@@ -13264,7 +13264,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 2 3
 # 39 "mcc_generated_files/system/src/../pins.h" 2
-# 153 "mcc_generated_files/system/src/../pins.h"
+# 210 "mcc_generated_files/system/src/../pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13284,7 +13284,7 @@ void PIN_MANAGER_Initialize(void)
 
     LATA = 0x0;
     LATB = 0x3;
-    LATC = 0x18;
+    LATC = 0x0;
     LATD = 0x1;
     LATE = 0x0;
 
@@ -13293,8 +13293,8 @@ void PIN_MANAGER_Initialize(void)
 
     TRISA = 0xFF;
     TRISB = 0xFF;
-    TRISC = 0xFF;
-    TRISD = 0xFE;
+    TRISC = 0x7F;
+    TRISD = 0xDE;
     TRISE = 0xF;
 
 
@@ -13302,8 +13302,8 @@ void PIN_MANAGER_Initialize(void)
 
     ANSELA = 0xFF;
     ANSELB = 0xFC;
-    ANSELC = 0xE7;
-    ANSELD = 0xFE;
+    ANSELC = 0x7F;
+    ANSELD = 0xE;
     ANSELE = 0x7;
 
 
@@ -13344,15 +13344,16 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    SSP1CLKPPS = 0x13;
-    RC3PPS = 0x15;
-    SSP1DATPPS = 0x14;
-    RC4PPS = 0x16;
-    SSP2CLKPPS = 0x9;
-    RB1PPS = 0x17;
-    SSP2DATPPS = 0x8;
-    RB0PPS = 0x18;
-# 121 "mcc_generated_files/system/src/pins.c"
+    SSP2DATPPS = 0x1E;
+    SSP2SSPPS = 0x1C;
+    RD5PPS = 0x18;
+    SSP2CLKPPS = 0x1F;
+    RD7PPS = 0x17;
+    SSP1CLKPPS = 0x9;
+    RB1PPS = 0x15;
+    SSP1DATPPS = 0x8;
+    RB0PPS = 0x16;
+# 122 "mcc_generated_files/system/src/pins.c"
     IOCAP = 0x0;
     IOCAN = 0x0;
     IOCAF = 0x0;

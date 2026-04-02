@@ -1,4 +1,4 @@
-# 1 "Main.c"
+# 1 "oled.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,16 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Main.c" 2
-
-
-
-
-
-
-
-# 1 "./mcc_generated_files/system/system.h" 1
-# 39 "./mcc_generated_files/system/system.h"
+# 1 "oled.c" 2
+# 1 "./oled.h" 1
+# 15 "./oled.h"
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 1 3
 # 18 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -13269,302 +13262,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 2 3
-# 40 "./mcc_generated_files/system/system.h" 2
+# 16 "./oled.h" 2
 
-# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stdbool.h" 1 3
-# 42 "./mcc_generated_files/system/system.h" 2
-# 1 "./mcc_generated_files/system/config_bits.h" 1
-# 39 "./mcc_generated_files/system/config_bits.h"
-# 1 "./mcc_generated_files/system/../system/clock.h" 1
-# 56 "./mcc_generated_files/system/../system/clock.h"
-void CLOCK_Initialize(void);
-# 40 "./mcc_generated_files/system/config_bits.h" 2
-# 43 "./mcc_generated_files/system/system.h" 2
-# 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 210 "./mcc_generated_files/system/../system/pins.h"
-void PIN_MANAGER_Initialize (void);
-
-
-
-
-
-
-
-void PIN_MANAGER_IOC(void);
-# 44 "./mcc_generated_files/system/system.h" 2
-# 1 "./mcc_generated_files/system/../system/interrupt.h" 1
-# 85 "./mcc_generated_files/system/../system/interrupt.h"
-void INTERRUPT_Initialize (void);
-# 125 "./mcc_generated_files/system/../system/interrupt.h"
-void INT_ISR(void);
-# 134 "./mcc_generated_files/system/../system/interrupt.h"
-void INT_CallBack(void);
-# 143 "./mcc_generated_files/system/../system/interrupt.h"
-void INT_SetInterruptHandler(void (* InterruptHandler)(void));
-# 152 "./mcc_generated_files/system/../system/interrupt.h"
-extern void (*INT_InterruptHandler)(void);
-# 161 "./mcc_generated_files/system/../system/interrupt.h"
-void INT_DefaultInterruptHandler(void);
-# 45 "./mcc_generated_files/system/system.h" 2
-
-# 1 "./mcc_generated_files/system/../i2c_client/mssp1.h" 1
-# 42 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-# 1 "./mcc_generated_files/system/../i2c_client/i2c_client_interface.h" 1
-# 39 "./mcc_generated_files/system/../i2c_client/i2c_client_interface.h"
-# 1 "./mcc_generated_files/system/../i2c_client/i2c_client_types.h" 1
-# 46 "./mcc_generated_files/system/../i2c_client/i2c_client_types.h"
-typedef enum
-{
-    I2C_CLIENT_TRANSFER_DIR_WRITE = 0,
-    I2C_CLIENT_TRANSFER_DIR_READ = 1,
-} i2c_client_transfer_dir_t;
-
-
-
-
-
-
-typedef enum
-{
-    I2C_CLIENT_ACK_STATUS_RECEIVED_ACK = 0,
-    I2C_CLIENT_ACK_STATUS_RECEIVED_NACK = 1,
-} i2c_client_ack_status_t;
-
-
-
-
-
-
-typedef enum
-{
-    I2C_CLIENT_TRANSFER_EVENT_NONE = 0,
-    I2C_CLIENT_TRANSFER_EVENT_ADDR_MATCH,
-    I2C_CLIENT_TRANSFER_EVENT_RX_READY ,
-    I2C_CLIENT_TRANSFER_EVENT_TX_READY,
-    I2C_CLIENT_TRANSFER_EVENT_STOP_BIT_RECEIVED,
-    I2C_CLIENT_TRANSFER_EVENT_ERROR,
-} i2c_client_transfer_event_t;
-
-
-
-
-
-
-typedef enum
-{
-    I2C_CLIENT_ERROR_NONE = 0,
-    I2C_CLIENT_ERROR_BUS_COLLISION,
-    I2C_CLIENT_ERROR_WRITE_COLLISION,
-    I2C_CLIENT_ERROR_RECEIVE_OVERFLOW,
-    I2C_CLIENT_ERROR_TRANSMIT_UNDERFLOW,
-    I2C_CLIENT_ERROR_READ_UNDERFLOW,
-} i2c_client_error_t;
-# 40 "./mcc_generated_files/system/../i2c_client/i2c_client_interface.h" 2
-
-
-
-
-
-
-typedef struct
-{
-
-
-
-    void (*Initialize)(void);
-
-
-
-
-    void (*Deinitialize)(void);
-
-
-
-
-    void (*WriteByte)(uint8_t data);
-
-
-
-
-    uint8_t(*ReadByte)(void);
-
-
-
-
-    i2c_client_error_t (*ErrorGet)(void);
-
-
-
-
-    i2c_client_transfer_dir_t (*TransferDirGet)(void);
-
-
-
-
-    i2c_client_ack_status_t (*LastByteAckStatusGet)(void);
-
-
-
-
-    void (*CallbackRegister)(_Bool (*handler)(i2c_client_transfer_event_t clientEvent));
-
-
-
-
-    void (*Tasks)(void);
-}i2c_client_interface_t;
-# 43 "./mcc_generated_files/system/../i2c_client/mssp1.h" 2
-# 62 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-extern const i2c_client_interface_t I2C1_Client;
-# 71 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-void I2C1_Initialize(void);
-
-
-
-
-
-
-
-void I2C1_Deinitialize(void);
-# 89 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-void I2C1_WriteByte(uint8_t data);
-# 99 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-uint8_t I2C1_ReadByte(void);
-# 109 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-uint16_t I2C1_ReadAddr(void);
-# 122 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-i2c_client_error_t I2C1_ErrorGet(void);
-# 133 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-i2c_client_transfer_dir_t I2C1_TransferDirGet(void);
-# 144 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-i2c_client_ack_status_t I2C1_LastByteAckStatusGet(void);
-
-
-
-
-
-
-
-void I2C1_CallbackRegister(_Bool (*callback)(i2c_client_transfer_event_t clientEvent));
-# 162 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-void I2C1_ISR(void);
-# 172 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-void I2C1_ERROR_ISR(void);
-# 47 "./mcc_generated_files/system/system.h" 2
-# 1 "./mcc_generated_files/system/../spi/mssp2.h" 1
-# 38 "./mcc_generated_files/system/../spi/mssp2.h"
-# 1 "./mcc_generated_files/system/../spi/spi_interface.h" 1
-# 39 "./mcc_generated_files/system/../spi/spi_interface.h"
-# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 1 3
-# 19 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 3
-# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 138 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 3
-typedef int ptrdiff_t;
-# 20 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 2 3
-# 40 "./mcc_generated_files/system/../spi/spi_interface.h" 2
-
-
-
-
-
-
-struct SPI_INTERFACE
-{
-    void (*Initialize)(void);
-    void (*Deinitialize)(void);
-    _Bool (*Open)(uint8_t spiConfigIndex);
-    void (*Close)(void);
-    void (*BufferExchange)(void *bufferData, size_t bufferSize);
-    void (*BufferRead)(void *bufferData, size_t bufferSize);
-    void (*BufferWrite)(void *bufferData, size_t bufferSize);
-    uint8_t (*ByteExchange)(uint8_t byteData);
-    uint8_t (*ByteRead)(void);
-    void (*ByteWrite)(uint8_t byteData);
-    _Bool (*IsRxReady)(void);
-    _Bool (*IsTxReady)(void);
-    void (*RxCompleteCallbackRegister)(void (*callbackHandler)(void));
-    void (*TxCompleteCallbackRegister)(void (*callbackHandler)(void));
-};
-# 39 "./mcc_generated_files/system/../spi/mssp2.h" 2
-
-
-
-
-
-
-extern const struct SPI_INTERFACE SPI2_Client;
-# 115 "./mcc_generated_files/system/../spi/mssp2.h"
-typedef enum {
-    CLIENT_CONFIG,
-    MSSP2_DEFAULT
-} spi2_configuration_name_t;
-
-
-
-
-
-
-
-void SPI2_Initialize(void);
-
-
-
-
-
-
-
-void SPI2_Deinitialize(void);
-# 144 "./mcc_generated_files/system/../spi/mssp2.h"
-_Bool SPI2_Open(uint8_t spiConfigIndex);
-
-
-
-
-
-
-
-void SPI2_Close(void);
-# 161 "./mcc_generated_files/system/../spi/mssp2.h"
-void SPI2_BufferExchange(void *bufferData, size_t bufferSize);
-# 170 "./mcc_generated_files/system/../spi/mssp2.h"
-void SPI2_BufferWrite(void *bufferData, size_t bufferSize);
-# 179 "./mcc_generated_files/system/../spi/mssp2.h"
-void SPI2_BufferRead(void *bufferData, size_t bufferSize);
-
-
-
-
-
-
-
-uint8_t SPI2_ByteExchange(uint8_t byteData);
-# 197 "./mcc_generated_files/system/../spi/mssp2.h"
-void SPI2_ByteWrite(uint8_t byteData);
-
-
-
-
-
-
-
-uint8_t SPI2_ByteRead(void);
-# 214 "./mcc_generated_files/system/../spi/mssp2.h"
-_Bool SPI2_IsRxReady(void);
-# 223 "./mcc_generated_files/system/../spi/mssp2.h"
-_Bool SPI2_IsTxReady(void);
-# 48 "./mcc_generated_files/system/system.h" 2
-
-
-
-
-
-
-
-
-void SYSTEM_Initialize(void);
-# 9 "Main.c" 2
-# 1 "./oled.h" 1
-# 17 "./oled.h"
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/string.h" 1 3
 # 25 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/string.h" 3
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 1 3
@@ -13630,35 +13329,193 @@ void oled_set_cursor(uint8_t line, uint8_t col);
 void oled_print(const char *str);
 void oled_display1(const char *str);
 void oled_display2(const char *str);
-# 10 "Main.c" 2
+# 2 "oled.c" 2
+# 1 "./mcc_generated_files/system/clock.h" 1
+# 56 "./mcc_generated_files/system/clock.h"
+void CLOCK_Initialize(void);
+# 3 "oled.c" 2
 
-void init_heartbeat_led(){
+# 1 "./mcc_generated_files/spi/mssp2.h" 1
+# 38 "./mcc_generated_files/spi/mssp2.h"
+# 1 "./mcc_generated_files/spi/spi_interface.h" 1
+# 38 "./mcc_generated_files/spi/spi_interface.h"
+# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stdbool.h" 1 3
+# 39 "./mcc_generated_files/spi/spi_interface.h" 2
+# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 1 3
+# 19 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 3
+# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 138 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 3
+typedef int ptrdiff_t;
+# 20 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 2 3
+# 40 "./mcc_generated_files/spi/spi_interface.h" 2
 
-    TRISDbits.TRISD0 = 0;
 
 
 
-    ANSELDbits.ANSD0 = 0;
-    LATDbits.LATD0 = 1;
+
+
+struct SPI_INTERFACE
+{
+    void (*Initialize)(void);
+    void (*Deinitialize)(void);
+    _Bool (*Open)(uint8_t spiConfigIndex);
+    void (*Close)(void);
+    void (*BufferExchange)(void *bufferData, size_t bufferSize);
+    void (*BufferRead)(void *bufferData, size_t bufferSize);
+    void (*BufferWrite)(void *bufferData, size_t bufferSize);
+    uint8_t (*ByteExchange)(uint8_t byteData);
+    uint8_t (*ByteRead)(void);
+    void (*ByteWrite)(uint8_t byteData);
+    _Bool (*IsRxReady)(void);
+    _Bool (*IsTxReady)(void);
+    void (*RxCompleteCallbackRegister)(void (*callbackHandler)(void));
+    void (*TxCompleteCallbackRegister)(void (*callbackHandler)(void));
+};
+# 39 "./mcc_generated_files/spi/mssp2.h" 2
+
+
+
+
+
+
+extern const struct SPI_INTERFACE SPI2_Client;
+# 115 "./mcc_generated_files/spi/mssp2.h"
+typedef enum {
+    CLIENT_CONFIG,
+    MSSP2_DEFAULT
+} spi2_configuration_name_t;
+
+
+
+
+
+
+
+void SPI2_Initialize(void);
+
+
+
+
+
+
+
+void SPI2_Deinitialize(void);
+# 144 "./mcc_generated_files/spi/mssp2.h"
+_Bool SPI2_Open(uint8_t spiConfigIndex);
+
+
+
+
+
+
+
+void SPI2_Close(void);
+# 161 "./mcc_generated_files/spi/mssp2.h"
+void SPI2_BufferExchange(void *bufferData, size_t bufferSize);
+# 170 "./mcc_generated_files/spi/mssp2.h"
+void SPI2_BufferWrite(void *bufferData, size_t bufferSize);
+# 179 "./mcc_generated_files/spi/mssp2.h"
+void SPI2_BufferRead(void *bufferData, size_t bufferSize);
+
+
+
+
+
+
+
+uint8_t SPI2_ByteExchange(uint8_t byteData);
+# 197 "./mcc_generated_files/spi/mssp2.h"
+void SPI2_ByteWrite(uint8_t byteData);
+
+
+
+
+
+
+
+uint8_t SPI2_ByteRead(void);
+# 214 "./mcc_generated_files/spi/mssp2.h"
+_Bool SPI2_IsRxReady(void);
+# 223 "./mcc_generated_files/spi/mssp2.h"
+_Bool SPI2_IsTxReady(void);
+# 5 "oled.c" 2
+# 17 "oled.c"
+void oled_send(uint8_t rs, uint8_t data){
+    LATCbits.LATC7 = 0;
+    _delay((unsigned long)((2)*(32000000U/4000000.0)));
+
+    SPI2_ByteExchange(rs & 0x01);
+    SPI2_ByteExchange(data);
+
+    _delay((unsigned long)((2)*(32000000U/4000000.0)));
+    LATCbits.LATC7 = 0;
+    _delay((unsigned long)((50)*(32000000U/4000000.0)));
 }
 
 
+void oled_init(){
 
-int main(void){
-    SYSTEM_Initialize();
+    LATCbits.LATC7 = 1;
+    _delay((unsigned long)((1000)*(32000000U/4000.0)));
 
-    init_heartbeat_led();
+    oled_send (0, 0x38);
+    oled_send (0, 0x08);
+    oled_send (0, 0x01);
 
-    oled_init();
+    _delay((unsigned long)((2000)*(32000000U/4000.0)));
+
+    oled_send (0, 0x06);
+    oled_send (0, 0x02);
+    oled_send (0, 0x0c);
+
+    LATCbits.LATC7 = 0;
+}
 
 
-    while(1){
-        _delay((unsigned long)((300)*(32000000U/4000.0)));
+void oled_clear(){
+    oled_send (0, 0x01);
+    _delay((unsigned long)((2)*(32000000U/4000.0)));
+}
 
-        LATDbits.LATD0 = 1;
-        _delay((unsigned long)((300)*(32000000U/4000.0)));
 
-        LATDbits.LATD0 = 0;
+void oled_set_cursor(uint8_t line, uint8_t col){
+    uint8_t addr = (line == 0) ? 0x00 : 0x40;
+    oled_send (0, 0x80 | (addr + (col & 0x0F)));
+    _delay((unsigned long)((50)*(32000000U/4000000.0)));
+}
+
+
+void oled_print(const char *str){
+    uint8_t count = 0;
+    while (*str && count < 16){
+        oled_send(1, (uint8_t)((uint8_t)*str++));
+        _delay((unsigned long)((50)*(32000000U/4000000.0)));
+        count++;
     }
-    return 1;
+}
+
+
+void oled_display1(const char *str){
+
+    oled_set_cursor(0,0);
+
+    uint8_t len = (uint8_t)strlen(str);
+
+    for(int i = 0; i < 16; i++){
+        oled_send(1, (uint8_t)((i < len) ? (uint8_t)str[i] : ' '));
+        _delay((unsigned long)((50)*(32000000U/4000000.0)));
+    }
+}
+
+
+void oled_display2(const char *str){
+
+    oled_set_cursor(1,0);
+
+    uint8_t len = (uint8_t)strlen(str);
+
+    for(int i = 0; i < 16; i++){
+        oled_send(1, (uint8_t)((i < len) ? (uint8_t)str[i] : ' '));
+        _delay((unsigned long)((50)*(32000000U/4000000.0)));
+    }
 }

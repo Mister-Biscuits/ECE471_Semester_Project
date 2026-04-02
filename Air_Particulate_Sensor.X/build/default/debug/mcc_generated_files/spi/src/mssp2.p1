@@ -1,183 +1,124 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"954 E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 954: extern volatile unsigned char LATA __attribute__((address(0x018)));
-[v _LATA `Vuc ~T0 @X0 0 e@24 ]
-"1016
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 1016: extern volatile unsigned char LATB __attribute__((address(0x019)));
-[v _LATB `Vuc ~T0 @X0 0 e@25 ]
-"1078
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 1078: extern volatile unsigned char LATC __attribute__((address(0x01A)));
-[v _LATC `Vuc ~T0 @X0 0 e@26 ]
-"1140
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 1140: extern volatile unsigned char LATD __attribute__((address(0x01B)));
-[v _LATD `Vuc ~T0 @X0 0 e@27 ]
-"1202
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 1202: extern volatile unsigned char LATE __attribute__((address(0x01C)));
-[v _LATE `Vuc ~T0 @X0 0 e@28 ]
-"674
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 674: extern volatile unsigned char TRISA __attribute__((address(0x012)));
-[v _TRISA `Vuc ~T0 @X0 0 e@18 ]
-"736
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 736: extern volatile unsigned char TRISB __attribute__((address(0x013)));
-[v _TRISB `Vuc ~T0 @X0 0 e@19 ]
-"798
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 798: extern volatile unsigned char TRISC __attribute__((address(0x014)));
-[v _TRISC `Vuc ~T0 @X0 0 e@20 ]
-"860
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 860: extern volatile unsigned char TRISD __attribute__((address(0x015)));
-[v _TRISD `Vuc ~T0 @X0 0 e@21 ]
-"922
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 922: extern volatile unsigned char TRISE __attribute__((address(0x016)));
-[v _TRISE `Vuc ~T0 @X0 0 e@22 ]
-"20150
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20150: extern volatile unsigned char ANSELA __attribute__((address(0x1F38)));
-[v _ANSELA `Vuc ~T0 @X0 0 e@7992 ]
-"20646
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20646: extern volatile unsigned char ANSELB __attribute__((address(0x1F43)));
-[v _ANSELB `Vuc ~T0 @X0 0 e@8003 ]
-"21142
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21142: extern volatile unsigned char ANSELC __attribute__((address(0x1F4E)));
-[v _ANSELC `Vuc ~T0 @X0 0 e@8014 ]
-"21638
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21638: extern volatile unsigned char ANSELD __attribute__((address(0x1F59)));
-[v _ANSELD `Vuc ~T0 @X0 0 e@8025 ]
-"21948
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21948: extern volatile unsigned char ANSELE __attribute__((address(0x1F64)));
-[v _ANSELE `Vuc ~T0 @X0 0 e@8036 ]
-"20212
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20212: extern volatile unsigned char WPUA __attribute__((address(0x1F39)));
-[v _WPUA `Vuc ~T0 @X0 0 e@7993 ]
-"20708
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20708: extern volatile unsigned char WPUB __attribute__((address(0x1F44)));
-[v _WPUB `Vuc ~T0 @X0 0 e@8004 ]
-"21204
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21204: extern volatile unsigned char WPUC __attribute__((address(0x1F4F)));
-[v _WPUC `Vuc ~T0 @X0 0 e@8015 ]
-"21700
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21700: extern volatile unsigned char WPUD __attribute__((address(0x1F5A)));
-[v _WPUD `Vuc ~T0 @X0 0 e@8026 ]
-"21980
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21980: extern volatile unsigned char WPUE __attribute__((address(0x1F65)));
-[v _WPUE `Vuc ~T0 @X0 0 e@8037 ]
-"20274
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20274: extern volatile unsigned char ODCONA __attribute__((address(0x1F3A)));
-[v _ODCONA `Vuc ~T0 @X0 0 e@7994 ]
-"20770
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20770: extern volatile unsigned char ODCONB __attribute__((address(0x1F45)));
-[v _ODCONB `Vuc ~T0 @X0 0 e@8005 ]
-"21266
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21266: extern volatile unsigned char ODCONC __attribute__((address(0x1F50)));
-[v _ODCONC `Vuc ~T0 @X0 0 e@8016 ]
-"21762
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21762: extern volatile unsigned char ODCOND __attribute__((address(0x1F5B)));
-[v _ODCOND `Vuc ~T0 @X0 0 e@8027 ]
-"22018
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 22018: extern volatile unsigned char ODCONE __attribute__((address(0x1F66)));
-[v _ODCONE `Vuc ~T0 @X0 0 e@8038 ]
-"20336
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20336: extern volatile unsigned char SLRCONA __attribute__((address(0x1F3B)));
-[v _SLRCONA `Vuc ~T0 @X0 0 e@7995 ]
-"20832
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20832: extern volatile unsigned char SLRCONB __attribute__((address(0x1F46)));
-[v _SLRCONB `Vuc ~T0 @X0 0 e@8006 ]
-"21328
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21328: extern volatile unsigned char SLRCONC __attribute__((address(0x1F51)));
-[v _SLRCONC `Vuc ~T0 @X0 0 e@8017 ]
-"21824
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21824: extern volatile unsigned char SLRCOND __attribute__((address(0x1F5C)));
-[v _SLRCOND `Vuc ~T0 @X0 0 e@8028 ]
-"22050
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 22050: extern volatile unsigned char SLRCONE __attribute__((address(0x1F67)));
-[v _SLRCONE `Vuc ~T0 @X0 0 e@8039 ]
-"20398
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20398: extern volatile unsigned char INLVLA __attribute__((address(0x1F3C)));
-[v _INLVLA `Vuc ~T0 @X0 0 e@7996 ]
-"20894
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20894: extern volatile unsigned char INLVLB __attribute__((address(0x1F47)));
-[v _INLVLB `Vuc ~T0 @X0 0 e@8007 ]
-"21390
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21390: extern volatile unsigned char INLVLC __attribute__((address(0x1F52)));
-[v _INLVLC `Vuc ~T0 @X0 0 e@8018 ]
-"21886
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21886: extern volatile unsigned char INLVLD __attribute__((address(0x1F5D)));
-[v _INLVLD `Vuc ~T0 @X0 0 e@8029 ]
-"22082
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 22082: extern volatile unsigned char INLVLE __attribute__((address(0x1F68)));
-[v _INLVLE `Vuc ~T0 @X0 0 e@8040 ]
-"18262
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 18262: extern volatile unsigned char SSP2DATPPS __attribute__((address(0x1EC9)));
-[v _SSP2DATPPS `Vuc ~T0 @X0 0 e@7881 ]
-"18320
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 18320: extern volatile unsigned char SSP2SSPPS __attribute__((address(0x1ECA)));
-[v _SSP2SSPPS `Vuc ~T0 @X0 0 e@7882 ]
-"19886
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 19886: extern volatile unsigned char RD5PPS __attribute__((address(0x1F2D)));
-[v _RD5PPS `Vuc ~T0 @X0 0 e@7981 ]
-"18204
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 18204: extern volatile unsigned char SSP2CLKPPS __attribute__((address(0x1EC8)));
-[v _SSP2CLKPPS `Vuc ~T0 @X0 0 e@7880 ]
-"19974
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 19974: extern volatile unsigned char RD7PPS __attribute__((address(0x1F2F)));
-[v _RD7PPS `Vuc ~T0 @X0 0 e@7983 ]
-"18030
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 18030: extern volatile unsigned char SSP1CLKPPS __attribute__((address(0x1EC5)));
-[v _SSP1CLKPPS `Vuc ~T0 @X0 0 e@7877 ]
-"19006
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 19006: extern volatile unsigned char RB1PPS __attribute__((address(0x1F19)));
-[v _RB1PPS `Vuc ~T0 @X0 0 e@7961 ]
-"18088
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 18088: extern volatile unsigned char SSP1DATPPS __attribute__((address(0x1EC6)));
-[v _SSP1DATPPS `Vuc ~T0 @X0 0 e@7878 ]
-"18962
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 18962: extern volatile unsigned char RB0PPS __attribute__((address(0x1F18)));
-[v _RB0PPS `Vuc ~T0 @X0 0 e@7960 ]
-"20460
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20460: extern volatile unsigned char IOCAP __attribute__((address(0x1F3D)));
-[v _IOCAP `Vuc ~T0 @X0 0 e@7997 ]
-"20522
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20522: extern volatile unsigned char IOCAN __attribute__((address(0x1F3E)));
-[v _IOCAN `Vuc ~T0 @X0 0 e@7998 ]
-"20584
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20584: extern volatile unsigned char IOCAF __attribute__((address(0x1F3F)));
-[v _IOCAF `Vuc ~T0 @X0 0 e@7999 ]
-"20956
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 20956: extern volatile unsigned char IOCBP __attribute__((address(0x1F48)));
-[v _IOCBP `Vuc ~T0 @X0 0 e@8008 ]
-"21018
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21018: extern volatile unsigned char IOCBN __attribute__((address(0x1F49)));
-[v _IOCBN `Vuc ~T0 @X0 0 e@8009 ]
-"21080
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21080: extern volatile unsigned char IOCBF __attribute__((address(0x1F4A)));
-[v _IOCBF `Vuc ~T0 @X0 0 e@8010 ]
-"21452
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21452: extern volatile unsigned char IOCCP __attribute__((address(0x1F53)));
-[v _IOCCP `Vuc ~T0 @X0 0 e@8019 ]
-"21514
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21514: extern volatile unsigned char IOCCN __attribute__((address(0x1F54)));
-[v _IOCCN `Vuc ~T0 @X0 0 e@8020 ]
-"21576
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 21576: extern volatile unsigned char IOCCF __attribute__((address(0x1F55)));
-[v _IOCCF `Vuc ~T0 @X0 0 e@8021 ]
-"22120
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 22120: extern volatile unsigned char IOCEP __attribute__((address(0x1F69)));
-[v _IOCEP `Vuc ~T0 @X0 0 e@8041 ]
-"22141
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 22141: extern volatile unsigned char IOCEN __attribute__((address(0x1F6A)));
-[v _IOCEN `Vuc ~T0 @X0 0 e@8042 ]
-"22162
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 22162: extern volatile unsigned char IOCEF __attribute__((address(0x1F6B)));
-[v _IOCEF `Vuc ~T0 @X0 0 e@8043 ]
-"9521
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9521:     struct {
-[s S446 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S446 . INTE . IOCIE TMR0IE ]
-"9520
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9520: typedef union {
-[u S445 `S446 1 ]
-[n S445 . . ]
-"9528
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9528: extern volatile PIE0bits_t PIE0bits __attribute__((address(0x716)));
-[v _PIE0bits `VS445 ~T0 @X0 0 e@1814 ]
+[v F7735 `(v ~T0 @X0 0 tf ]
+[v F7737 `(v ~T0 @X0 0 tf ]
+[v F7739 `(a ~T0 @X0 0 tf1`uc ]
+[v F7742 `(v ~T0 @X0 0 tf ]
+[v F7744 `(v ~T0 @X0 0 tf2`*v`ui ]
+[v F7748 `(v ~T0 @X0 0 tf2`*v`ui ]
+[v F7752 `(v ~T0 @X0 0 tf2`*v`ui ]
+[v F7756 `(uc ~T0 @X0 0 tf1`uc ]
+[v F7759 `(uc ~T0 @X0 0 tf ]
+[v F7761 `(v ~T0 @X0 0 tf1`uc ]
+[v F7764 `(a ~T0 @X0 0 tf ]
+[v F7766 `(a ~T0 @X0 0 tf ]
+[v F7769 `(v ~T0 @X0 0 tf ]
+[v F7768 `(v ~T0 @X0 0 tf1`*F7769 ]
+[v F7773 `(v ~T0 @X0 0 tf ]
+[v F7772 `(v ~T0 @X0 0 tf1`*F7773 ]
+"47 mcc_generated_files/spi/src/../spi_interface.h
+[; ;mcc_generated_files/spi/src/../spi_interface.h: 47: {
+[s S1020 `*F7735 1 `*F7737 1 `*F7739 1 `*F7742 1 `*F7744 1 `*F7748 1 `*F7752 1 `*F7756 1 `*F7759 1 `*F7761 1 `*F7764 1 `*F7766 1 `*F7768 1 `*F7772 1 ]
+[n S1020 SPI_INTERFACE Initialize Deinitialize Open Close BufferExchange BufferRead BufferWrite ByteExchange ByteRead ByteWrite IsRxReady IsTxReady RxCompleteCallbackRegister TxCompleteCallbackRegister ]
+"126 mcc_generated_files/spi/src/../mssp2.h
+[; ;mcc_generated_files/spi/src/../mssp2.h: 126: void SPI2_Initialize(void);
+[v _SPI2_Initialize `(v ~T0 @X0 0 ef ]
+"134
+[; ;mcc_generated_files/spi/src/../mssp2.h: 134: void SPI2_Deinitialize(void);
+[v _SPI2_Deinitialize `(v ~T0 @X0 0 ef ]
+"144
+[; ;mcc_generated_files/spi/src/../mssp2.h: 144: _Bool SPI2_Open(uint8_t spiConfigIndex);
+[v _SPI2_Open `(a ~T0 @X0 0 ef1`uc ]
+"152
+[; ;mcc_generated_files/spi/src/../mssp2.h: 152: void SPI2_Close(void);
+[v _SPI2_Close `(v ~T0 @X0 0 ef ]
+"161
+[; ;mcc_generated_files/spi/src/../mssp2.h: 161: void SPI2_BufferExchange(void *bufferData, size_t bufferSize);
+[v _SPI2_BufferExchange `(v ~T0 @X0 0 ef2`*v`ui ]
+"179
+[; ;mcc_generated_files/spi/src/../mssp2.h: 179: void SPI2_BufferRead(void *bufferData, size_t bufferSize);
+[v _SPI2_BufferRead `(v ~T0 @X0 0 ef2`*v`ui ]
+"170
+[; ;mcc_generated_files/spi/src/../mssp2.h: 170: void SPI2_BufferWrite(void *bufferData, size_t bufferSize);
+[v _SPI2_BufferWrite `(v ~T0 @X0 0 ef2`*v`ui ]
+"187
+[; ;mcc_generated_files/spi/src/../mssp2.h: 187: uint8_t SPI2_ByteExchange(uint8_t byteData);
+[v _SPI2_ByteExchange `(uc ~T0 @X0 0 ef1`uc ]
+"205
+[; ;mcc_generated_files/spi/src/../mssp2.h: 205: uint8_t SPI2_ByteRead(void);
+[v _SPI2_ByteRead `(uc ~T0 @X0 0 ef ]
+"197
+[; ;mcc_generated_files/spi/src/../mssp2.h: 197: void SPI2_ByteWrite(uint8_t byteData);
+[v _SPI2_ByteWrite `(v ~T0 @X0 0 ef1`uc ]
+"214
+[; ;mcc_generated_files/spi/src/../mssp2.h: 214: _Bool SPI2_IsRxReady(void);
+[v _SPI2_IsRxReady `(a ~T0 @X0 0 ef ]
+"223
+[; ;mcc_generated_files/spi/src/../mssp2.h: 223: _Bool SPI2_IsTxReady(void);
+[v _SPI2_IsTxReady `(a ~T0 @X0 0 ef ]
+[v F7831 `(v ~T0 @X0 0 tf ]
+[v F7830 `(v ~T0 @X0 0 tf1`*F7831 ]
+[v F7834 `(v ~T0 @X0 0 tf ]
+[v F7833 `(v ~T0 @X0 0 tf1`*F7834 ]
+"43 mcc_generated_files/spi/src/../spi_polling_types.h
+[; ;mcc_generated_files/spi/src/../spi_polling_types.h: 43: typedef struct {
+[s S1021 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S1021 . stat con1 con3 baud clock ]
+"9626 E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9626:     struct {
+[s S452 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S452 . SSP1IE BCL1IE SSP2IE BCL2IE TX1IE RC1IE TX2IE RC2IE ]
+"9625
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9625: typedef union {
+[u S451 `S452 1 ]
+[n S451 . . ]
+"9637
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9637: extern volatile PIE3bits_t PIE3bits __attribute__((address(0x719)));
+[v _PIE3bits `VS451 ~T0 @X0 0 e@1817 ]
+"9320
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9320:     struct {
+[s S435 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S435 . SSP1IF BCL1IF SSP2IF BCL2IF TX1IF RC1IF TX2IF RC2IF ]
+"9319
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9319: typedef union {
+[u S434 `S435 1 ]
+[n S434 . . ]
+"9331
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9331: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x70F)));
+[v _PIR3bits `VS434 ~T0 @X0 0 e@1807 ]
+"3563
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3563: extern volatile unsigned char SSP2STAT __attribute__((address(0x199)));
+[v _SSP2STAT `Vuc ~T0 @X0 0 e@409 ]
+"3927
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3927: extern volatile unsigned char SSP2CON1 __attribute__((address(0x19A)));
+[v _SSP2CON1 `Vuc ~T0 @X0 0 e@410 ]
+"4234
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 4234: extern volatile unsigned char SSP2CON3 __attribute__((address(0x19C)));
+[v _SSP2CON3 `Vuc ~T0 @X0 0 e@412 ]
+"3373
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3373: extern volatile unsigned char SSP2ADD __attribute__((address(0x197)));
+[v _SSP2ADD `Vuc ~T0 @X0 0 e@407 ]
+"3933
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3933:     struct {
+[s S186 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S186 . SSPM CKP SSPEN SSPOV WCOL ]
+"3940
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3940:     struct {
+[s S187 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S187 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"3946
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3946:     struct {
+[s S188 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S188 . SSPM02 SSPM12 SSPM22 SSPM32 CKP2 SSPEN2 SSPOV2 WCOL2 ]
+"3932
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3932: typedef union {
+[u S185 `S186 1 `S187 1 `S188 1 ]
+[n S185 . . . . ]
+"3957
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3957: extern volatile SSP2CON1bits_t SSP2CON1bits __attribute__((address(0x19A)));
+[v _SSP2CON1bits `VS185 ~T0 @X0 0 e@410 ]
+"3353
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3353: extern volatile unsigned char SSP2BUF __attribute__((address(0x196)));
+[v _SSP2BUF `Vuc ~T0 @X0 0 e@406 ]
 "52 E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 52: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1282,198 +1223,573 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22466
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 22466: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"38 mcc_generated_files/system/src/pins.c
-[; ;mcc_generated_files/system/src/pins.c: 38: void PIN_MANAGER_Initialize(void)
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
-"39
-[; ;mcc_generated_files/system/src/pins.c: 39: {
-{
-[e :U _PIN_MANAGER_Initialize ]
-[f ]
-"43
-[; ;mcc_generated_files/system/src/pins.c: 43:     LATA = 0x0;
-[e = _LATA -> -> 0 `i `uc ]
-"44
-[; ;mcc_generated_files/system/src/pins.c: 44:     LATB = 0x3;
-[e = _LATB -> -> 3 `i `uc ]
-"45
-[; ;mcc_generated_files/system/src/pins.c: 45:     LATC = 0x0;
-[e = _LATC -> -> 0 `i `uc ]
-"46
-[; ;mcc_generated_files/system/src/pins.c: 46:     LATD = 0x1;
-[e = _LATD -> -> 1 `i `uc ]
-"47
-[; ;mcc_generated_files/system/src/pins.c: 47:     LATE = 0x0;
-[e = _LATE -> -> 0 `i `uc ]
-"52
-[; ;mcc_generated_files/system/src/pins.c: 52:     TRISA = 0xFF;
-[e = _TRISA -> -> 255 `i `uc ]
-"53
-[; ;mcc_generated_files/system/src/pins.c: 53:     TRISB = 0xFF;
-[e = _TRISB -> -> 255 `i `uc ]
-"54
-[; ;mcc_generated_files/system/src/pins.c: 54:     TRISC = 0x7F;
-[e = _TRISC -> -> 127 `i `uc ]
+"38 mcc_generated_files/spi/src/mssp2.c
+[; ;mcc_generated_files/spi/src/mssp2.c: 38: const struct SPI_INTERFACE SPI2_Client = {
+[v _SPI2_Client `CS1020 ~T0 @X0 1 e ]
+[i _SPI2_Client
+:U ..
+:U ..
+&U _SPI2_Initialize
+&U _SPI2_Deinitialize
+&U _SPI2_Open
+&U _SPI2_Close
+&U _SPI2_BufferExchange
+&U _SPI2_BufferRead
+&U _SPI2_BufferWrite
+&U _SPI2_ByteExchange
+&U _SPI2_ByteRead
+&U _SPI2_ByteWrite
+&U _SPI2_IsRxReady
+&U _SPI2_IsTxReady
+-> -> -> 0 `i `*v `*F7830
+-> -> -> 0 `i `*v `*F7833
+..
+..
+]
 "55
-[; ;mcc_generated_files/system/src/pins.c: 55:     TRISD = 0xDE;
-[e = _TRISD -> -> 222 `i `uc ]
-"56
-[; ;mcc_generated_files/system/src/pins.c: 56:     TRISE = 0xF;
-[e = _TRISE -> -> 15 `i `uc ]
+[; ;mcc_generated_files/spi/src/mssp2.c: 55: static const spi_configuration_t spi2_configuration[] = {
+[v _spi2_configuration `CS1021 ~T0 @X0 -> 2 `i s ]
+[i _spi2_configuration
+:U ..
+:U ..
+-> -> 0 `i `uc
+-> -> 4 `i `uc
+-> -> 16 `i `uc
+-> -> 1 `i `uc
+..
+:U ..
+-> -> 100 `i `uc
+-> -> 4 `i `uc
+-> -> 16 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+"60
+[; ;mcc_generated_files/spi/src/mssp2.c: 60: void SPI2_Initialize(void)
+[v _SPI2_Initialize `(v ~T0 @X0 1 ef ]
 "61
-[; ;mcc_generated_files/system/src/pins.c: 61:     ANSELA = 0xFF;
-[e = _ANSELA -> -> 255 `i `uc ]
-"62
-[; ;mcc_generated_files/system/src/pins.c: 62:     ANSELB = 0xFC;
-[e = _ANSELB -> -> 252 `i `uc ]
-"63
-[; ;mcc_generated_files/system/src/pins.c: 63:     ANSELC = 0x7F;
-[e = _ANSELC -> -> 127 `i `uc ]
-"64
-[; ;mcc_generated_files/system/src/pins.c: 64:     ANSELD = 0xE;
-[e = _ANSELD -> -> 14 `i `uc ]
-"65
-[; ;mcc_generated_files/system/src/pins.c: 65:     ANSELE = 0x7;
-[e = _ANSELE -> -> 7 `i `uc ]
-"70
-[; ;mcc_generated_files/system/src/pins.c: 70:     WPUA = 0x0;
-[e = _WPUA -> -> 0 `i `uc ]
-"71
-[; ;mcc_generated_files/system/src/pins.c: 71:     WPUB = 0x0;
-[e = _WPUB -> -> 0 `i `uc ]
-"72
-[; ;mcc_generated_files/system/src/pins.c: 72:     WPUC = 0x0;
-[e = _WPUC -> -> 0 `i `uc ]
-"73
-[; ;mcc_generated_files/system/src/pins.c: 73:     WPUD = 0x0;
-[e = _WPUD -> -> 0 `i `uc ]
-"74
-[; ;mcc_generated_files/system/src/pins.c: 74:     WPUE = 0x0;
-[e = _WPUE -> -> 0 `i `uc ]
-"80
-[; ;mcc_generated_files/system/src/pins.c: 80:     ODCONA = 0x0;
-[e = _ODCONA -> -> 0 `i `uc ]
-"81
-[; ;mcc_generated_files/system/src/pins.c: 81:     ODCONB = 0x0;
-[e = _ODCONB -> -> 0 `i `uc ]
-"82
-[; ;mcc_generated_files/system/src/pins.c: 82:     ODCONC = 0x0;
-[e = _ODCONC -> -> 0 `i `uc ]
-"83
-[; ;mcc_generated_files/system/src/pins.c: 83:     ODCOND = 0x0;
-[e = _ODCOND -> -> 0 `i `uc ]
-"84
-[; ;mcc_generated_files/system/src/pins.c: 84:     ODCONE = 0x0;
-[e = _ODCONE -> -> 0 `i `uc ]
-"88
-[; ;mcc_generated_files/system/src/pins.c: 88:     SLRCONA = 0xFF;
-[e = _SLRCONA -> -> 255 `i `uc ]
-"89
-[; ;mcc_generated_files/system/src/pins.c: 89:     SLRCONB = 0xFF;
-[e = _SLRCONB -> -> 255 `i `uc ]
-"90
-[; ;mcc_generated_files/system/src/pins.c: 90:     SLRCONC = 0xFF;
-[e = _SLRCONC -> -> 255 `i `uc ]
-"91
-[; ;mcc_generated_files/system/src/pins.c: 91:     SLRCOND = 0xFF;
-[e = _SLRCOND -> -> 255 `i `uc ]
-"92
-[; ;mcc_generated_files/system/src/pins.c: 92:     SLRCONE = 0x7;
-[e = _SLRCONE -> -> 7 `i `uc ]
-"96
-[; ;mcc_generated_files/system/src/pins.c: 96:     INLVLA = 0xFF;
-[e = _INLVLA -> -> 255 `i `uc ]
-"97
-[; ;mcc_generated_files/system/src/pins.c: 97:     INLVLB = 0xFF;
-[e = _INLVLB -> -> 255 `i `uc ]
-"98
-[; ;mcc_generated_files/system/src/pins.c: 98:     INLVLC = 0xFF;
-[e = _INLVLC -> -> 255 `i `uc ]
-"99
-[; ;mcc_generated_files/system/src/pins.c: 99:     INLVLD = 0xFF;
-[e = _INLVLD -> -> 255 `i `uc ]
-"100
-[; ;mcc_generated_files/system/src/pins.c: 100:     INLVLE = 0xF;
-[e = _INLVLE -> -> 15 `i `uc ]
-"105
-[; ;mcc_generated_files/system/src/pins.c: 105:     SSP2DATPPS = 0x1E;
-[e = _SSP2DATPPS -> -> 30 `i `uc ]
-"106
-[; ;mcc_generated_files/system/src/pins.c: 106:     SSP2SSPPS = 0x1C;
-[e = _SSP2SSPPS -> -> 28 `i `uc ]
-"107
-[; ;mcc_generated_files/system/src/pins.c: 107:     RD5PPS = 0x18;
-[e = _RD5PPS -> -> 24 `i `uc ]
-"108
-[; ;mcc_generated_files/system/src/pins.c: 108:     SSP2CLKPPS = 0x1F;
-[e = _SSP2CLKPPS -> -> 31 `i `uc ]
-"109
-[; ;mcc_generated_files/system/src/pins.c: 109:     RD7PPS = 0x17;
-[e = _RD7PPS -> -> 23 `i `uc ]
-"110
-[; ;mcc_generated_files/system/src/pins.c: 110:     SSP1CLKPPS = 0x9;
-[e = _SSP1CLKPPS -> -> 9 `i `uc ]
-"111
-[; ;mcc_generated_files/system/src/pins.c: 111:     RB1PPS = 0x15;
-[e = _RB1PPS -> -> 21 `i `uc ]
-"112
-[; ;mcc_generated_files/system/src/pins.c: 112:     SSP1DATPPS = 0x8;
-[e = _SSP1DATPPS -> -> 8 `i `uc ]
-"113
-[; ;mcc_generated_files/system/src/pins.c: 113:     RB0PPS = 0x16;
-[e = _RB0PPS -> -> 22 `i `uc ]
-"122
-[; ;mcc_generated_files/system/src/pins.c: 122:     IOCAP = 0x0;
-[e = _IOCAP -> -> 0 `i `uc ]
-"123
-[; ;mcc_generated_files/system/src/pins.c: 123:     IOCAN = 0x0;
-[e = _IOCAN -> -> 0 `i `uc ]
-"124
-[; ;mcc_generated_files/system/src/pins.c: 124:     IOCAF = 0x0;
-[e = _IOCAF -> -> 0 `i `uc ]
-"125
-[; ;mcc_generated_files/system/src/pins.c: 125:     IOCBP = 0x0;
-[e = _IOCBP -> -> 0 `i `uc ]
-"126
-[; ;mcc_generated_files/system/src/pins.c: 126:     IOCBN = 0x0;
-[e = _IOCBN -> -> 0 `i `uc ]
-"127
-[; ;mcc_generated_files/system/src/pins.c: 127:     IOCBF = 0x0;
-[e = _IOCBF -> -> 0 `i `uc ]
-"128
-[; ;mcc_generated_files/system/src/pins.c: 128:     IOCCP = 0x0;
-[e = _IOCCP -> -> 0 `i `uc ]
-"129
-[; ;mcc_generated_files/system/src/pins.c: 129:     IOCCN = 0x0;
-[e = _IOCCN -> -> 0 `i `uc ]
-"130
-[; ;mcc_generated_files/system/src/pins.c: 130:     IOCCF = 0x0;
-[e = _IOCCF -> -> 0 `i `uc ]
-"131
-[; ;mcc_generated_files/system/src/pins.c: 131:     IOCEP = 0x0;
-[e = _IOCEP -> -> 0 `i `uc ]
-"132
-[; ;mcc_generated_files/system/src/pins.c: 132:     IOCEN = 0x0;
-[e = _IOCEN -> -> 0 `i `uc ]
-"133
-[; ;mcc_generated_files/system/src/pins.c: 133:     IOCEF = 0x0;
-[e = _IOCEF -> -> 0 `i `uc ]
-"137
-[; ;mcc_generated_files/system/src/pins.c: 137:     PIE0bits.IOCIE = 1;
-[e = . . _PIE0bits 0 2 -> -> 1 `i `uc ]
-"138
-[; ;mcc_generated_files/system/src/pins.c: 138: }
-[e :UE 1020 ]
-}
-"140
-[; ;mcc_generated_files/system/src/pins.c: 140: void PIN_MANAGER_IOC(void)
-[v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"141
-[; ;mcc_generated_files/system/src/pins.c: 141: {
+[; ;mcc_generated_files/spi/src/mssp2.c: 61: {
 {
-[e :U _PIN_MANAGER_IOC ]
+[e :U _SPI2_Initialize ]
 [f ]
+"63
+[; ;mcc_generated_files/spi/src/mssp2.c: 63:     PIE3bits.SSP2IE = 0U;
+[e = . . _PIE3bits 0 2 -> -> 0 `ui `uc ]
+"64
+[; ;mcc_generated_files/spi/src/mssp2.c: 64:     PIR3bits.SSP2IF = 0U;
+[e = . . _PIR3bits 0 2 -> -> 0 `ui `uc ]
+"66
+[; ;mcc_generated_files/spi/src/mssp2.c: 66:     SSP2STAT = (uint8_t)0x00;
+[e = _SSP2STAT -> -> 0 `i `uc ]
+"71
+[; ;mcc_generated_files/spi/src/mssp2.c: 71:     SSP2CON1 = (uint8_t)0x20;
+[e = _SSP2CON1 -> -> 32 `i `uc ]
+"72
+[; ;mcc_generated_files/spi/src/mssp2.c: 72:     SSP2CON3 = (uint8_t)0x00;
+[e = _SSP2CON3 -> -> 0 `i `uc ]
+"73
+[; ;mcc_generated_files/spi/src/mssp2.c: 73:     SSP2ADD = (uint8_t)0x00;
+[e = _SSP2ADD -> -> 0 `i `uc ]
+"74
+[; ;mcc_generated_files/spi/src/mssp2.c: 74: }
+[e :UE 1022 ]
+}
+"76
+[; ;mcc_generated_files/spi/src/mssp2.c: 76: void SPI2_Deinitialize(void)
+[v _SPI2_Deinitialize `(v ~T0 @X0 1 ef ]
+"77
+[; ;mcc_generated_files/spi/src/mssp2.c: 77: {
+{
+[e :U _SPI2_Deinitialize ]
+[f ]
+"79
+[; ;mcc_generated_files/spi/src/mssp2.c: 79:     SSP2STAT = (uint8_t)0x00;
+[e = _SSP2STAT -> -> 0 `i `uc ]
+"80
+[; ;mcc_generated_files/spi/src/mssp2.c: 80:     SSP2CON1 = (uint8_t)0x00;
+[e = _SSP2CON1 -> -> 0 `i `uc ]
+"81
+[; ;mcc_generated_files/spi/src/mssp2.c: 81:     SSP2CON3 = (uint8_t)0x00;
+[e = _SSP2CON3 -> -> 0 `i `uc ]
+"82
+[; ;mcc_generated_files/spi/src/mssp2.c: 82:     SSP2ADD = (uint8_t)0x00;
+[e = _SSP2ADD -> -> 0 `i `uc ]
+"83
+[; ;mcc_generated_files/spi/src/mssp2.c: 83: }
+[e :UE 1023 ]
+}
+"85
+[; ;mcc_generated_files/spi/src/mssp2.c: 85: _Bool SPI2_Open(uint8_t spiConfigIndex)
+[v _SPI2_Open `(a ~T0 @X0 1 ef1`uc ]
+"86
+[; ;mcc_generated_files/spi/src/mssp2.c: 86: {
+{
+[e :U _SPI2_Open ]
+"85
+[; ;mcc_generated_files/spi/src/mssp2.c: 85: _Bool SPI2_Open(uint8_t spiConfigIndex)
+[v _spiConfigIndex `uc ~T0 @X0 1 r1 ]
+"86
+[; ;mcc_generated_files/spi/src/mssp2.c: 86: {
+[f ]
+"87
+[; ;mcc_generated_files/spi/src/mssp2.c: 87:     _Bool returnValue = 0;
+[v _returnValue `a ~T0 @X0 1 a ]
+[e = _returnValue -> -> 0 `i `a ]
+"88
+[; ;mcc_generated_files/spi/src/mssp2.c: 88:     if (SSP2CON1bits.SSPEN == 0U)
+[e $ ! == -> . . _SSP2CON1bits 0 2 `ui -> 0 `ui 1025  ]
+"89
+[; ;mcc_generated_files/spi/src/mssp2.c: 89:     {
+{
+"90
+[; ;mcc_generated_files/spi/src/mssp2.c: 90:         SSP2STAT = spi2_configuration[spiConfigIndex].stat;
+[e = _SSP2STAT . *U + &U _spi2_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi2_configuration `ui `ux 0 ]
+"91
+[; ;mcc_generated_files/spi/src/mssp2.c: 91:         SSP2CON1 = spi2_configuration[spiConfigIndex].con1;
+[e = _SSP2CON1 . *U + &U _spi2_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi2_configuration `ui `ux 1 ]
+"92
+[; ;mcc_generated_files/spi/src/mssp2.c: 92:         SSP2CON3 = spi2_configuration[spiConfigIndex].con3;
+[e = _SSP2CON3 . *U + &U _spi2_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi2_configuration `ui `ux 2 ]
+"93
+[; ;mcc_generated_files/spi/src/mssp2.c: 93:         SSP2ADD = spi2_configuration[spiConfigIndex].baud;
+[e = _SSP2ADD . *U + &U _spi2_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi2_configuration `ui `ux 3 ]
+"95
+[; ;mcc_generated_files/spi/src/mssp2.c: 95:         SSP2CON1bits.SSPEN = 1U;
+[e = . . _SSP2CON1bits 0 2 -> -> 1 `ui `uc ]
+"97
+[; ;mcc_generated_files/spi/src/mssp2.c: 97:         returnValue = 1;
+[e = _returnValue -> -> 1 `i `a ]
+"98
+[; ;mcc_generated_files/spi/src/mssp2.c: 98:     }
+}
+[e $U 1026  ]
+"99
+[; ;mcc_generated_files/spi/src/mssp2.c: 99:     else
+[e :U 1025 ]
+"100
+[; ;mcc_generated_files/spi/src/mssp2.c: 100:     {
+{
+"101
+[; ;mcc_generated_files/spi/src/mssp2.c: 101:         returnValue = 0;
+[e = _returnValue -> -> 0 `i `a ]
+"102
+[; ;mcc_generated_files/spi/src/mssp2.c: 102:     }
+}
+[e :U 1026 ]
+"103
+[; ;mcc_generated_files/spi/src/mssp2.c: 103:     return returnValue;
+[e ) _returnValue ]
+[e $UE 1024  ]
+"104
+[; ;mcc_generated_files/spi/src/mssp2.c: 104: }
+[e :UE 1024 ]
+}
+"106
+[; ;mcc_generated_files/spi/src/mssp2.c: 106: void SPI2_Close(void)
+[v _SPI2_Close `(v ~T0 @X0 1 ef ]
+"107
+[; ;mcc_generated_files/spi/src/mssp2.c: 107: {
+{
+[e :U _SPI2_Close ]
+[f ]
+"108
+[; ;mcc_generated_files/spi/src/mssp2.c: 108:     SSP2CON1bits.SSPEN = 0U;
+[e = . . _SSP2CON1bits 0 2 -> -> 0 `ui `uc ]
+"109
+[; ;mcc_generated_files/spi/src/mssp2.c: 109: }
+[e :UE 1027 ]
+}
+"111
+[; ;mcc_generated_files/spi/src/mssp2.c: 111: void SPI2_BufferExchange(void *bufferData, size_t bufferSize)
+[v _SPI2_BufferExchange `(v ~T0 @X0 1 ef2`*v`ui ]
+"112
+[; ;mcc_generated_files/spi/src/mssp2.c: 112: {
+{
+[e :U _SPI2_BufferExchange ]
+"111
+[; ;mcc_generated_files/spi/src/mssp2.c: 111: void SPI2_BufferExchange(void *bufferData, size_t bufferSize)
+[v _bufferData `*v ~T0 @X0 1 r1 ]
+[v _bufferSize `ui ~T0 @X0 1 r2 ]
+"112
+[; ;mcc_generated_files/spi/src/mssp2.c: 112: {
+[f ]
+"113
+[; ;mcc_generated_files/spi/src/mssp2.c: 113:     uint8_t *bufferInput = bufferData;
+[v _bufferInput `*uc ~T0 @X0 1 a ]
+[e = _bufferInput -> _bufferData `*uc ]
+"114
+[; ;mcc_generated_files/spi/src/mssp2.c: 114:     size_t bufferInputSize = bufferSize;
+[v _bufferInputSize `ui ~T0 @X0 1 a ]
+[e = _bufferInputSize _bufferSize ]
+"115
+[; ;mcc_generated_files/spi/src/mssp2.c: 115:     while (0U != bufferInputSize)
+[e $U 1029  ]
+[e :U 1030 ]
+"116
+[; ;mcc_generated_files/spi/src/mssp2.c: 116:     {
+{
+"117
+[; ;mcc_generated_files/spi/src/mssp2.c: 117:         SSP2BUF = *bufferInput;
+[e = _SSP2BUF *U _bufferInput ]
+"118
+[; ;mcc_generated_files/spi/src/mssp2.c: 118:         while (PIR3bits.SSP2IF == 0U)
+[e $U 1032  ]
+[e :U 1033 ]
+"119
+[; ;mcc_generated_files/spi/src/mssp2.c: 119:         {
+{
+"121
+[; ;mcc_generated_files/spi/src/mssp2.c: 121:         }
+}
+[e :U 1032 ]
+"118
+[; ;mcc_generated_files/spi/src/mssp2.c: 118:         while (PIR3bits.SSP2IF == 0U)
+[e $ == -> . . _PIR3bits 0 2 `ui -> 0 `ui 1033  ]
+[e :U 1034 ]
+"122
+[; ;mcc_generated_files/spi/src/mssp2.c: 122:         PIR3bits.SSP2IF = 0U;
+[e = . . _PIR3bits 0 2 -> -> 0 `ui `uc ]
+"123
+[; ;mcc_generated_files/spi/src/mssp2.c: 123:         *bufferInput = SSP2BUF;
+[e = *U _bufferInput _SSP2BUF ]
+"124
+[; ;mcc_generated_files/spi/src/mssp2.c: 124:         bufferInput++;
+[e ++ _bufferInput * -> -> 1 `i `x -> -> # *U _bufferInput `i `x ]
+"125
+[; ;mcc_generated_files/spi/src/mssp2.c: 125:         bufferInputSize--;
+[e -- _bufferInputSize -> -> 1 `i `ui ]
+"126
+[; ;mcc_generated_files/spi/src/mssp2.c: 126:     }
+}
+[e :U 1029 ]
+"115
+[; ;mcc_generated_files/spi/src/mssp2.c: 115:     while (0U != bufferInputSize)
+[e $ != -> 0 `ui _bufferInputSize 1030  ]
+[e :U 1031 ]
+"127
+[; ;mcc_generated_files/spi/src/mssp2.c: 127: }
+[e :UE 1028 ]
+}
+"129
+[; ;mcc_generated_files/spi/src/mssp2.c: 129: void SPI2_BufferWrite(void *bufferData, size_t bufferSize)
+[v _SPI2_BufferWrite `(v ~T0 @X0 1 ef2`*v`ui ]
+"130
+[; ;mcc_generated_files/spi/src/mssp2.c: 130: {
+{
+[e :U _SPI2_BufferWrite ]
+"129
+[; ;mcc_generated_files/spi/src/mssp2.c: 129: void SPI2_BufferWrite(void *bufferData, size_t bufferSize)
+[v _bufferData `*v ~T0 @X0 1 r1 ]
+[v _bufferSize `ui ~T0 @X0 1 r2 ]
+"130
+[; ;mcc_generated_files/spi/src/mssp2.c: 130: {
+[f ]
+"131
+[; ;mcc_generated_files/spi/src/mssp2.c: 131:     uint8_t *bufferInput = bufferData;
+[v _bufferInput `*uc ~T0 @X0 1 a ]
+[e = _bufferInput -> _bufferData `*uc ]
+"132
+[; ;mcc_generated_files/spi/src/mssp2.c: 132:     size_t bufferInputSize = bufferSize;
+[v _bufferInputSize `ui ~T0 @X0 1 a ]
+[e = _bufferInputSize _bufferSize ]
+"133
+[; ;mcc_generated_files/spi/src/mssp2.c: 133:     while (0U != bufferInputSize)
+[e $U 1036  ]
+[e :U 1037 ]
+"134
+[; ;mcc_generated_files/spi/src/mssp2.c: 134:     {
+{
+"135
+[; ;mcc_generated_files/spi/src/mssp2.c: 135:         SSP2BUF = *bufferInput;
+[e = _SSP2BUF *U _bufferInput ]
+"136
+[; ;mcc_generated_files/spi/src/mssp2.c: 136:         while (PIR3bits.SSP2IF == 0U)
+[e $U 1039  ]
+[e :U 1040 ]
+"137
+[; ;mcc_generated_files/spi/src/mssp2.c: 137:         {
+{
+"139
+[; ;mcc_generated_files/spi/src/mssp2.c: 139:         }
+}
+[e :U 1039 ]
+"136
+[; ;mcc_generated_files/spi/src/mssp2.c: 136:         while (PIR3bits.SSP2IF == 0U)
+[e $ == -> . . _PIR3bits 0 2 `ui -> 0 `ui 1040  ]
+[e :U 1041 ]
+"140
+[; ;mcc_generated_files/spi/src/mssp2.c: 140:         PIR3bits.SSP2IF = 0U;
+[e = . . _PIR3bits 0 2 -> -> 0 `ui `uc ]
+"141
+[; ;mcc_generated_files/spi/src/mssp2.c: 141:         bufferInput++;
+[e ++ _bufferInput * -> -> 1 `i `x -> -> # *U _bufferInput `i `x ]
 "142
-[; ;mcc_generated_files/system/src/pins.c: 142: }
-[e :UE 1021 ]
+[; ;mcc_generated_files/spi/src/mssp2.c: 142:         bufferInputSize--;
+[e -- _bufferInputSize -> -> 1 `i `ui ]
+"143
+[; ;mcc_generated_files/spi/src/mssp2.c: 143:     }
+}
+[e :U 1036 ]
+"133
+[; ;mcc_generated_files/spi/src/mssp2.c: 133:     while (0U != bufferInputSize)
+[e $ != -> 0 `ui _bufferInputSize 1037  ]
+[e :U 1038 ]
+"144
+[; ;mcc_generated_files/spi/src/mssp2.c: 144: }
+[e :UE 1035 ]
+}
+"146
+[; ;mcc_generated_files/spi/src/mssp2.c: 146: void SPI2_BufferRead(void *bufferData, size_t bufferSize)
+[v _SPI2_BufferRead `(v ~T0 @X0 1 ef2`*v`ui ]
+"147
+[; ;mcc_generated_files/spi/src/mssp2.c: 147: {
+{
+[e :U _SPI2_BufferRead ]
+"146
+[; ;mcc_generated_files/spi/src/mssp2.c: 146: void SPI2_BufferRead(void *bufferData, size_t bufferSize)
+[v _bufferData `*v ~T0 @X0 1 r1 ]
+[v _bufferSize `ui ~T0 @X0 1 r2 ]
+"147
+[; ;mcc_generated_files/spi/src/mssp2.c: 147: {
+[f ]
+"148
+[; ;mcc_generated_files/spi/src/mssp2.c: 148:     uint8_t *bufferInput = bufferData;
+[v _bufferInput `*uc ~T0 @X0 1 a ]
+[e = _bufferInput -> _bufferData `*uc ]
+"149
+[; ;mcc_generated_files/spi/src/mssp2.c: 149:     size_t bufferInputSize = bufferSize;
+[v _bufferInputSize `ui ~T0 @X0 1 a ]
+[e = _bufferInputSize _bufferSize ]
+"150
+[; ;mcc_generated_files/spi/src/mssp2.c: 150:     while (0U != bufferInputSize)
+[e $U 1043  ]
+[e :U 1044 ]
+"151
+[; ;mcc_generated_files/spi/src/mssp2.c: 151:     {
+{
+"152
+[; ;mcc_generated_files/spi/src/mssp2.c: 152:         SSP2BUF = (uint8_t)0x00;
+[e = _SSP2BUF -> -> 0 `i `uc ]
+"153
+[; ;mcc_generated_files/spi/src/mssp2.c: 153:         while (PIR3bits.SSP2IF == 0U)
+[e $U 1046  ]
+[e :U 1047 ]
+"154
+[; ;mcc_generated_files/spi/src/mssp2.c: 154:         {
+{
+"156
+[; ;mcc_generated_files/spi/src/mssp2.c: 156:         }
+}
+[e :U 1046 ]
+"153
+[; ;mcc_generated_files/spi/src/mssp2.c: 153:         while (PIR3bits.SSP2IF == 0U)
+[e $ == -> . . _PIR3bits 0 2 `ui -> 0 `ui 1047  ]
+[e :U 1048 ]
+"157
+[; ;mcc_generated_files/spi/src/mssp2.c: 157:         PIR3bits.SSP2IF = 0U;
+[e = . . _PIR3bits 0 2 -> -> 0 `ui `uc ]
+"158
+[; ;mcc_generated_files/spi/src/mssp2.c: 158:         *bufferInput = SSP2BUF;
+[e = *U _bufferInput _SSP2BUF ]
+"159
+[; ;mcc_generated_files/spi/src/mssp2.c: 159:         bufferInput++;
+[e ++ _bufferInput * -> -> 1 `i `x -> -> # *U _bufferInput `i `x ]
+"160
+[; ;mcc_generated_files/spi/src/mssp2.c: 160:         bufferInputSize--;
+[e -- _bufferInputSize -> -> 1 `i `ui ]
+"161
+[; ;mcc_generated_files/spi/src/mssp2.c: 161:     }
+}
+[e :U 1043 ]
+"150
+[; ;mcc_generated_files/spi/src/mssp2.c: 150:     while (0U != bufferInputSize)
+[e $ != -> 0 `ui _bufferInputSize 1044  ]
+[e :U 1045 ]
+"162
+[; ;mcc_generated_files/spi/src/mssp2.c: 162: }
+[e :UE 1042 ]
+}
+"164
+[; ;mcc_generated_files/spi/src/mssp2.c: 164: uint8_t SPI2_ByteExchange(uint8_t byteData)
+[v _SPI2_ByteExchange `(uc ~T0 @X0 1 ef1`uc ]
+"165
+[; ;mcc_generated_files/spi/src/mssp2.c: 165: {
+{
+[e :U _SPI2_ByteExchange ]
+"164
+[; ;mcc_generated_files/spi/src/mssp2.c: 164: uint8_t SPI2_ByteExchange(uint8_t byteData)
+[v _byteData `uc ~T0 @X0 1 r1 ]
+"165
+[; ;mcc_generated_files/spi/src/mssp2.c: 165: {
+[f ]
+"166
+[; ;mcc_generated_files/spi/src/mssp2.c: 166:     SSP2BUF = byteData;
+[e = _SSP2BUF _byteData ]
+"167
+[; ;mcc_generated_files/spi/src/mssp2.c: 167:     while (PIR3bits.SSP2IF == 0U)
+[e $U 1050  ]
+[e :U 1051 ]
+"168
+[; ;mcc_generated_files/spi/src/mssp2.c: 168:     {
+{
+"170
+[; ;mcc_generated_files/spi/src/mssp2.c: 170:     }
+}
+[e :U 1050 ]
+"167
+[; ;mcc_generated_files/spi/src/mssp2.c: 167:     while (PIR3bits.SSP2IF == 0U)
+[e $ == -> . . _PIR3bits 0 2 `ui -> 0 `ui 1051  ]
+[e :U 1052 ]
+"171
+[; ;mcc_generated_files/spi/src/mssp2.c: 171:     PIR3bits.SSP2IF = 0U;
+[e = . . _PIR3bits 0 2 -> -> 0 `ui `uc ]
+"172
+[; ;mcc_generated_files/spi/src/mssp2.c: 172:     return SSP2BUF;
+[e ) _SSP2BUF ]
+[e $UE 1049  ]
+"173
+[; ;mcc_generated_files/spi/src/mssp2.c: 173: }
+[e :UE 1049 ]
+}
+"175
+[; ;mcc_generated_files/spi/src/mssp2.c: 175: void SPI2_ByteWrite(uint8_t byteData)
+[v _SPI2_ByteWrite `(v ~T0 @X0 1 ef1`uc ]
+"176
+[; ;mcc_generated_files/spi/src/mssp2.c: 176: {
+{
+[e :U _SPI2_ByteWrite ]
+"175
+[; ;mcc_generated_files/spi/src/mssp2.c: 175: void SPI2_ByteWrite(uint8_t byteData)
+[v _byteData `uc ~T0 @X0 1 r1 ]
+"176
+[; ;mcc_generated_files/spi/src/mssp2.c: 176: {
+[f ]
+"177
+[; ;mcc_generated_files/spi/src/mssp2.c: 177:     SSP2BUF = byteData;
+[e = _SSP2BUF _byteData ]
+"178
+[; ;mcc_generated_files/spi/src/mssp2.c: 178: }
+[e :UE 1053 ]
+}
+"180
+[; ;mcc_generated_files/spi/src/mssp2.c: 180: uint8_t SPI2_ByteRead(void)
+[v _SPI2_ByteRead `(uc ~T0 @X0 1 ef ]
+"181
+[; ;mcc_generated_files/spi/src/mssp2.c: 181: {
+{
+[e :U _SPI2_ByteRead ]
+[f ]
+"182
+[; ;mcc_generated_files/spi/src/mssp2.c: 182:     if (1U == PIR3bits.SSP2IF)
+[e $ ! == -> 1 `ui -> . . _PIR3bits 0 2 `ui 1055  ]
+"183
+[; ;mcc_generated_files/spi/src/mssp2.c: 183:     {
+{
+"184
+[; ;mcc_generated_files/spi/src/mssp2.c: 184:         PIR3bits.SSP2IF = 0U;
+[e = . . _PIR3bits 0 2 -> -> 0 `ui `uc ]
+"185
+[; ;mcc_generated_files/spi/src/mssp2.c: 185:     }
+}
+[e :U 1055 ]
+"186
+[; ;mcc_generated_files/spi/src/mssp2.c: 186:     return SSP2BUF;
+[e ) _SSP2BUF ]
+[e $UE 1054  ]
+"187
+[; ;mcc_generated_files/spi/src/mssp2.c: 187: }
+[e :UE 1054 ]
+}
+"189
+[; ;mcc_generated_files/spi/src/mssp2.c: 189: _Bool SPI2_IsRxReady(void)
+[v _SPI2_IsRxReady `(a ~T0 @X0 1 ef ]
+"190
+[; ;mcc_generated_files/spi/src/mssp2.c: 190: {
+{
+[e :U _SPI2_IsRxReady ]
+[f ]
+"191
+[; ;mcc_generated_files/spi/src/mssp2.c: 191:     _Bool returnValue = 0;
+[v _returnValue `a ~T0 @X0 1 a ]
+[e = _returnValue -> -> 0 `i `a ]
+"192
+[; ;mcc_generated_files/spi/src/mssp2.c: 192:     if (SSP2CON1bits.SSPEN == 1U)
+[e $ ! == -> . . _SSP2CON1bits 0 2 `ui -> 1 `ui 1057  ]
+"193
+[; ;mcc_generated_files/spi/src/mssp2.c: 193:     {
+{
+"194
+[; ;mcc_generated_files/spi/src/mssp2.c: 194:         returnValue = ((PIR3bits.SSP2IF != 0U) ? 1: 0);
+[e = _returnValue -> ? != -> . . _PIR3bits 0 2 `ui -> 0 `ui : -> 1 `i -> 0 `i `a ]
+"195
+[; ;mcc_generated_files/spi/src/mssp2.c: 195:     }
+}
+[e $U 1058  ]
+"196
+[; ;mcc_generated_files/spi/src/mssp2.c: 196:     else
+[e :U 1057 ]
+"197
+[; ;mcc_generated_files/spi/src/mssp2.c: 197:     {
+{
+"198
+[; ;mcc_generated_files/spi/src/mssp2.c: 198:         returnValue = 0;
+[e = _returnValue -> -> 0 `i `a ]
+"199
+[; ;mcc_generated_files/spi/src/mssp2.c: 199:     }
+}
+[e :U 1058 ]
+"200
+[; ;mcc_generated_files/spi/src/mssp2.c: 200:     return returnValue;
+[e ) _returnValue ]
+[e $UE 1056  ]
+"201
+[; ;mcc_generated_files/spi/src/mssp2.c: 201: }
+[e :UE 1056 ]
+}
+"203
+[; ;mcc_generated_files/spi/src/mssp2.c: 203: _Bool SPI2_IsTxReady(void)
+[v _SPI2_IsTxReady `(a ~T0 @X0 1 ef ]
+"204
+[; ;mcc_generated_files/spi/src/mssp2.c: 204: {
+{
+[e :U _SPI2_IsTxReady ]
+[f ]
+"205
+[; ;mcc_generated_files/spi/src/mssp2.c: 205:     _Bool returnValue = 0;
+[v _returnValue `a ~T0 @X0 1 a ]
+[e = _returnValue -> -> 0 `i `a ]
+"206
+[; ;mcc_generated_files/spi/src/mssp2.c: 206:     if (SSP2CON1bits.SSPEN == 1U)
+[e $ ! == -> . . _SSP2CON1bits 0 2 `ui -> 1 `ui 1060  ]
+"207
+[; ;mcc_generated_files/spi/src/mssp2.c: 207:     {
+{
+"208
+[; ;mcc_generated_files/spi/src/mssp2.c: 208:         returnValue = ((PIR3bits.SSP2IF != 0U) ? 0: 1);
+[e = _returnValue -> ? != -> . . _PIR3bits 0 2 `ui -> 0 `ui : -> 0 `i -> 1 `i `a ]
+"209
+[; ;mcc_generated_files/spi/src/mssp2.c: 209:     }
+}
+[e $U 1061  ]
+"210
+[; ;mcc_generated_files/spi/src/mssp2.c: 210:     else
+[e :U 1060 ]
+"211
+[; ;mcc_generated_files/spi/src/mssp2.c: 211:     {
+{
+"212
+[; ;mcc_generated_files/spi/src/mssp2.c: 212:         returnValue = 0;
+[e = _returnValue -> -> 0 `i `a ]
+"213
+[; ;mcc_generated_files/spi/src/mssp2.c: 213:     }
+}
+[e :U 1061 ]
+"214
+[; ;mcc_generated_files/spi/src/mssp2.c: 214:     return returnValue;
+[e ) _returnValue ]
+[e $UE 1059  ]
+"215
+[; ;mcc_generated_files/spi/src/mssp2.c: 215: }
+[e :UE 1059 ]
 }

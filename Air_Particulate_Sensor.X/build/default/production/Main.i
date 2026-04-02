@@ -13281,7 +13281,7 @@ void CLOCK_Initialize(void);
 # 40 "./mcc_generated_files/system/config_bits.h" 2
 # 43 "./mcc_generated_files/system/system.h" 2
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 153 "./mcc_generated_files/system/../system/pins.h"
+# 210 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13451,11 +13451,53 @@ void I2C1_ISR(void);
 # 172 "./mcc_generated_files/system/../i2c_client/mssp1.h"
 void I2C1_ERROR_ISR(void);
 # 47 "./mcc_generated_files/system/system.h" 2
-# 1 "./mcc_generated_files/system/../i2c_client/mssp2.h" 1
-# 62 "./mcc_generated_files/system/../i2c_client/mssp2.h"
-extern const i2c_client_interface_t I2C2_Client;
-# 71 "./mcc_generated_files/system/../i2c_client/mssp2.h"
-void I2C2_Initialize(void);
+# 1 "./mcc_generated_files/system/../spi/mssp2.h" 1
+# 38 "./mcc_generated_files/system/../spi/mssp2.h"
+# 1 "./mcc_generated_files/system/../spi/spi_interface.h" 1
+# 39 "./mcc_generated_files/system/../spi/spi_interface.h"
+# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 1 3
+# 19 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 3
+# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 138 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 3
+typedef int ptrdiff_t;
+# 20 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 2 3
+# 40 "./mcc_generated_files/system/../spi/spi_interface.h" 2
+
+
+
+
+
+
+struct SPI_INTERFACE
+{
+    void (*Initialize)(void);
+    void (*Deinitialize)(void);
+    _Bool (*Open)(uint8_t spiConfigIndex);
+    void (*Close)(void);
+    void (*BufferExchange)(void *bufferData, size_t bufferSize);
+    void (*BufferRead)(void *bufferData, size_t bufferSize);
+    void (*BufferWrite)(void *bufferData, size_t bufferSize);
+    uint8_t (*ByteExchange)(uint8_t byteData);
+    uint8_t (*ByteRead)(void);
+    void (*ByteWrite)(uint8_t byteData);
+    _Bool (*IsRxReady)(void);
+    _Bool (*IsTxReady)(void);
+    void (*RxCompleteCallbackRegister)(void (*callbackHandler)(void));
+    void (*TxCompleteCallbackRegister)(void (*callbackHandler)(void));
+};
+# 39 "./mcc_generated_files/system/../spi/mssp2.h" 2
+
+
+
+
+
+
+extern const struct SPI_INTERFACE SPI2_Client;
+# 115 "./mcc_generated_files/system/../spi/mssp2.h"
+typedef enum {
+    CLIENT_CONFIG,
+    MSSP2_DEFAULT
+} spi2_configuration_name_t;
 
 
 
@@ -13463,19 +13505,7 @@ void I2C2_Initialize(void);
 
 
 
-void I2C2_Deinitialize(void);
-# 89 "./mcc_generated_files/system/../i2c_client/mssp2.h"
-void I2C2_WriteByte(uint8_t data);
-# 99 "./mcc_generated_files/system/../i2c_client/mssp2.h"
-uint8_t I2C2_ReadByte(void);
-# 109 "./mcc_generated_files/system/../i2c_client/mssp2.h"
-uint16_t I2C2_ReadAddr(void);
-# 122 "./mcc_generated_files/system/../i2c_client/mssp2.h"
-i2c_client_error_t I2C2_ErrorGet(void);
-# 133 "./mcc_generated_files/system/../i2c_client/mssp2.h"
-i2c_client_transfer_dir_t I2C2_TransferDirGet(void);
-# 144 "./mcc_generated_files/system/../i2c_client/mssp2.h"
-i2c_client_ack_status_t I2C2_LastByteAckStatusGet(void);
+void SPI2_Initialize(void);
 
 
 
@@ -13483,11 +13513,45 @@ i2c_client_ack_status_t I2C2_LastByteAckStatusGet(void);
 
 
 
-void I2C2_CallbackRegister(_Bool (*callback)(i2c_client_transfer_event_t clientEvent));
-# 162 "./mcc_generated_files/system/../i2c_client/mssp2.h"
-void I2C2_ISR(void);
-# 172 "./mcc_generated_files/system/../i2c_client/mssp2.h"
-void I2C2_ERROR_ISR(void);
+void SPI2_Deinitialize(void);
+# 144 "./mcc_generated_files/system/../spi/mssp2.h"
+_Bool SPI2_Open(uint8_t spiConfigIndex);
+
+
+
+
+
+
+
+void SPI2_Close(void);
+# 161 "./mcc_generated_files/system/../spi/mssp2.h"
+void SPI2_BufferExchange(void *bufferData, size_t bufferSize);
+# 170 "./mcc_generated_files/system/../spi/mssp2.h"
+void SPI2_BufferWrite(void *bufferData, size_t bufferSize);
+# 179 "./mcc_generated_files/system/../spi/mssp2.h"
+void SPI2_BufferRead(void *bufferData, size_t bufferSize);
+
+
+
+
+
+
+
+uint8_t SPI2_ByteExchange(uint8_t byteData);
+# 197 "./mcc_generated_files/system/../spi/mssp2.h"
+void SPI2_ByteWrite(uint8_t byteData);
+
+
+
+
+
+
+
+uint8_t SPI2_ByteRead(void);
+# 214 "./mcc_generated_files/system/../spi/mssp2.h"
+_Bool SPI2_IsRxReady(void);
+# 223 "./mcc_generated_files/system/../spi/mssp2.h"
+_Bool SPI2_IsTxReady(void);
 # 48 "./mcc_generated_files/system/system.h" 2
 
 
@@ -13499,6 +13563,74 @@ void I2C2_ERROR_ISR(void);
 
 void SYSTEM_Initialize(void);
 # 9 "Main.c" 2
+# 1 "./oled.h" 1
+# 17 "./oled.h"
+# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/string.h" 1 3
+# 25 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/string.h" 3
+# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 421 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 26 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/string.h" 2 3
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+
+
+
+
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 18 "./oled.h" 2
+
+void oled_init(void);
+void oled_clear(void);
+void oled_set_cursor(uint8_t line, uint8_t col);
+void oled_print(const char *str);
+void oled_display1(const char *str);
+void oled_display2(const char *str);
+# 10 "Main.c" 2
 
 void init_heartbeat_led(){
 
@@ -13510,10 +13642,16 @@ void init_heartbeat_led(){
     LATDbits.LATD0 = 1;
 }
 
+
+
 int main(void){
     SYSTEM_Initialize();
 
     init_heartbeat_led();
+
+    oled_init();
+
+
     while(1){
         _delay((unsigned long)((300)*(32000000U/4000.0)));
 

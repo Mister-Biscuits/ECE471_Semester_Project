@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/i2c_client/src/mssp2.c"
+# 1 "mcc_generated_files/spi/src/mssp2.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/i2c_client/src/mssp2.c" 2
-# 36 "mcc_generated_files/i2c_client/src/mssp2.c"
+# 1 "mcc_generated_files/spi/src/mssp2.c" 2
+# 34 "mcc_generated_files/spi/src/mssp2.c"
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 1 3
 # 18 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -13261,121 +13261,56 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 2 3
-# 37 "mcc_generated_files/i2c_client/src/mssp2.c" 2
-# 1 "mcc_generated_files/i2c_client/src/../mssp2.h" 1
-# 40 "mcc_generated_files/i2c_client/src/../mssp2.h"
+# 35 "mcc_generated_files/spi/src/mssp2.c" 2
+# 1 "mcc_generated_files/spi/src/../mssp2.h" 1
+# 38 "mcc_generated_files/spi/src/../mssp2.h"
+# 1 "mcc_generated_files/spi/src/../spi_interface.h" 1
+# 38 "mcc_generated_files/spi/src/../spi_interface.h"
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stdbool.h" 1 3
-# 41 "mcc_generated_files/i2c_client/src/../mssp2.h" 2
+# 39 "mcc_generated_files/spi/src/../spi_interface.h" 2
+# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 1 3
+# 19 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 3
+# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 138 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 3
+typedef int ptrdiff_t;
+# 20 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 2 3
+# 40 "mcc_generated_files/spi/src/../spi_interface.h" 2
 
-# 1 "mcc_generated_files/i2c_client/src/../i2c_client_interface.h" 1
-# 39 "mcc_generated_files/i2c_client/src/../i2c_client_interface.h"
-# 1 "mcc_generated_files/i2c_client/src/../i2c_client_types.h" 1
-# 46 "mcc_generated_files/i2c_client/src/../i2c_client_types.h"
-typedef enum
+
+
+
+
+
+struct SPI_INTERFACE
 {
-    I2C_CLIENT_TRANSFER_DIR_WRITE = 0,
-    I2C_CLIENT_TRANSFER_DIR_READ = 1,
-} i2c_client_transfer_dir_t;
-
-
-
-
-
-
-typedef enum
-{
-    I2C_CLIENT_ACK_STATUS_RECEIVED_ACK = 0,
-    I2C_CLIENT_ACK_STATUS_RECEIVED_NACK = 1,
-} i2c_client_ack_status_t;
-
-
-
-
-
-
-typedef enum
-{
-    I2C_CLIENT_TRANSFER_EVENT_NONE = 0,
-    I2C_CLIENT_TRANSFER_EVENT_ADDR_MATCH,
-    I2C_CLIENT_TRANSFER_EVENT_RX_READY ,
-    I2C_CLIENT_TRANSFER_EVENT_TX_READY,
-    I2C_CLIENT_TRANSFER_EVENT_STOP_BIT_RECEIVED,
-    I2C_CLIENT_TRANSFER_EVENT_ERROR,
-} i2c_client_transfer_event_t;
-
-
-
-
-
-
-typedef enum
-{
-    I2C_CLIENT_ERROR_NONE = 0,
-    I2C_CLIENT_ERROR_BUS_COLLISION,
-    I2C_CLIENT_ERROR_WRITE_COLLISION,
-    I2C_CLIENT_ERROR_RECEIVE_OVERFLOW,
-    I2C_CLIENT_ERROR_TRANSMIT_UNDERFLOW,
-    I2C_CLIENT_ERROR_READ_UNDERFLOW,
-} i2c_client_error_t;
-# 40 "mcc_generated_files/i2c_client/src/../i2c_client_interface.h" 2
-
-
-
-
-
-
-typedef struct
-{
-
-
-
     void (*Initialize)(void);
-
-
-
-
     void (*Deinitialize)(void);
+    _Bool (*Open)(uint8_t spiConfigIndex);
+    void (*Close)(void);
+    void (*BufferExchange)(void *bufferData, size_t bufferSize);
+    void (*BufferRead)(void *bufferData, size_t bufferSize);
+    void (*BufferWrite)(void *bufferData, size_t bufferSize);
+    uint8_t (*ByteExchange)(uint8_t byteData);
+    uint8_t (*ByteRead)(void);
+    void (*ByteWrite)(uint8_t byteData);
+    _Bool (*IsRxReady)(void);
+    _Bool (*IsTxReady)(void);
+    void (*RxCompleteCallbackRegister)(void (*callbackHandler)(void));
+    void (*TxCompleteCallbackRegister)(void (*callbackHandler)(void));
+};
+# 39 "mcc_generated_files/spi/src/../mssp2.h" 2
 
 
 
 
-    void (*WriteByte)(uint8_t data);
 
 
-
-
-    uint8_t(*ReadByte)(void);
-
-
-
-
-    i2c_client_error_t (*ErrorGet)(void);
-
-
-
-
-    i2c_client_transfer_dir_t (*TransferDirGet)(void);
-
-
-
-
-    i2c_client_ack_status_t (*LastByteAckStatusGet)(void);
-
-
-
-
-    void (*CallbackRegister)(_Bool (*handler)(i2c_client_transfer_event_t clientEvent));
-
-
-
-
-    void (*Tasks)(void);
-}i2c_client_interface_t;
-# 43 "mcc_generated_files/i2c_client/src/../mssp2.h" 2
-# 62 "mcc_generated_files/i2c_client/src/../mssp2.h"
-extern const i2c_client_interface_t I2C2_Client;
-# 71 "mcc_generated_files/i2c_client/src/../mssp2.h"
-void I2C2_Initialize(void);
+extern const struct SPI_INTERFACE SPI2_Client;
+# 115 "mcc_generated_files/spi/src/../mssp2.h"
+typedef enum {
+    CLIENT_CONFIG,
+    MSSP2_DEFAULT
+} spi2_configuration_name_t;
 
 
 
@@ -13383,19 +13318,7 @@ void I2C2_Initialize(void);
 
 
 
-void I2C2_Deinitialize(void);
-# 89 "mcc_generated_files/i2c_client/src/../mssp2.h"
-void I2C2_WriteByte(uint8_t data);
-# 99 "mcc_generated_files/i2c_client/src/../mssp2.h"
-uint8_t I2C2_ReadByte(void);
-# 109 "mcc_generated_files/i2c_client/src/../mssp2.h"
-uint16_t I2C2_ReadAddr(void);
-# 122 "mcc_generated_files/i2c_client/src/../mssp2.h"
-i2c_client_error_t I2C2_ErrorGet(void);
-# 133 "mcc_generated_files/i2c_client/src/../mssp2.h"
-i2c_client_transfer_dir_t I2C2_TransferDirGet(void);
-# 144 "mcc_generated_files/i2c_client/src/../mssp2.h"
-i2c_client_ack_status_t I2C2_LastByteAckStatusGet(void);
+void SPI2_Initialize(void);
 
 
 
@@ -13403,227 +13326,232 @@ i2c_client_ack_status_t I2C2_LastByteAckStatusGet(void);
 
 
 
-void I2C2_CallbackRegister(_Bool (*callback)(i2c_client_transfer_event_t clientEvent));
-# 162 "mcc_generated_files/i2c_client/src/../mssp2.h"
-void I2C2_ISR(void);
-# 172 "mcc_generated_files/i2c_client/src/../mssp2.h"
-void I2C2_ERROR_ISR(void);
-# 38 "mcc_generated_files/i2c_client/src/mssp2.c" 2
+void SPI2_Deinitialize(void);
+# 144 "mcc_generated_files/spi/src/../mssp2.h"
+_Bool SPI2_Open(uint8_t spiConfigIndex);
 
 
 
 
-const i2c_client_interface_t I2C2_Client = {
-    .Initialize = I2C2_Initialize,
-    .Deinitialize = I2C2_Deinitialize,
-    .WriteByte = I2C2_WriteByte,
-    .ReadByte = I2C2_ReadByte,
-    .TransferDirGet = I2C2_TransferDirGet,
-    .LastByteAckStatusGet = I2C2_LastByteAckStatusGet,
-    .ErrorGet = I2C2_ErrorGet,
-    .CallbackRegister = I2C2_CallbackRegister,
-    .Tasks = ((void*)0)
+
+
+
+void SPI2_Close(void);
+# 161 "mcc_generated_files/spi/src/../mssp2.h"
+void SPI2_BufferExchange(void *bufferData, size_t bufferSize);
+# 170 "mcc_generated_files/spi/src/../mssp2.h"
+void SPI2_BufferWrite(void *bufferData, size_t bufferSize);
+# 179 "mcc_generated_files/spi/src/../mssp2.h"
+void SPI2_BufferRead(void *bufferData, size_t bufferSize);
+
+
+
+
+
+
+
+uint8_t SPI2_ByteExchange(uint8_t byteData);
+# 197 "mcc_generated_files/spi/src/../mssp2.h"
+void SPI2_ByteWrite(uint8_t byteData);
+
+
+
+
+
+
+
+uint8_t SPI2_ByteRead(void);
+# 214 "mcc_generated_files/spi/src/../mssp2.h"
+_Bool SPI2_IsRxReady(void);
+# 223 "mcc_generated_files/spi/src/../mssp2.h"
+_Bool SPI2_IsTxReady(void);
+# 36 "mcc_generated_files/spi/src/mssp2.c" 2
+# 1 "mcc_generated_files/spi/src/../spi_polling_types.h" 1
+# 43 "mcc_generated_files/spi/src/../spi_polling_types.h"
+typedef struct {
+    uint8_t stat;
+    uint8_t con1;
+    uint8_t con3;
+    uint8_t baud;
+    uint8_t clock;
+} spi_configuration_t;
+# 37 "mcc_generated_files/spi/src/mssp2.c" 2
+
+const struct SPI_INTERFACE SPI2_Client = {
+    .Initialize = SPI2_Initialize,
+    .Deinitialize = SPI2_Deinitialize,
+    .Open = SPI2_Open,
+    .Close = SPI2_Close,
+    .BufferExchange = SPI2_BufferExchange,
+    .BufferWrite = SPI2_BufferWrite,
+    .BufferRead = SPI2_BufferRead,
+    .ByteExchange = SPI2_ByteExchange,
+    .ByteWrite = SPI2_ByteWrite,
+    .ByteRead = SPI2_ByteRead,
+    .IsRxReady = SPI2_IsRxReady,
+    .IsTxReady = SPI2_IsTxReady,
+    .RxCompleteCallbackRegister = ((void*)0),
+    .TxCompleteCallbackRegister = ((void*)0)
 };
 
-static void I2C2_EventHandler(void);
-static void I2C2_ErrorEventHandler(void);
+static const spi_configuration_t spi2_configuration[] = {
+    { 0x0, 0x4, 0x10, 0x01 },
+    { 0x64, 0x4, 0x10, 0x0 }
+};
 
-static volatile uint16_t i2c2Addr;
-static volatile i2c_client_error_t i2c2ErrorState;
-static _Bool(*I2C2_InterruptHandler)(i2c_client_transfer_event_t clientEvent);
-
-void I2C2_Initialize(void)
+void SPI2_Initialize(void)
 {
 
-    SSP2STAT = 0x80;
+    PIE3bits.SSP2IE = 0U;
+    PIR3bits.SSP2IF = 0U;
 
-    SSP2CON1 |= 0x6;
+    SSP2STAT = (uint8_t)0x00;
 
-    SSP2CON2 = 0x1;
 
-    SSP2CON3 = 0x0;
 
-    SSP2ADD = 0x0;
 
-    SSP2MSK = 0xFE;
-
-    PIE3bits.SSP2IE = 1;
-    PIE3bits.BCL2IE = 1;
-    I2C2_InterruptHandler = ((void*)0);
-    SSP2CON1bits.SSPEN = 1;
-    SSP2CON3bits.PCIE = 1;
-    SSP2CON3bits.AHEN = 1;
-    SSP2CON3bits.DHEN = 1;
-
+    SSP2CON1 = (uint8_t)0x20;
+    SSP2CON3 = (uint8_t)0x00;
+    SSP2ADD = (uint8_t)0x00;
 }
 
-void I2C2_Deinitialize(void)
+void SPI2_Deinitialize(void)
 {
-    SSP2STAT = 0x00;
-    SSP2CON1 |= 0x00;
-    SSP2CON2 = 0x00;
-    SSP2CON3 = 0x00;
-    SSP2ADD = 0x08;
-    SSP2MSK = 0xFE;
 
-    PIE3bits.SSP2IE = 0;
-    PIE3bits.BCL2IE = 0;
-    SSP2CON3bits.PCIE = 0;
+    SSP2STAT = (uint8_t)0x00;
+    SSP2CON1 = (uint8_t)0x00;
+    SSP2CON3 = (uint8_t)0x00;
+    SSP2ADD = (uint8_t)0x00;
 }
 
-void I2C2_WriteByte(uint8_t data)
+_Bool SPI2_Open(uint8_t spiConfigIndex)
 {
-    SSP2BUF = data;
+    _Bool returnValue = 0;
+    if (SSP2CON1bits.SSPEN == 0U)
+    {
+        SSP2STAT = spi2_configuration[spiConfigIndex].stat;
+        SSP2CON1 = spi2_configuration[spiConfigIndex].con1;
+        SSP2CON3 = spi2_configuration[spiConfigIndex].con3;
+        SSP2ADD = spi2_configuration[spiConfigIndex].baud;
+
+        SSP2CON1bits.SSPEN = 1U;
+
+        returnValue = 1;
+    }
+    else
+    {
+        returnValue = 0;
+    }
+    return returnValue;
 }
 
-uint8_t I2C2_ReadByte(void)
+void SPI2_Close(void)
 {
+    SSP2CON1bits.SSPEN = 0U;
+}
+
+void SPI2_BufferExchange(void *bufferData, size_t bufferSize)
+{
+    uint8_t *bufferInput = bufferData;
+    size_t bufferInputSize = bufferSize;
+    while (0U != bufferInputSize)
+    {
+        SSP2BUF = *bufferInput;
+        while (PIR3bits.SSP2IF == 0U)
+        {
+
+        }
+        PIR3bits.SSP2IF = 0U;
+        *bufferInput = SSP2BUF;
+        bufferInput++;
+        bufferInputSize--;
+    }
+}
+
+void SPI2_BufferWrite(void *bufferData, size_t bufferSize)
+{
+    uint8_t *bufferInput = bufferData;
+    size_t bufferInputSize = bufferSize;
+    while (0U != bufferInputSize)
+    {
+        SSP2BUF = *bufferInput;
+        while (PIR3bits.SSP2IF == 0U)
+        {
+
+        }
+        PIR3bits.SSP2IF = 0U;
+        bufferInput++;
+        bufferInputSize--;
+    }
+}
+
+void SPI2_BufferRead(void *bufferData, size_t bufferSize)
+{
+    uint8_t *bufferInput = bufferData;
+    size_t bufferInputSize = bufferSize;
+    while (0U != bufferInputSize)
+    {
+        SSP2BUF = (uint8_t)0x00;
+        while (PIR3bits.SSP2IF == 0U)
+        {
+
+        }
+        PIR3bits.SSP2IF = 0U;
+        *bufferInput = SSP2BUF;
+        bufferInput++;
+        bufferInputSize--;
+    }
+}
+
+uint8_t SPI2_ByteExchange(uint8_t byteData)
+{
+    SSP2BUF = byteData;
+    while (PIR3bits.SSP2IF == 0U)
+    {
+
+    }
+    PIR3bits.SSP2IF = 0U;
     return SSP2BUF;
 }
 
-uint16_t I2C2_ReadAddr(void)
+void SPI2_ByteWrite(uint8_t byteData)
 {
-    return (i2c2Addr >> 1);
+    SSP2BUF = byteData;
 }
 
-i2c_client_error_t I2C2_ErrorGet(void)
+uint8_t SPI2_ByteRead(void)
 {
-    i2c_client_error_t error;
-    error = i2c2ErrorState;
-    i2c2ErrorState = I2C_CLIENT_ERROR_NONE;
-    return error;
-}
-
-i2c_client_transfer_dir_t I2C2_TransferDirGet(void)
-{
-    return (SSP2STATbits.R_nW ? I2C_CLIENT_TRANSFER_DIR_READ : I2C_CLIENT_TRANSFER_DIR_WRITE);
-}
-
-i2c_client_ack_status_t I2C2_LastByteAckStatusGet(void)
-{
-    return (SSP2CON2bits.ACKDT ? I2C_CLIENT_ACK_STATUS_RECEIVED_NACK : I2C_CLIENT_ACK_STATUS_RECEIVED_ACK);
-}
-
-void I2C2_CallbackRegister(_Bool(*callback)(i2c_client_transfer_event_t clientEvent))
-{
-    if (callback != ((void*)0))
+    if (1U == PIR3bits.SSP2IF)
     {
-        I2C2_InterruptHandler = callback;
+        PIR3bits.SSP2IF = 0U;
     }
+    return SSP2BUF;
 }
 
-void I2C2_ISR(void)
+_Bool SPI2_IsRxReady(void)
 {
-    I2C2_EventHandler();
-}
-
-void I2C2_ERROR_ISR(void)
-{
-    I2C2_ErrorEventHandler();
-}
-
-
-
-
-static void I2C2_EventHandler(void)
-{
-    PIR3bits.SSP2IF = 0;
-    if (0U != SSP2STATbits.P)
+    _Bool returnValue = 0;
+    if (SSP2CON1bits.SSPEN == 1U)
     {
-
-        I2C2_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_STOP_BIT_RECEIVED);
-    }
-    else if ((!SSP2STATbits.D_nA) && (0U != SSP2CON3bits.ACKTIM))
-    {
-
-        i2c2Addr = I2C2_ReadByte();
-
-        i2c2ErrorState = I2C_CLIENT_ERROR_NONE;
-
-        if (I2C2_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_ADDR_MATCH) == 1)
-        {
-
-            SSP2CON2bits.ACKDT = 0;
-            SSP2CON2bits.ACKEN = 1;
-        }
-        else
-        {
-
-            SSP2CON2bits.ACKDT = 1;
-            SSP2CON2bits.ACKEN = 1;
-        }
+        returnValue = ((PIR3bits.SSP2IF != 0U) ? 1: 0);
     }
     else
     {
-
-        if (0U != SSP2STATbits.R_nW)
-        {
-            if ((!SSP2STATbits.BF) && (!SSP2CON2bits.ACKSTAT))
-            {
-
-                if (I2C2_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_TX_READY) == 0)
-                {
-
-                    SSP2CON2bits.ACKDT = 1;
-                    SSP2CON2bits.ACKEN = 1;
-                }
-                else
-                {
-
-                    SSP2CON2bits.ACKDT = 0;
-                    SSP2CON2bits.ACKEN = 1;
-                }
-            }
-        }
-        else
-        {
-            if (0U != SSP2STATbits.BF)
-            {
-
-                if (I2C2_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_RX_READY) == 1)
-                {
-
-                    SSP2CON2bits.ACKDT = 0;
-                    SSP2CON2bits.ACKEN = 1;
-                }
-                else
-                {
-
-                    SSP2CON2bits.ACKDT = 1;
-                    SSP2CON2bits.ACKEN = 1;
-                }
-            }
-        }
+        returnValue = 0;
     }
-
-
-    SSP2CON1bits.CKP = 1;
+    return returnValue;
 }
 
-static void I2C2_ErrorEventHandler(void)
+_Bool SPI2_IsTxReady(void)
 {
-    if (0U != PIR3bits.BCL2IF)
+    _Bool returnValue = 0;
+    if (SSP2CON1bits.SSPEN == 1U)
     {
-        i2c2ErrorState = I2C_CLIENT_ERROR_BUS_COLLISION;
-        I2C2_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_ERROR);
-        PIR3bits.BCL2IF = 0;
-    }
-    else if (0U != SSP2CON1bits.WCOL)
-    {
-        i2c2ErrorState = I2C_CLIENT_ERROR_WRITE_COLLISION;
-        I2C2_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_ERROR);
-        SSP2CON1bits.WCOL = 0;
+        returnValue = ((PIR3bits.SSP2IF != 0U) ? 0: 1);
     }
     else
     {
-        i2c2ErrorState = I2C_CLIENT_ERROR_NONE;
+        returnValue = 0;
     }
-
-
-    if (0U != SSP2CON1bits.SSPOV)
-    {
-        SSP2CON1bits.SSPOV = 0;
-    }
-
-    SSP2CON1bits.CKP = 1;
+    return returnValue;
 }

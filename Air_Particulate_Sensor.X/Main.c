@@ -6,6 +6,7 @@
  */
 
 #include "mcc_generated_files/system/system.h"
+#include "oled.h"
 
 void init_heartbeat_led(){
     //Set output
@@ -17,10 +18,16 @@ void init_heartbeat_led(){
     LATDbits.LATD0 = 1;
 }
 
+
+
 int main(void){
     SYSTEM_Initialize();
     
     init_heartbeat_led();
+    
+    oled_init();
+    //oled_display1("ECE471 Air Proj");
+    //oled_display2("OLED READY");
     while(1){
         __delay_ms(300);
         

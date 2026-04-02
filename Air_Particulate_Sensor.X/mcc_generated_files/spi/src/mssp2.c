@@ -64,7 +64,11 @@ void SPI2_Initialize(void)
     PIR3bits.SSP2IF    = 0U;
 
     SSP2STAT = (uint8_t)0x00;
-    SSP2CON1 = (uint8_t)0x00;
+    /*Bits 0-3: Host mode = FOSC/4 = 0000 
+     *Bit 4: 0 Idle low
+     *Bit 5: SSPEN: 1
+     */
+    SSP2CON1 = (uint8_t)0x20; 
     SSP2CON3 = (uint8_t)0x00;
     SSP2ADD  = (uint8_t)0x00;
 }

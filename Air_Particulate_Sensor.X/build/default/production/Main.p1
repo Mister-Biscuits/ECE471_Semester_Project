@@ -36,6 +36,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56 ./mcc_generated_files/system/system.h
 [; ;./mcc_generated_files/system/system.h: 56: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"19 ./oled.h
+[; ;./oled.h: 19: void oled_init(void);
+[v _oled_init `(v ~T0 @X0 0 ef ]
 [v F202 `(v ~T0 @X0 1 tf1`ul ]
 "20 E:\MPXLab\XC8 Compiler\pic\include/builtins.h
 [v __delay `JF202 ~T0 @X0 0 e ]
@@ -1144,65 +1147,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22466
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 22466: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"10 Main.c
-[; ;Main.c: 10: void init_heartbeat_led(){
+"11 Main.c
+[; ;Main.c: 11: void init_heartbeat_led(){
 [v _init_heartbeat_led `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_heartbeat_led ]
 [f ]
-"12
-[; ;Main.c: 12:     TRISDbits.TRISD0 = 0;
+"13
+[; ;Main.c: 13:     TRISDbits.TRISD0 = 0;
 [e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
-"16
-[; ;Main.c: 16:     ANSELDbits.ANSD0 = 0;
-[e = . . _ANSELDbits 0 0 -> -> 0 `i `uc ]
 "17
-[; ;Main.c: 17:     LATDbits.LATD0 = 1;
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
+[; ;Main.c: 17:     ANSELDbits.ANSD0 = 0;
+[e = . . _ANSELDbits 0 0 -> -> 0 `i `uc ]
 "18
-[; ;Main.c: 18: }
-[e :UE 1021 ]
+[; ;Main.c: 18:     LATDbits.LATD0 = 1;
+[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
+"19
+[; ;Main.c: 19: }
+[e :UE 1023 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"20
-[; ;Main.c: 20: int main(void){
+"23
+[; ;Main.c: 23: int main(void){
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"21
-[; ;Main.c: 21:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"23
-[; ;Main.c: 23:     init_heartbeat_led();
-[e ( _init_heartbeat_led ..  ]
 "24
-[; ;Main.c: 24:     while(1){
-[e :U 1024 ]
-{
-"25
-[; ;Main.c: 25:         _delay((unsigned long)((300)*(32000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"27
-[; ;Main.c: 27:         LATDbits.LATD0 = 1;
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
+[; ;Main.c: 24:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"26
+[; ;Main.c: 26:     init_heartbeat_led();
+[e ( _init_heartbeat_led ..  ]
 "28
-[; ;Main.c: 28:         _delay((unsigned long)((300)*(32000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"30
-[; ;Main.c: 30:         LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+[; ;Main.c: 28:     oled_init();
+[e ( _oled_init ..  ]
 "31
-[; ;Main.c: 31:     }
-}
-[e :U 1023 ]
-[e $U 1024  ]
-[e :U 1025 ]
+[; ;Main.c: 31:     while(1){
+[e :U 1026 ]
+{
 "32
-[; ;Main.c: 32:     return 1;
+[; ;Main.c: 32:         _delay((unsigned long)((300)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"34
+[; ;Main.c: 34:         LATDbits.LATD0 = 1;
+[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
+"35
+[; ;Main.c: 35:         _delay((unsigned long)((300)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"37
+[; ;Main.c: 37:         LATDbits.LATD0 = 0;
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+"38
+[; ;Main.c: 38:     }
+}
+[e :U 1025 ]
+[e $U 1026  ]
+[e :U 1027 ]
+"39
+[; ;Main.c: 39:     return 1;
 [e ) -> 1 `i ]
-[e $UE 1022  ]
-"33
-[; ;Main.c: 33: }
-[e :UE 1022 ]
+[e $UE 1024  ]
+"40
+[; ;Main.c: 40: }
+[e :UE 1024 ]
 }
