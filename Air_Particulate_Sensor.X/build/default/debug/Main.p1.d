@@ -5,9 +5,6 @@ mcc_generated_files/system/config_bits.h  \
 mcc_generated_files/system/../system/clock.h  \
 mcc_generated_files/system/../system/pins.h  \
 mcc_generated_files/system/../system/interrupt.h  \
-mcc_generated_files/system/../i2c_client/mssp1.h  \
-mcc_generated_files/system/../i2c_client/i2c_client_interface.h  \
-mcc_generated_files/system/../i2c_client/i2c_client_types.h  \
-mcc_generated_files/system/../spi/mssp2.h  \
-mcc_generated_files/system/../spi/spi_interface.h  \
-oled.h 
+oled.h  \
+sgp30_sensor.h  \
+I2C.h 

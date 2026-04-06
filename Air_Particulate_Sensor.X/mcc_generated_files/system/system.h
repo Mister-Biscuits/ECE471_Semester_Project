@@ -43,8 +43,6 @@
 #include "../system/pins.h"
 #include "../system/interrupt.h"
 #include "../system/clock.h"
-#include "../i2c_client/mssp1.h"
-#include "../spi/mssp2.h"
 
 /**
  * @ingroup systemdriver

@@ -33,16 +33,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 1157: extern volatile LATDbits_t LATDbits __attribute__((address(0x01B)));
 [v _LATDbits `VS58 ~T0 @X0 0 e@27 ]
 [p mainexit ]
-"56 ./mcc_generated_files/system/system.h
-[; ;./mcc_generated_files/system/system.h: 56: void SYSTEM_Initialize(void);
+"54 ./mcc_generated_files/system/system.h
+[; ;./mcc_generated_files/system/system.h: 54: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"19 ./oled.h
-[; ;./oled.h: 19: void oled_init(void);
-[v _oled_init `(v ~T0 @X0 0 ef ]
+"114 ./I2C.h
+[; ;./I2C.h: 114: void I2C_HW_Init(uint8_t brg);
+[v _I2C_HW_Init `(v ~T0 @X0 0 ef1`uc ]
 [v F202 `(v ~T0 @X0 1 tf1`ul ]
 "20 E:\MPXLab\XC8 Compiler\pic\include/builtins.h
 [v __delay `JF202 ~T0 @X0 0 e ]
 [p i __delay ]
+"19 ./oled.h
+[; ;./oled.h: 19: void oled_init(void);
+[v _oled_init `(v ~T0 @X0 0 ef ]
+"77 ./sgp30_sensor.h
+[; ;./sgp30_sensor.h: 77: void sgp30_init(void);
+[v _sgp30_init `(v ~T0 @X0 0 ef ]
+"138
+[; ;./sgp30_sensor.h: 138: _Bool sgp30_self_test(void);
+[v _sgp30_self_test `(a ~T0 @X0 0 ef ]
+"24 ./oled.h
+[; ;./oled.h: 24: void oled_display1(const char *str);
+[v _oled_display1 `(v ~T0 @X0 0 ef1`*Cuc ]
+"25
+[; ;./oled.h: 25: void oled_display2(const char *str);
+[v _oled_display2 `(v ~T0 @X0 0 ef1`*Cuc ]
+"54 ./sgp30_sensor.h
+[; ;./sgp30_sensor.h: 54: typedef struct {
+[s S1021 `us 1 `us 1 `a 1 ]
+[n S1021 . co2eq tvoc valid ]
+"84
+[; ;./sgp30_sensor.h: 84: _Bool sgp30_measure(sgp30_data_t *result);
+[v _sgp30_measure `(a ~T0 @X0 0 ef1`*S1021 ]
+"121 E:\MPXLab\XC8 Compiler\pic\include\c99/stdio.h
+[; ;E:\MPXLab\XC8 Compiler\pic\include\c99/stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "52 E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 52: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1147,68 +1172,152 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22466
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 22466: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"11 Main.c
-[; ;Main.c: 11: void init_heartbeat_led(){
+"14 Main.c
+[; ;Main.c: 14: void init_heartbeat_led(void){
 [v _init_heartbeat_led `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_heartbeat_led ]
 [f ]
-"13
-[; ;Main.c: 13:     TRISDbits.TRISD0 = 0;
+"15
+[; ;Main.c: 15:     TRISDbits.TRISD0 = 0;
 [e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
-"17
-[; ;Main.c: 17:     ANSELDbits.ANSD0 = 0;
+"16
+[; ;Main.c: 16:     ANSELDbits.ANSD0 = 0;
 [e = . . _ANSELDbits 0 0 -> -> 0 `i `uc ]
-"18
-[; ;Main.c: 18:     LATDbits.LATD0 = 1;
+"17
+[; ;Main.c: 17:     LATDbits.LATD0 = 1;
 [e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"19
-[; ;Main.c: 19: }
-[e :UE 1023 ]
+"18
+[; ;Main.c: 18: }
+[e :UE 1025 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"23
-[; ;Main.c: 23: int main(void){
+"20
+[; ;Main.c: 20: int main(void){
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"24
-[; ;Main.c: 24:     SYSTEM_Initialize();
+"21
+[; ;Main.c: 21:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"26
-[; ;Main.c: 26:     init_heartbeat_led();
+"23
+[; ;Main.c: 23:     init_heartbeat_led();
 [e ( _init_heartbeat_led ..  ]
-"28
-[; ;Main.c: 28:     oled_init();
-[e ( _oled_init ..  ]
-"31
-[; ;Main.c: 31:     while(1){
-[e :U 1026 ]
-{
+"29
+[; ;Main.c: 29:     I2C_HW_Init(((uint8_t)(((32000000UL) / (4UL * (400000UL))) - 1UL)));
+[e ( _I2C_HW_Init (1 -> - / -> 32000000 `ul * -> 4 `ul -> 400000 `ul -> 1 `ul `uc ]
 "32
-[; ;Main.c: 32:         _delay((unsigned long)((300)*(32000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"34
-[; ;Main.c: 34:         LATDbits.LATD0 = 1;
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"35
-[; ;Main.c: 35:         _delay((unsigned long)((300)*(32000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"37
-[; ;Main.c: 37:         LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+[; ;Main.c: 32:     _delay((unsigned long)((500)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"33
+[; ;Main.c: 33:     oled_init();
+[e ( _oled_init ..  ]
+"36
+[; ;Main.c: 36:     sgp30_init();
+[e ( _sgp30_init ..  ]
 "38
-[; ;Main.c: 38:     }
-}
-[e :U 1025 ]
-[e $U 1026  ]
-[e :U 1027 ]
+[; ;Main.c: 38:     _delay((unsigned long)((2000)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
 "39
-[; ;Main.c: 39:     return 1;
-[e ) -> 1 `i ]
-[e $UE 1024  ]
+[; ;Main.c: 39:     if (!sgp30_self_test()) {
+[e $ ! ! != -> ( _sgp30_self_test ..  `i -> 0 `i 1027  ]
+{
 "40
-[; ;Main.c: 40: }
-[e :UE 1024 ]
+[; ;Main.c: 40:         oled_display1("SGP30 SELF-TEST");
+[e ( _oled_display1 (1 :s 1C ]
+"41
+[; ;Main.c: 41:         oled_display2("FAILED!");
+[e ( _oled_display2 (1 :s 2C ]
+"43
+[; ;Main.c: 43:         while(1) {
+[e :U 1029 ]
+{
+"44
+[; ;Main.c: 44:             LATDbits.LATD0 ^= 1;
+[e =^ . . _LATDbits 0 0 -> -> 1 `i `Vuc ]
+"45
+[; ;Main.c: 45:             _delay((unsigned long)((100)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"46
+[; ;Main.c: 46:         }
 }
+[e :U 1028 ]
+[e $U 1029  ]
+[e :U 1030 ]
+"47
+[; ;Main.c: 47:     }
+}
+[e :U 1027 ]
+"50
+[; ;Main.c: 50:     oled_display1("SGP30 OK");
+[e ( _oled_display1 (1 :s 3C ]
+"51
+[; ;Main.c: 51:     oled_display2("Warming up...");
+[e ( _oled_display2 (1 :s 4C ]
+"54
+[; ;Main.c: 54:     sgp30_data_t air;
+[v _air `S1021 ~T0 @X0 1 a ]
+"55
+[; ;Main.c: 55:     char line1[17];
+[v _line1 `uc ~T0 @X0 -> 17 `i a ]
+"56
+[; ;Main.c: 56:     char line2[17];
+[v _line2 `uc ~T0 @X0 -> 17 `i a ]
+"58
+[; ;Main.c: 58:     while(1){
+[e :U 1032 ]
+{
+"59
+[; ;Main.c: 59:         LATDbits.LATD0 = 1;
+[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
+"61
+[; ;Main.c: 61:         if (sgp30_measure(&air) && air.valid) {
+[e $ ! && != -> ( _sgp30_measure (1 &U _air `i -> 0 `i != -> . _air 2 `i -> 0 `i 1034  ]
+{
+"62
+[; ;Main.c: 62:             sprintf(line1, "CO2: %u ppm", air.co2eq);
+[e ( _sprintf (1 , (. , &U _line1 :s 5C -> . _air 0 `ui ]
+"63
+[; ;Main.c: 63:             sprintf(line2, "TVOC: %u ppb", air.tvoc);
+[e ( _sprintf (1 , (. , &U _line2 :s 6C -> . _air 1 `ui ]
+"64
+[; ;Main.c: 64:             oled_display1(line1);
+[e ( _oled_display1 (1 -> &U _line1 `*Cuc ]
+"65
+[; ;Main.c: 65:             oled_display2(line2);
+[e ( _oled_display2 (1 -> &U _line2 `*Cuc ]
+"66
+[; ;Main.c: 66:         }
+}
+[e :U 1034 ]
+"68
+[; ;Main.c: 68:         _delay((unsigned long)((500)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"69
+[; ;Main.c: 69:         LATDbits.LATD0 = 0;
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+"70
+[; ;Main.c: 70:         _delay((unsigned long)((500)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"71
+[; ;Main.c: 71:     }
+}
+[e :U 1031 ]
+[e $U 1032  ]
+[e :U 1033 ]
+"72
+[; ;Main.c: 72:     return 1;
+[e ) -> 1 `i ]
+[e $UE 1026  ]
+"73
+[; ;Main.c: 73: }
+[e :UE 1026 ]
+}
+[p f _sprintf 8389632 ]
+[a 5C 67 79 50 58 32 37 117 32 112 112 109 0 ]
+[a 6C 84 86 79 67 58 32 37 117 32 112 112 98 0 ]
+[a 1C 83 71 80 51 48 32 83 69 76 70 45 84 69 83 84 0 ]
+[a 3C 83 71 80 51 48 32 79 75 0 ]
+[a 4C 87 97 114 109 105 110 103 32 117 112 46 46 46 0 ]
+[a 2C 70 65 73 76 69 68 33 0 ]

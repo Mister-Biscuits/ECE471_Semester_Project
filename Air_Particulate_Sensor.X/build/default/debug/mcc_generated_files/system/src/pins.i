@@ -7,9 +7,9 @@
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "mcc_generated_files/system/src/pins.c" 2
-# 35 "mcc_generated_files/system/src/pins.c"
+# 21 "mcc_generated_files/system/src/pins.c"
 # 1 "mcc_generated_files/system/src/../pins.h" 1
-# 38 "mcc_generated_files/system/src/../pins.h"
+# 24 "mcc_generated_files/system/src/../pins.h"
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 1 3
 # 18 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -13263,8 +13263,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 2 3
-# 39 "mcc_generated_files/system/src/../pins.h" 2
-# 210 "mcc_generated_files/system/src/../pins.h"
+# 25 "mcc_generated_files/system/src/../pins.h" 2
+# 146 "mcc_generated_files/system/src/../pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13274,7 +13274,7 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
-# 36 "mcc_generated_files/system/src/pins.c" 2
+# 22 "mcc_generated_files/system/src/pins.c" 2
 
 
 void PIN_MANAGER_Initialize(void)
@@ -13283,47 +13283,35 @@ void PIN_MANAGER_Initialize(void)
 
 
     LATA = 0x0;
-    LATB = 0x3;
+    LATB = 0x0;
     LATC = 0x0;
-    LATD = 0x1;
+    LATD = 0x0;
     LATE = 0x0;
-
-
-
-
+# 48 "mcc_generated_files/system/src/pins.c"
     TRISA = 0xFF;
-    TRISB = 0xFF;
-    TRISC = 0x7F;
-    TRISD = 0xDE;
+    TRISB = 0xFC;
+    TRISC = 0x3F;
+    TRISD = 0xFF;
     TRISE = 0xF;
-
-
-
-
+# 65 "mcc_generated_files/system/src/pins.c"
     ANSELA = 0xFF;
     ANSELB = 0xFC;
-    ANSELC = 0x7F;
-    ANSELD = 0xE;
+    ANSELC = 0x0F;
+    ANSELD = 0xFF;
     ANSELE = 0x7;
-
-
-
-
+# 78 "mcc_generated_files/system/src/pins.c"
     WPUA = 0x0;
     WPUB = 0x0;
-    WPUC = 0x0;
+    WPUC = 0x30;
     WPUD = 0x0;
     WPUE = 0x0;
-
-
-
-
-
+# 91 "mcc_generated_files/system/src/pins.c"
     ODCONA = 0x0;
     ODCONB = 0x0;
-    ODCONC = 0x0;
+    ODCONC = 0x30;
     ODCOND = 0x0;
     ODCONE = 0x0;
+
 
 
 
@@ -13335,25 +13323,18 @@ void PIN_MANAGER_Initialize(void)
 
 
 
+
     INLVLA = 0xFF;
     INLVLB = 0xFF;
     INLVLC = 0xFF;
     INLVLD = 0xFF;
     INLVLE = 0xF;
-
-
-
-
-    SSP2DATPPS = 0x1E;
-    SSP2SSPPS = 0x1C;
-    RD5PPS = 0x18;
-    SSP2CLKPPS = 0x1F;
-    RD7PPS = 0x17;
-    SSP1CLKPPS = 0x9;
-    RB1PPS = 0x15;
-    SSP1DATPPS = 0x8;
-    RB0PPS = 0x16;
-# 122 "mcc_generated_files/system/src/pins.c"
+# 131 "mcc_generated_files/system/src/pins.c"
+    SSP1DATPPS = 0x14;
+    SSP1CLKPPS = 0x15;
+    RC4PPS = 0x19;
+    RC5PPS = 0x18;
+# 143 "mcc_generated_files/system/src/pins.c"
     IOCAP = 0x0;
     IOCAN = 0x0;
     IOCAF = 0x0;
@@ -13366,10 +13347,6 @@ void PIN_MANAGER_Initialize(void)
     IOCEP = 0x0;
     IOCEN = 0x0;
     IOCEF = 0x0;
-
-
-
-    PIE0bits.IOCIE = 1;
 }
 
 void PIN_MANAGER_IOC(void)

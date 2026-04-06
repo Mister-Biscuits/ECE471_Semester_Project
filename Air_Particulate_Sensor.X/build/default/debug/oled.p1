@@ -1,4 +1,19 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"1022 E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 1022:     struct {
+[s S55 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S55 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"1021
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 1021: typedef union {
+[u S54 `S55 1 ]
+[n S54 . . ]
+"1033
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 1033: extern volatile LATBbits_t LATBbits __attribute__((address(0x019)));
+[v _LATBbits `VS54 ~T0 @X0 0 e@25 ]
+[v F202 `(v ~T0 @X0 1 tf1`ul ]
+"20 E:\MPXLab\XC8 Compiler\pic\include/builtins.h
+[v __delay `JF202 ~T0 @X0 0 e ]
+[p i __delay ]
 "1084 E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 1084:     struct {
 [s S57 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -10,13 +25,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1095
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 1095: extern volatile LATCbits_t LATCbits __attribute__((address(0x01A)));
 [v _LATCbits `VS56 ~T0 @X0 0 e@26 ]
-[v F202 `(v ~T0 @X0 1 tf1`ul ]
-"20 E:\MPXLab\XC8 Compiler\pic\include/builtins.h
-[v __delay `JF202 ~T0 @X0 0 e ]
-[p i __delay ]
-"187 ./mcc_generated_files/spi/mssp2.h
-[; ;./mcc_generated_files/spi/mssp2.h: 187: uint8_t SPI2_ByteExchange(uint8_t byteData);
-[v _SPI2_ByteExchange `(uc ~T0 @X0 0 ef1`uc ]
 "54 E:\MPXLab\XC8 Compiler\pic\include\c99/string.h
 [; ;E:\MPXLab\XC8 Compiler\pic\include\c99/string.h: 54: size_t strlen (const char *);
 [v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
@@ -1124,231 +1132,302 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22466
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 22466: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"17 oled.c
-[; ;oled.c: 17: void oled_send(uint8_t rs, uint8_t data){
+"23 oled.c
+[; ;oled.c: 23: void oled_send_bit(uint8_t bit) {
+[v _oled_send_bit `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _oled_send_bit ]
+[v _bit `uc ~T0 @X0 1 r1 ]
+[f ]
+"24
+[; ;oled.c: 24:     if (bit)
+[e $ ! != -> _bit `i -> 0 `i 1022  ]
+"25
+[; ;oled.c: 25:         LATBbits.LATB0 = 1;
+[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
+[e $U 1023  ]
+"26
+[; ;oled.c: 26:     else
+[e :U 1022 ]
+"27
+[; ;oled.c: 27:         LATBbits.LATB0 = 0;
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+[e :U 1023 ]
+"28
+[; ;oled.c: 28:     _delay((unsigned long)((1)*(32000000U/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
+"29
+[; ;oled.c: 29:     LATBbits.LATB1 = 1;
+[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
+"30
+[; ;oled.c: 30:     _delay((unsigned long)((1)*(32000000U/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
+"31
+[; ;oled.c: 31:     LATBbits.LATB1 = 0;
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
+"32
+[; ;oled.c: 32:     _delay((unsigned long)((1)*(32000000U/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
+"33
+[; ;oled.c: 33: }
+[e :UE 1021 ]
+}
+"36
+[; ;oled.c: 36: void oled_send(uint8_t rs, uint8_t data) {
 [v _oled_send `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _oled_send ]
 [v _rs `uc ~T0 @X0 1 r1 ]
 [v _data `uc ~T0 @X0 1 r2 ]
 [f ]
-"18
-[; ;oled.c: 18:     LATCbits.LATC7 = 0;
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
-"19
-[; ;oled.c: 19:     _delay((unsigned long)((2)*(32000000U/4000000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
-"21
-[; ;oled.c: 21:     SPI2_ByteExchange(rs & 0x01);
-[e ( _SPI2_ByteExchange (1 -> & -> _rs `i -> 1 `i `uc ]
-"22
-[; ;oled.c: 22:     SPI2_ByteExchange(data);
-[e ( _SPI2_ByteExchange (1 _data ]
-"24
-[; ;oled.c: 24:     _delay((unsigned long)((2)*(32000000U/4000000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
-"25
-[; ;oled.c: 25:     LATCbits.LATC7 = 0;
-[e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
-"26
-[; ;oled.c: 26:     _delay((unsigned long)((50)*(32000000U/4000000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
-"27
-[; ;oled.c: 27: }
-[e :UE 1022 ]
-}
-"30
-[; ;oled.c: 30: void oled_init(){
-[v _oled_init `(v ~T0 @X0 1 ef ]
-{
-[e :U _oled_init ]
-[f ]
-"32
-[; ;oled.c: 32:     LATCbits.LATC7 = 1;
-[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
-"33
-[; ;oled.c: 33:     _delay((unsigned long)((1000)*(32000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"35
-[; ;oled.c: 35:     oled_send (0, 0x38);
-[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 56 `i `uc ]
-"36
-[; ;oled.c: 36:     oled_send (0, 0x08);
-[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 8 `i `uc ]
 "37
-[; ;oled.c: 37:     oled_send (0, 0x01);
-[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"39
-[; ;oled.c: 39:     _delay((unsigned long)((2000)*(32000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"41
-[; ;oled.c: 41:     oled_send (0, 0x06);
-[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 6 `i `uc ]
-"42
-[; ;oled.c: 42:     oled_send (0, 0x02);
-[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 2 `i `uc ]
-"43
-[; ;oled.c: 43:     oled_send (0, 0x0c);
-[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 12 `i `uc ]
-"45
-[; ;oled.c: 45:     LATCbits.LATC7 = 0;
+[; ;oled.c: 37:     LATCbits.LATC7 = 0;
 [e = . . _LATCbits 0 7 -> -> 0 `i `uc ]
+"38
+[; ;oled.c: 38:     _delay((unsigned long)((1)*(32000000U/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
+"41
+[; ;oled.c: 41:     oled_send_bit(rs & 0x01);
+[e ( _oled_send_bit (1 -> & -> _rs `i -> 1 `i `uc ]
+"43
+[; ;oled.c: 43:     oled_send_bit(0);
+[e ( _oled_send_bit (1 -> -> 0 `i `uc ]
+"45
+[; ;oled.c: 45:     for (int i = 7; i >= 0; i--) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 7 `i ]
+[e $ >= _i -> 0 `i 1025  ]
+[e $U 1026  ]
+[e :U 1025 ]
+{
 "46
-[; ;oled.c: 46: }
-[e :UE 1023 ]
+[; ;oled.c: 46:         oled_send_bit((data >> i) & 0x01);
+[e ( _oled_send_bit (1 -> & >> -> _data `i _i -> 1 `i `uc ]
+"47
+[; ;oled.c: 47:     }
+}
+[e -- _i -> 1 `i ]
+[e $ >= _i -> 0 `i 1025  ]
+[e :U 1026 ]
 }
 "49
-[; ;oled.c: 49: void oled_clear(){
-[v _oled_clear `(v ~T0 @X0 1 ef ]
-{
-[e :U _oled_clear ]
-[f ]
+[; ;oled.c: 49:     _delay((unsigned long)((1)*(32000000U/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
 "50
-[; ;oled.c: 50:     oled_send (0, 0x01);
-[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;oled.c: 50:     LATCbits.LATC7 = 1;
+[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
 "51
-[; ;oled.c: 51:     _delay((unsigned long)((2)*(32000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+[; ;oled.c: 51:     _delay((unsigned long)((100)*(32000000U/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
 "52
 [; ;oled.c: 52: }
 [e :UE 1024 ]
 }
+"54
+[; ;oled.c: 54: void oled_init(void) {
+[v _oled_init `(v ~T0 @X0 1 ef ]
+{
+[e :U _oled_init ]
+[f ]
 "55
-[; ;oled.c: 55: void oled_set_cursor(uint8_t line, uint8_t col){
+[; ;oled.c: 55:    LATCbits.LATC7 = 1;
+[e = . . _LATCbits 0 7 -> -> 1 `i `uc ]
+"56
+[; ;oled.c: 56:     _delay((unsigned long)((100)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"58
+[; ;oled.c: 58:     oled_send (0, 0x38);
+[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 56 `i `uc ]
+"59
+[; ;oled.c: 59:     _delay((unsigned long)((10)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"60
+[; ;oled.c: 60:     oled_send (0, 0x08);
+[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 8 `i `uc ]
+"61
+[; ;oled.c: 61:     _delay((unsigned long)((10)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"62
+[; ;oled.c: 62:     oled_send (0, 0x01);
+[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"63
+[; ;oled.c: 63:     _delay((unsigned long)((20)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"64
+[; ;oled.c: 64:     oled_send (0, 0x06);
+[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 6 `i `uc ]
+"65
+[; ;oled.c: 65:     _delay((unsigned long)((10)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"66
+[; ;oled.c: 66:     oled_send (0, 0x0C);
+[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 12 `i `uc ]
+"67
+[; ;oled.c: 67:     _delay((unsigned long)((1)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"68
+[; ;oled.c: 68:     oled_send (0, 0x02);
+[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 2 `i `uc ]
+"69
+[; ;oled.c: 69:     _delay((unsigned long)((2)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"70
+[; ;oled.c: 70: }
+[e :UE 1028 ]
+}
+"73
+[; ;oled.c: 73: void oled_clear(){
+[v _oled_clear `(v ~T0 @X0 1 ef ]
+{
+[e :U _oled_clear ]
+[f ]
+"74
+[; ;oled.c: 74:     oled_send (0, 0x01);
+[e ( _oled_send (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"75
+[; ;oled.c: 75:     _delay((unsigned long)((2)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"76
+[; ;oled.c: 76: }
+[e :UE 1029 ]
+}
+"79
+[; ;oled.c: 79: void oled_set_cursor(uint8_t line, uint8_t col){
 [v _oled_set_cursor `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _oled_set_cursor ]
 [v _line `uc ~T0 @X0 1 r1 ]
 [v _col `uc ~T0 @X0 1 r2 ]
 [f ]
-"56
-[; ;oled.c: 56:     uint8_t addr = (line == 0) ? 0x00 : 0x40;
+"80
+[; ;oled.c: 80:     uint8_t addr = (line == 0) ? 0x00 : 0x40;
 [v _addr `uc ~T0 @X0 1 a ]
 [e = _addr -> ? == -> _line `i -> 0 `i : -> 0 `i -> 64 `i `uc ]
-"57
-[; ;oled.c: 57:     oled_send (0, 0x80 | (addr + (col & 0x0F)));
+"81
+[; ;oled.c: 81:     oled_send (0, 0x80 | (addr + (col & 0x0F)));
 [e ( _oled_send (2 , -> -> 0 `i `uc -> | -> 128 `i + -> _addr `i & -> _col `i -> 15 `i `uc ]
-"58
-[; ;oled.c: 58:     _delay((unsigned long)((50)*(32000000U/4000000.0)));
+"82
+[; ;oled.c: 82:     _delay((unsigned long)((50)*(32000000U/4000000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
-"59
-[; ;oled.c: 59: }
-[e :UE 1025 ]
+"83
+[; ;oled.c: 83: }
+[e :UE 1030 ]
 }
-"62
-[; ;oled.c: 62: void oled_print(const char *str){
+"86
+[; ;oled.c: 86: void oled_print(const char *str){
 [v _oled_print `(v ~T0 @X0 1 ef1`*Cuc ]
 {
 [e :U _oled_print ]
 [v _str `*Cuc ~T0 @X0 1 r1 ]
 [f ]
-"63
-[; ;oled.c: 63:     uint8_t count = 0;
+"87
+[; ;oled.c: 87:     uint8_t count = 0;
 [v _count `uc ~T0 @X0 1 a ]
 [e = _count -> -> 0 `i `uc ]
-"64
-[; ;oled.c: 64:     while (*str && count < 16){
-[e $U 1027  ]
-[e :U 1028 ]
+"88
+[; ;oled.c: 88:     while (*str && count < 16){
+[e $U 1032  ]
+[e :U 1033 ]
 {
-"65
-[; ;oled.c: 65:         oled_send(1, (uint8_t)((uint8_t)*str++));
+"89
+[; ;oled.c: 89:         oled_send(1, (uint8_t)((uint8_t)*str++));
 [e ( _oled_send (2 , -> -> 1 `i `uc -> *U ++ _str * -> -> 1 `i `x -> -> # *U _str `i `x `uc ]
-"66
-[; ;oled.c: 66:         _delay((unsigned long)((50)*(32000000U/4000000.0)));
+"90
+[; ;oled.c: 90:         _delay((unsigned long)((50)*(32000000U/4000000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
-"67
-[; ;oled.c: 67:         count++;
+"91
+[; ;oled.c: 91:         count++;
 [e ++ _count -> -> 1 `i `uc ]
-"68
-[; ;oled.c: 68:     }
+"92
+[; ;oled.c: 92:     }
 }
-[e :U 1027 ]
-"64
-[; ;oled.c: 64:     while (*str && count < 16){
-[e $ && != -> *U _str `i -> 0 `i < -> _count `i -> 16 `i 1028  ]
-[e :U 1029 ]
-"69
-[; ;oled.c: 69: }
-[e :UE 1026 ]
+[e :U 1032 ]
+"88
+[; ;oled.c: 88:     while (*str && count < 16){
+[e $ && != -> *U _str `i -> 0 `i < -> _count `i -> 16 `i 1033  ]
+[e :U 1034 ]
+"93
+[; ;oled.c: 93: }
+[e :UE 1031 ]
 }
-"72
-[; ;oled.c: 72: void oled_display1(const char *str){
+"96
+[; ;oled.c: 96: void oled_display1(const char *str){
 [v _oled_display1 `(v ~T0 @X0 1 ef1`*Cuc ]
 {
 [e :U _oled_display1 ]
 [v _str `*Cuc ~T0 @X0 1 r1 ]
 [f ]
-"74
-[; ;oled.c: 74:     oled_set_cursor(0,0);
+"98
+[; ;oled.c: 98:     oled_set_cursor(0,0);
 [e ( _oled_set_cursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"76
-[; ;oled.c: 76:     uint8_t len = (uint8_t)strlen(str);
+"100
+[; ;oled.c: 100:     uint8_t len = (uint8_t)strlen(str);
 [v _len `uc ~T0 @X0 1 a ]
 [e = _len -> ( _strlen (1 _str `uc ]
-"78
-[; ;oled.c: 78:     for(int i = 0; i < 16; i++){
+"102
+[; ;oled.c: 102:     for(int i = 0; i < 16; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 16 `i 1031  ]
-[e $U 1032  ]
-[e :U 1031 ]
+[e $ < _i -> 16 `i 1036  ]
+[e $U 1037  ]
+[e :U 1036 ]
 {
-"79
-[; ;oled.c: 79:         oled_send(1, (uint8_t)((i < len) ? (uint8_t)str[i] : ' '));
+"103
+[; ;oled.c: 103:         oled_send(1, (uint8_t)((i < len) ? (uint8_t)str[i] : ' '));
 [e ( _oled_send (2 , -> -> 1 `i `uc -> ? < _i -> _len `i : -> -> *U + _str * -> _i `x -> -> # *U _str `i `x `uc `ui -> 32 `ui `uc ]
-"80
-[; ;oled.c: 80:         _delay((unsigned long)((50)*(32000000U/4000000.0)));
+"104
+[; ;oled.c: 104:         _delay((unsigned long)((50)*(32000000U/4000000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
-"81
-[; ;oled.c: 81:     }
+"105
+[; ;oled.c: 105:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 16 `i 1031  ]
-[e :U 1032 ]
+[e $ < _i -> 16 `i 1036  ]
+[e :U 1037 ]
 }
-"82
-[; ;oled.c: 82: }
-[e :UE 1030 ]
+"106
+[; ;oled.c: 106: }
+[e :UE 1035 ]
 }
-"85
-[; ;oled.c: 85: void oled_display2(const char *str){
+"109
+[; ;oled.c: 109: void oled_display2(const char *str){
 [v _oled_display2 `(v ~T0 @X0 1 ef1`*Cuc ]
 {
 [e :U _oled_display2 ]
 [v _str `*Cuc ~T0 @X0 1 r1 ]
 [f ]
-"87
-[; ;oled.c: 87:     oled_set_cursor(1,0);
+"111
+[; ;oled.c: 111:     oled_set_cursor(1,0);
 [e ( _oled_set_cursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"89
-[; ;oled.c: 89:     uint8_t len = (uint8_t)strlen(str);
+"113
+[; ;oled.c: 113:     uint8_t len = (uint8_t)strlen(str);
 [v _len `uc ~T0 @X0 1 a ]
 [e = _len -> ( _strlen (1 _str `uc ]
-"91
-[; ;oled.c: 91:     for(int i = 0; i < 16; i++){
+"115
+[; ;oled.c: 115:     for(int i = 0; i < 16; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 16 `i 1035  ]
-[e $U 1036  ]
-[e :U 1035 ]
+[e $ < _i -> 16 `i 1040  ]
+[e $U 1041  ]
+[e :U 1040 ]
 {
-"92
-[; ;oled.c: 92:         oled_send(1, (uint8_t)((i < len) ? (uint8_t)str[i] : ' '));
+"116
+[; ;oled.c: 116:         oled_send(1, (uint8_t)((i < len) ? (uint8_t)str[i] : ' '));
 [e ( _oled_send (2 , -> -> 1 `i `uc -> ? < _i -> _len `i : -> -> *U + _str * -> _i `x -> -> # *U _str `i `x `uc `ui -> 32 `ui `uc ]
-"93
-[; ;oled.c: 93:         _delay((unsigned long)((50)*(32000000U/4000000.0)));
+"117
+[; ;oled.c: 117:         _delay((unsigned long)((50)*(32000000U/4000000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 32000000 `ul `d .4000000.0 `ul ]
-"94
-[; ;oled.c: 94:     }
+"118
+[; ;oled.c: 118:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 16 `i 1035  ]
-[e :U 1036 ]
+[e $ < _i -> 16 `i 1040  ]
+[e :U 1041 ]
 }
-"95
-[; ;oled.c: 95: }
-[e :UE 1034 ]
+"119
+[; ;oled.c: 119: }
+[e :UE 1039 ]
 }

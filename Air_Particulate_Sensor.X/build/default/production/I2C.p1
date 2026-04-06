@@ -1,185 +1,31 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F7758 `(v ~T0 @X0 0 tf ]
-[v F7760 `(v ~T0 @X0 0 tf ]
-[v F7762 `(v ~T0 @X0 0 tf1`uc ]
-[v F7765 `(uc ~T0 @X0 0 tf ]
-"42 mcc_generated_files/i2c_client/src/mssp1.c
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 42: const i2c_client_interface_t I2C1_Client = {
-[c E7748 0 1 2 3 4 5 .. ]
-[n E7748 . I2C_CLIENT_ERROR_NONE I2C_CLIENT_ERROR_BUS_COLLISION I2C_CLIENT_ERROR_WRITE_COLLISION I2C_CLIENT_ERROR_RECEIVE_OVERFLOW I2C_CLIENT_ERROR_TRANSMIT_UNDERFLOW I2C_CLIENT_ERROR_READ_UNDERFLOW  ]
-[v F7767 `(E7748 ~T0 @X0 0 tf ]
-[c E7732 0 1 .. ]
-[n E7732 . I2C_CLIENT_TRANSFER_DIR_WRITE I2C_CLIENT_TRANSFER_DIR_READ  ]
-[v F7769 `(E7732 ~T0 @X0 0 tf ]
-[c E7736 0 1 .. ]
-[n E7736 . I2C_CLIENT_ACK_STATUS_RECEIVED_ACK I2C_CLIENT_ACK_STATUS_RECEIVED_NACK  ]
-[v F7771 `(E7736 ~T0 @X0 0 tf ]
-[c E7740 0 1 2 3 4 5 .. ]
-[n E7740 . I2C_CLIENT_TRANSFER_EVENT_NONE I2C_CLIENT_TRANSFER_EVENT_ADDR_MATCH I2C_CLIENT_TRANSFER_EVENT_RX_READY I2C_CLIENT_TRANSFER_EVENT_TX_READY I2C_CLIENT_TRANSFER_EVENT_STOP_BIT_RECEIVED I2C_CLIENT_TRANSFER_EVENT_ERROR  ]
-[v F7774 `(a ~T0 @X0 0 tf1`E7740 ]
-[v F7773 `(v ~T0 @X0 0 tf1`*F7774 ]
-[v F7778 `(v ~T0 @X0 0 tf ]
-"47 mcc_generated_files/i2c_client/src/../i2c_client_interface.h
-[; ;mcc_generated_files/i2c_client/src/../i2c_client_interface.h: 47: {
-[s S1020 `*F7758 1 `*F7760 1 `*F7762 1 `*F7765 1 `*F7767 1 `*F7769 1 `*F7771 1 `*F7773 1 `*F7778 1 ]
-[n S1020 . Initialize Deinitialize WriteByte ReadByte ErrorGet TransferDirGet LastByteAckStatusGet CallbackRegister Tasks ]
-"71 mcc_generated_files/i2c_client/src/../mssp1.h
-[; ;mcc_generated_files/i2c_client/src/../mssp1.h: 71: void I2C1_Initialize(void);
-[v _I2C1_Initialize `(v ~T0 @X0 0 ef ]
-"79
-[; ;mcc_generated_files/i2c_client/src/../mssp1.h: 79: void I2C1_Deinitialize(void);
-[v _I2C1_Deinitialize `(v ~T0 @X0 0 ef ]
-"89
-[; ;mcc_generated_files/i2c_client/src/../mssp1.h: 89: void I2C1_WriteByte(uint8_t data);
-[v _I2C1_WriteByte `(v ~T0 @X0 0 ef1`uc ]
-"99
-[; ;mcc_generated_files/i2c_client/src/../mssp1.h: 99: uint8_t I2C1_ReadByte(void);
-[v _I2C1_ReadByte `(uc ~T0 @X0 0 ef ]
-"122
-[; ;mcc_generated_files/i2c_client/src/../mssp1.h: 122: i2c_client_error_t I2C1_ErrorGet(void);
-[v _I2C1_ErrorGet `(E7748 ~T0 @X0 0 ef ]
-"133
-[; ;mcc_generated_files/i2c_client/src/../mssp1.h: 133: i2c_client_transfer_dir_t I2C1_TransferDirGet(void);
-[v _I2C1_TransferDirGet `(E7732 ~T0 @X0 0 ef ]
-"144
-[; ;mcc_generated_files/i2c_client/src/../mssp1.h: 144: i2c_client_ack_status_t I2C1_LastByteAckStatusGet(void);
-[v _I2C1_LastByteAckStatusGet `(E7736 ~T0 @X0 0 ef ]
-[v F7791 `(a ~T0 @X0 0 tf1`E7740 ]
-"152
-[; ;mcc_generated_files/i2c_client/src/../mssp1.h: 152: void I2C1_CallbackRegister(_Bool (*callback)(i2c_client_transfer_event_t clientEvent));
-[v _I2C1_CallbackRegister `(v ~T0 @X0 0 ef1`*F7791 ]
-[v F7811 `(v ~T0 @X0 0 tf ]
-[v F7817 `(a ~T0 @X0 0 tf1`E7740 ]
-"2620 E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2620: extern volatile unsigned char SSP1STAT __attribute__((address(0x18F)));
-[v _SSP1STAT `Vuc ~T0 @X0 0 e@399 ]
+"18 I2C.c
+[; ;I2C.c: 18: static I2C_Status wait_for_if(void)
+[c E7732 0 1 2 3 .. ]
+[n E7732 . I2C_OK I2C_NACK I2C_BUS_COLL I2C_TIMEOUT  ]
+"9320 E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9320:     struct {
+[s S435 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S435 . SSP1IF BCL1IF SSP2IF BCL2IF TX1IF RC1IF TX2IF RC2IF ]
+"9319
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9319: typedef union {
+[u S434 `S435 1 ]
+[n S434 . . ]
+"9331
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9331: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x70F)));
+[v _PIR3bits `VS434 ~T0 @X0 0 e@1807 ]
 "2984
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2984: extern volatile unsigned char SSP1CON1 __attribute__((address(0x190)));
 [v _SSP1CON1 `Vuc ~T0 @X0 0 e@400 ]
-"3104
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3104: extern volatile unsigned char SSP1CON2 __attribute__((address(0x191)));
-[v _SSP1CON2 `Vuc ~T0 @X0 0 e@401 ]
+"2620
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2620: extern volatile unsigned char SSP1STAT __attribute__((address(0x18F)));
+[v _SSP1STAT `Vuc ~T0 @X0 0 e@399 ]
 "3291
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3291: extern volatile unsigned char SSP1CON3 __attribute__((address(0x192)));
 [v _SSP1CON3 `Vuc ~T0 @X0 0 e@402 ]
 "2430
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2430: extern volatile unsigned char SSP1ADD __attribute__((address(0x18D)));
 [v _SSP1ADD `Vuc ~T0 @X0 0 e@397 ]
-"2550
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2550: extern volatile unsigned char SSP1MSK __attribute__((address(0x18E)));
-[v _SSP1MSK `Vuc ~T0 @X0 0 e@398 ]
-"9626
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9626:     struct {
-[s S452 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S452 . SSP1IE BCL1IE SSP2IE BCL2IE TX1IE RC1IE TX2IE RC2IE ]
-"9625
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9625: typedef union {
-[u S451 `S452 1 ]
-[n S451 . . ]
-"9637
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9637: extern volatile PIE3bits_t PIE3bits __attribute__((address(0x719)));
-[v _PIE3bits `VS451 ~T0 @X0 0 e@1817 ]
-[v F7820 `(a ~T0 @X0 0 tf1`E7740 ]
-"2990
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2990:     struct {
-[s S149 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S149 . SSPM CKP SSPEN SSPOV WCOL ]
-"2997
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2997:     struct {
-[s S150 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S150 . SSPM0 SSPM1 SSPM2 SSPM3 ]
-"3003
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3003:     struct {
-[s S151 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S151 . SSPM01 SSPM11 SSPM21 SSPM31 CKP1 SSPEN1 SSPOV1 WCOL1 ]
-"2989
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2989: typedef union {
-[u S148 `S149 1 `S150 1 `S151 1 ]
-[n S148 . . . . ]
-"3014
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3014: extern volatile SSP1CON1bits_t SSP1CON1bits __attribute__((address(0x190)));
-[v _SSP1CON1bits `VS148 ~T0 @X0 0 e@400 ]
-"3297
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3297:     struct {
-[s S159 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S159 . DHEN AHEN SBCDE SDAHT BOEN SCIE PCIE ACKTIM ]
-"3296
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3296: typedef union {
-[u S158 `S159 1 ]
-[n S158 . . ]
-"3308
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3308: extern volatile SSP1CON3bits_t SSP1CON3bits __attribute__((address(0x192)));
-[v _SSP1CON3bits `VS158 ~T0 @X0 0 e@402 ]
-"2410
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2410: extern volatile unsigned char SSP1BUF __attribute__((address(0x18C)));
-[v _SSP1BUF `Vuc ~T0 @X0 0 e@396 ]
-"2626
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2626:     struct {
-[s S133 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S133 . BF UA R_nW S P D_nA CKE SMP ]
-"2636
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2636:     struct {
-[s S134 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S134 . . R_W . D_A ]
-"2642
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2642:     struct {
-[s S135 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S135 . . nW . nA ]
-"2648
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2648:     struct {
-[s S136 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S136 . . nWRITE . nADDRESS ]
-"2654
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2654:     struct {
-[s S137 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S137 . . READ_WRITE . DATA_ADDRESS ]
-"2660
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2660:     struct {
-[s S138 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S138 . . I2C_READ I2C_START I2C_STOP I2C_DAT ]
-"2667
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2667:     struct {
-[s S139 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S139 . BF1 UA1 R START STOP D CKE1 SMP1 ]
-"2677
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2677:     struct {
-[s S140 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S140 . . RW START1 STOP1 DA ]
-"2684
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2684:     struct {
-[s S141 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S141 . . RW1 I2C_START1 I2C_STOP2 DA1 ]
-"2691
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2691:     struct {
-[s S142 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S142 . . I2C_READ1 S2 P2 DATA_ADDRESS1 ]
-"2698
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2698:     struct {
-[s S143 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S143 . . READ_WRITE1 . D_A1 ]
-"2704
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2704:     struct {
-[s S144 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S144 . . R_W1 . D_nA1 ]
-"2710
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2710:     struct {
-[s S145 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S145 . . R_nW1 . I2C_DAT1 ]
-"2716
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2716:     struct {
-[s S146 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S146 . . nW2 . nA2 ]
-"2722
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2722:     struct {
-[s S147 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S147 . . nWRITE1 . nADDRESS1 ]
-"2625
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2625: typedef union {
-[u S132 `S133 1 `S134 1 `S135 1 `S136 1 `S137 1 `S138 1 `S139 1 `S140 1 `S141 1 `S142 1 `S143 1 `S144 1 `S145 1 `S146 1 `S147 1 ]
-[n S132 . . . . . . . . . . . . . . . . ]
-"2729
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2729: extern volatile SSP1STATbits_t SSP1STATbits __attribute__((address(0x18F)));
-[v _SSP1STATbits `VS132 ~T0 @X0 0 e@399 ]
 "3110
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3110:     struct {
 [s S153 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -207,26 +53,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3151
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3151: extern volatile SSP1CON2bits_t SSP1CON2bits __attribute__((address(0x191)));
 [v _SSP1CON2bits `VS152 ~T0 @X0 0 e@401 ]
-[v F7834 `(a ~T0 @X0 0 tf1`E7740 ]
-[v F7837 `(a ~T0 @X0 0 tf1`E7740 ]
-[v F7839 `(a ~T0 @X0 0 tf1`E7740 ]
-"54 mcc_generated_files/i2c_client/src/mssp1.c
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 54: static void I2C1_EventHandler(void);
-[v _I2C1_EventHandler `(v ~T0 @X0 0 sf ]
-"55
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 55: static void I2C1_ErrorEventHandler(void);
-[v _I2C1_ErrorEventHandler `(v ~T0 @X0 0 sf ]
-"9320 E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9320:     struct {
-[s S435 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S435 . SSP1IF BCL1IF SSP2IF BCL2IF TX1IF RC1IF TX2IF RC2IF ]
-"9319
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9319: typedef union {
-[u S434 `S435 1 ]
-[n S434 . . ]
-"9331
-[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 9331: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x70F)));
-[v _PIR3bits `VS434 ~T0 @X0 0 e@1807 ]
+"3104
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 3104: extern volatile unsigned char SSP1CON2 __attribute__((address(0x191)));
+[v _SSP1CON2 `Vuc ~T0 @X0 0 e@401 ]
+"2410
+[; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 2410: extern volatile unsigned char SSP1BUF __attribute__((address(0x18C)));
+[v _SSP1BUF `Vuc ~T0 @X0 0 e@396 ]
 "52 E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 52: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1331,565 +1163,658 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22466
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 22466: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"42 mcc_generated_files/i2c_client/src/mssp1.c
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 42: const i2c_client_interface_t I2C1_Client = {
-[v _I2C1_Client `CS1020 ~T0 @X0 1 e ]
-[i _I2C1_Client
-:U ..
-:U ..
-&U _I2C1_Initialize
-&U _I2C1_Deinitialize
-&U _I2C1_WriteByte
-&U _I2C1_ReadByte
-&U _I2C1_ErrorGet
-&U _I2C1_TransferDirGet
-&U _I2C1_LastByteAckStatusGet
-&U _I2C1_CallbackRegister
--> -> -> 0 `i `*v `*F7811
-..
-..
-]
-"57
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 57: static volatile uint16_t i2c1Addr;
-[v _i2c1Addr `Vus ~T0 @X0 1 s ]
-"58
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 58: static volatile i2c_client_error_t i2c1ErrorState;
-[v _i2c1ErrorState `VE7748 ~T0 @X0 1 s ]
-"59
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 59: static _Bool(*I2C1_InterruptHandler)(i2c_client_transfer_event_t clientEvent);
-[v _I2C1_InterruptHandler `*F7817 ~T0 @X0 1 s ]
-"61
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 61: void I2C1_Initialize(void)
-[v _I2C1_Initialize `(v ~T0 @X0 1 ef ]
-"62
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 62: {
+"18 I2C.c
+[; ;I2C.c: 18: static I2C_Status wait_for_if(void)
+[v _wait_for_if `(E7732 ~T0 @X0 1 sf ]
+"19
+[; ;I2C.c: 19: {
 {
-[e :U _I2C1_Initialize ]
+[e :U _wait_for_if ]
 [f ]
-"64
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 64:     SSP1STAT = 0x80;
-[e = _SSP1STAT -> -> 128 `i `uc ]
-"66
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 66:     SSP1CON1 |= 0x6;
-[e =| _SSP1CON1 -> -> 6 `i `Vuc ]
-"68
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 68:     SSP1CON2 = 0x1;
-[e = _SSP1CON2 -> -> 1 `i `uc ]
-"70
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 70:     SSP1CON3 = 0x0;
-[e = _SSP1CON3 -> -> 0 `i `uc ]
-"72
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 72:     SSP1ADD = 0x0;
-[e = _SSP1ADD -> -> 0 `i `uc ]
-"74
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 74:     SSP1MSK = 0xFE;
-[e = _SSP1MSK -> -> 254 `i `uc ]
-"76
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 76:     PIE3bits.SSP1IE = 1;
-[e = . . _PIE3bits 0 0 -> -> 1 `i `uc ]
-"77
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 77:     PIE3bits.BCL1IE = 1;
-[e = . . _PIE3bits 0 1 -> -> 1 `i `uc ]
-"78
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 78:     I2C1_InterruptHandler = ((void*)0);
-[e = _I2C1_InterruptHandler -> -> -> 0 `i `*v `*F7820 ]
-"79
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 79:     SSP1CON1bits.SSPEN = 1;
-[e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]
-"80
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 80:     SSP1CON3bits.PCIE = 1;
-[e = . . _SSP1CON3bits 0 6 -> -> 1 `i `uc ]
-"81
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 81:     SSP1CON3bits.AHEN = 1;
-[e = . . _SSP1CON3bits 0 1 -> -> 1 `i `uc ]
-"82
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 82:     SSP1CON3bits.DHEN = 1;
-[e = . . _SSP1CON3bits 0 0 -> -> 1 `i `uc ]
-"84
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 84: }
-[e :UE 1021 ]
+"20
+[; ;I2C.c: 20:     uint16_t cnt = 1000u;
+[v _cnt `us ~T0 @X0 1 a ]
+[e = _cnt -> -> 1000 `ui `us ]
+"21
+[; ;I2C.c: 21:     while (!PIR3bits.SSP1IF) {
+[e $U 1021  ]
+[e :U 1022 ]
+{
+"22
+[; ;I2C.c: 22:         if (--cnt == 0u) return I2C_TIMEOUT;
+[e $ ! == -> =- _cnt -> -> 1 `i `us `ui -> 0 `ui 1024  ]
+[e ) . `E7732 3 ]
+[e $UE 1020  ]
+[e :U 1024 ]
+"23
+[; ;I2C.c: 23:     }
 }
-"86
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 86: void I2C1_Deinitialize(void)
-[v _I2C1_Deinitialize `(v ~T0 @X0 1 ef ]
-"87
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 87: {
-{
-[e :U _I2C1_Deinitialize ]
-[f ]
-"88
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 88:     SSP1STAT = 0x00;
-[e = _SSP1STAT -> -> 0 `i `uc ]
-"89
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 89:     SSP1CON1 |= 0x00;
-[e =| _SSP1CON1 -> -> 0 `i `Vuc ]
-"90
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 90:     SSP1CON2 = 0x00;
-[e = _SSP1CON2 -> -> 0 `i `uc ]
-"91
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 91:     SSP1CON3 = 0x00;
-[e = _SSP1CON3 -> -> 0 `i `uc ]
-"92
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 92:     SSP1ADD = 0x08;
-[e = _SSP1ADD -> -> 8 `i `uc ]
-"93
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 93:     SSP1MSK = 0xFE;
-[e = _SSP1MSK -> -> 254 `i `uc ]
-"95
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 95:     PIE3bits.SSP1IE = 0;
-[e = . . _PIE3bits 0 0 -> -> 0 `i `uc ]
-"96
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 96:     PIE3bits.BCL1IE = 0;
-[e = . . _PIE3bits 0 1 -> -> 0 `i `uc ]
-"97
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 97:     SSP1CON3bits.PCIE = 0;
-[e = . . _SSP1CON3bits 0 6 -> -> 0 `i `uc ]
-"98
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 98: }
-[e :UE 1022 ]
+[e :U 1021 ]
+"21
+[; ;I2C.c: 21:     while (!PIR3bits.SSP1IF) {
+[e $ ! != -> . . _PIR3bits 0 0 `i -> 0 `i 1022  ]
+[e :U 1023 ]
+"24
+[; ;I2C.c: 24:     PIR3bits.SSP1IF = 0;
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+"25
+[; ;I2C.c: 25:     return I2C_OK;
+[e ) . `E7732 0 ]
+[e $UE 1020  ]
+"26
+[; ;I2C.c: 26: }
+[e :UE 1020 ]
 }
-"100
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 100: void I2C1_WriteByte(uint8_t data)
-[v _I2C1_WriteByte `(v ~T0 @X0 1 ef1`uc ]
-"101
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 101: {
+"28
+[; ;I2C.c: 28: static I2C_Status wait_for_idle(volatile uint8_t *reg, uint8_t mask)
+[v _wait_for_idle `(E7732 ~T0 @X0 1 sf2`*Vuc`uc ]
+"29
+[; ;I2C.c: 29: {
 {
-[e :U _I2C1_WriteByte ]
-"100
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 100: void I2C1_WriteByte(uint8_t data)
-[v _data `uc ~T0 @X0 1 r1 ]
-"101
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 101: {
+[e :U _wait_for_idle ]
+"28
+[; ;I2C.c: 28: static I2C_Status wait_for_idle(volatile uint8_t *reg, uint8_t mask)
+[v _reg `*Vuc ~T0 @X0 1 r1 ]
+[v _mask `uc ~T0 @X0 1 r2 ]
+"29
+[; ;I2C.c: 29: {
 [f ]
-"102
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 102:     SSP1BUF = data;
-[e = _SSP1BUF _data ]
-"103
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 103: }
-[e :UE 1023 ]
-}
-"105
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 105: uint8_t I2C1_ReadByte(void)
-[v _I2C1_ReadByte `(uc ~T0 @X0 1 ef ]
-"106
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 106: {
+"30
+[; ;I2C.c: 30:     uint16_t cnt = 1000u;
+[v _cnt `us ~T0 @X0 1 a ]
+[e = _cnt -> -> 1000 `ui `us ]
+"31
+[; ;I2C.c: 31:     while (*reg & mask) {
+[e $U 1026  ]
+[e :U 1027 ]
 {
-[e :U _I2C1_ReadByte ]
-[f ]
-"107
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 107:     return SSP1BUF;
-[e ) _SSP1BUF ]
-[e $UE 1024  ]
-"108
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 108: }
-[e :UE 1024 ]
-}
-"110
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 110: uint16_t I2C1_ReadAddr(void)
-[v _I2C1_ReadAddr `(us ~T0 @X0 1 ef ]
-"111
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 111: {
-{
-[e :U _I2C1_ReadAddr ]
-[f ]
-"112
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 112:     return (i2c1Addr >> 1);
-[e ) -> >> -> _i2c1Addr `ui -> 1 `i `us ]
+"32
+[; ;I2C.c: 32:         if (--cnt == 0u) return I2C_TIMEOUT;
+[e $ ! == -> =- _cnt -> -> 1 `i `us `ui -> 0 `ui 1029  ]
+[e ) . `E7732 3 ]
 [e $UE 1025  ]
-"113
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 113: }
+[e :U 1029 ]
+"33
+[; ;I2C.c: 33:     }
+}
+[e :U 1026 ]
+"31
+[; ;I2C.c: 31:     while (*reg & mask) {
+[e $ != & -> *U _reg `i -> _mask `i -> 0 `i 1027  ]
+[e :U 1028 ]
+"34
+[; ;I2C.c: 34:     PIR3bits.SSP1IF = 0;
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+"35
+[; ;I2C.c: 35:     return I2C_OK;
+[e ) . `E7732 0 ]
+[e $UE 1025  ]
+"36
+[; ;I2C.c: 36: }
 [e :UE 1025 ]
 }
-"115
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 115: i2c_client_error_t I2C1_ErrorGet(void)
-[v _I2C1_ErrorGet `(E7748 ~T0 @X0 1 ef ]
-"116
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 116: {
+"38
+[; ;I2C.c: 38: static I2C_Status check_bus_collision(void)
+[v _check_bus_collision `(E7732 ~T0 @X0 1 sf ]
+"39
+[; ;I2C.c: 39: {
 {
-[e :U _I2C1_ErrorGet ]
+[e :U _check_bus_collision ]
 [f ]
-"117
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 117:     i2c_client_error_t error;
-[v _error `E7748 ~T0 @X0 1 a ]
-"118
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 118:     error = i2c1ErrorState;
-[e = _error _i2c1ErrorState ]
-"119
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 119:     i2c1ErrorState = I2C_CLIENT_ERROR_NONE;
-[e = _i2c1ErrorState . `E7748 0 ]
-"120
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 120:     return error;
-[e ) _error ]
-[e $UE 1026  ]
-"121
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 121: }
-[e :UE 1026 ]
-}
-"123
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 123: i2c_client_transfer_dir_t I2C1_TransferDirGet(void)
-[v _I2C1_TransferDirGet `(E7732 ~T0 @X0 1 ef ]
-"124
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 124: {
+"40
+[; ;I2C.c: 40:     if (PIR3bits.BCL1IF) {
+[e $ ! != -> . . _PIR3bits 0 1 `i -> 0 `i 1031  ]
 {
-[e :U _I2C1_TransferDirGet ]
+"41
+[; ;I2C.c: 41:         PIR3bits.BCL1IF = 0;
+[e = . . _PIR3bits 0 1 -> -> 0 `i `uc ]
+"42
+[; ;I2C.c: 42:         return I2C_BUS_COLL;
+[e ) . `E7732 2 ]
+[e $UE 1030  ]
+"43
+[; ;I2C.c: 43:     }
+}
+[e :U 1031 ]
+"44
+[; ;I2C.c: 44:     return I2C_OK;
+[e ) . `E7732 0 ]
+[e $UE 1030  ]
+"45
+[; ;I2C.c: 45: }
+[e :UE 1030 ]
+}
+"51
+[; ;I2C.c: 51: void I2C_HW_Init(uint8_t brg)
+[v _I2C_HW_Init `(v ~T0 @X0 1 ef1`uc ]
+"52
+[; ;I2C.c: 52: {
+{
+[e :U _I2C_HW_Init ]
+"51
+[; ;I2C.c: 51: void I2C_HW_Init(uint8_t brg)
+[v _brg `uc ~T0 @X0 1 r1 ]
+"52
+[; ;I2C.c: 52: {
 [f ]
-"125
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 125:     return (SSP1STATbits.R_nW ? I2C_CLIENT_TRANSFER_DIR_READ : I2C_CLIENT_TRANSFER_DIR_WRITE);
-[e ) -> ? != -> . . _SSP1STATbits 0 2 `i -> 0 `i : . `E7732 1 . `E7732 0 `E7732 ]
-[e $UE 1027  ]
-"126
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 126: }
-[e :UE 1027 ]
-}
-"128
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 128: i2c_client_ack_status_t I2C1_LastByteAckStatusGet(void)
-[v _I2C1_LastByteAckStatusGet `(E7736 ~T0 @X0 1 ef ]
-"129
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 129: {
-{
-[e :U _I2C1_LastByteAckStatusGet ]
-[f ]
-"130
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 130:     return (SSP1CON2bits.ACKDT ? I2C_CLIENT_ACK_STATUS_RECEIVED_NACK : I2C_CLIENT_ACK_STATUS_RECEIVED_ACK);
-[e ) -> ? != -> . . _SSP1CON2bits 0 5 `i -> 0 `i : . `E7736 1 . `E7736 0 `E7736 ]
-[e $UE 1028  ]
-"131
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 131: }
-[e :UE 1028 ]
-}
-"133
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 133: void I2C1_CallbackRegister(_Bool(*callback)(i2c_client_transfer_event_t clientEvent))
-[v _I2C1_CallbackRegister `(v ~T0 @X0 1 ef1`*F7834 ]
-"134
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 134: {
-{
-[e :U _I2C1_CallbackRegister ]
-"133
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 133: void I2C1_CallbackRegister(_Bool(*callback)(i2c_client_transfer_event_t clientEvent))
-[v _callback `*F7837 ~T0 @X0 1 r1 ]
-"134
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 134: {
-[f ]
-"135
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 135:     if (callback != ((void*)0))
-[e $ ! != _callback -> -> -> 0 `i `*v `*F7839 1030  ]
-"136
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 136:     {
-{
-"137
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 137:         I2C1_InterruptHandler = callback;
-[e = _I2C1_InterruptHandler _callback ]
-"138
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 138:     }
-}
-[e :U 1030 ]
-"139
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 139: }
-[e :UE 1029 ]
-}
-"141
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 141: void I2C1_ISR(void)
-[v _I2C1_ISR `(v ~T0 @X0 1 ef ]
-"142
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 142: {
-{
-[e :U _I2C1_ISR ]
-[f ]
-"143
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 143:     I2C1_EventHandler();
-[e ( _I2C1_EventHandler ..  ]
-"144
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 144: }
-[e :UE 1031 ]
-}
-"146
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 146: void I2C1_ERROR_ISR(void)
-[v _I2C1_ERROR_ISR `(v ~T0 @X0 1 ef ]
-"147
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 147: {
-{
-[e :U _I2C1_ERROR_ISR ]
-[f ]
-"148
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 148:     I2C1_ErrorEventHandler();
-[e ( _I2C1_ErrorEventHandler ..  ]
-"149
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 149: }
+"53
+[; ;I2C.c: 53:     SSP1CON1 = 0x00;
+[e = _SSP1CON1 -> -> 0 `i `uc ]
+"54
+[; ;I2C.c: 54:     SSP1STAT = 0x00;
+[e = _SSP1STAT -> -> 0 `i `uc ]
+"55
+[; ;I2C.c: 55:     SSP1CON3 = 0x08;
+[e = _SSP1CON3 -> -> 8 `i `uc ]
+"56
+[; ;I2C.c: 56:     SSP1ADD = brg;
+[e = _SSP1ADD _brg ]
+"57
+[; ;I2C.c: 57:     SSP1CON1 = 0x28;
+[e = _SSP1CON1 -> -> 40 `i `uc ]
+"58
+[; ;I2C.c: 58:     PIR3bits.SSP1IF = 0;
+[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
+"59
+[; ;I2C.c: 59:     PIR3bits.BCL1IF = 0;
+[e = . . _PIR3bits 0 1 -> -> 0 `i `uc ]
+"60
+[; ;I2C.c: 60: }
 [e :UE 1032 ]
 }
-"154
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 154: static void I2C1_EventHandler(void)
-[v _I2C1_EventHandler `(v ~T0 @X0 1 sf ]
-"155
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 155: {
+"66
+[; ;I2C.c: 66: I2C_Status I2C_HW_Start(void)
+[v _I2C_HW_Start `(E7732 ~T0 @X0 1 ef ]
+"67
+[; ;I2C.c: 67: {
 {
-[e :U _I2C1_EventHandler ]
+[e :U _I2C_HW_Start ]
 [f ]
-"156
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 156:     PIR3bits.SSP1IF = 0;
-[e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-"157
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 157:     if (0U != SSP1STATbits.P)
-[e $ ! != -> 0 `ui -> . . _SSP1STATbits 0 4 `ui 1034  ]
-"158
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 158:     {
-{
-"160
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 160:         I2C1_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_STOP_BIT_RECEIVED);
-[e ( *U _I2C1_InterruptHandler (1 . `E7740 4 ]
-"161
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 161:     }
-}
-[e $U 1035  ]
-"162
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 162:     else if ((!SSP1STATbits.D_nA) && (0U != SSP1CON3bits.ACKTIM))
+"68
+[; ;I2C.c: 68:     I2C_Status s;
+[v _s `E7732 ~T0 @X0 1 a ]
+"69
+[; ;I2C.c: 69:     SSP1CON2bits.SEN = 1;
+[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
+"70
+[; ;I2C.c: 70:     s = wait_for_idle((volatile uint8_t *)&SSP1CON2, 0x01u);
+[e = _s ( _wait_for_idle (2 , &U _SSP1CON2 -> -> 1 `ui `uc ]
+"71
+[; ;I2C.c: 71:     if (s != I2C_OK) return s;
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1034  ]
+[e ) _s ]
+[e $UE 1033  ]
 [e :U 1034 ]
-[e $ ! && ! != -> . . _SSP1STATbits 0 5 `i -> 0 `i != -> 0 `ui -> . . _SSP1CON3bits 0 7 `ui 1036  ]
-"163
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 163:     {
-{
-"165
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 165:         i2c1Addr = I2C1_ReadByte();
-[e = _i2c1Addr -> ( _I2C1_ReadByte ..  `us ]
-"167
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 167:         i2c1ErrorState = I2C_CLIENT_ERROR_NONE;
-[e = _i2c1ErrorState . `E7748 0 ]
-"169
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 169:         if (I2C1_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_ADDR_MATCH) == 1)
-[e $ ! == -> ( *U _I2C1_InterruptHandler (1 . `E7740 1 `i -> 1 `i 1037  ]
-"170
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 170:         {
-{
-"172
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 172:             SSP1CON2bits.ACKDT = 0;
-[e = . . _SSP1CON2bits 0 5 -> -> 0 `i `uc ]
-"173
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 173:             SSP1CON2bits.ACKEN = 1;
-[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-"174
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 174:         }
-}
-[e $U 1038  ]
-"175
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 175:         else
-[e :U 1037 ]
-"176
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 176:         {
-{
-"178
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 178:             SSP1CON2bits.ACKDT = 1;
-[e = . . _SSP1CON2bits 0 5 -> -> 1 `i `uc ]
-"179
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 179:             SSP1CON2bits.ACKEN = 1;
-[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-"180
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 180:         }
-}
-[e :U 1038 ]
-"181
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 181:     }
-}
-[e $U 1039  ]
-"182
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 182:     else
-[e :U 1036 ]
-"183
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 183:     {
-{
-"185
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 185:         if (0U != SSP1STATbits.R_nW)
-[e $ ! != -> 0 `ui -> . . _SSP1STATbits 0 2 `ui 1040  ]
-"186
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 186:         {
-{
-"187
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 187:             if ((!SSP1STATbits.BF) && (!SSP1CON2bits.ACKSTAT))
-[e $ ! && ! != -> . . _SSP1STATbits 0 0 `i -> 0 `i ! != -> . . _SSP1CON2bits 0 6 `i -> 0 `i 1041  ]
-"188
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 188:             {
-{
-"190
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 190:                 if (I2C1_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_TX_READY) == 0)
-[e $ ! == -> ( *U _I2C1_InterruptHandler (1 . `E7740 3 `i -> 0 `i 1042  ]
-"191
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 191:                 {
-{
-"193
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 193:                     SSP1CON2bits.ACKDT = 1;
-[e = . . _SSP1CON2bits 0 5 -> -> 1 `i `uc ]
-"194
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 194:                     SSP1CON2bits.ACKEN = 1;
-[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-"195
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 195:                 }
-}
-[e $U 1043  ]
-"196
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 196:                 else
-[e :U 1042 ]
-"197
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 197:                 {
-{
-"199
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 199:                     SSP1CON2bits.ACKDT = 0;
-[e = . . _SSP1CON2bits 0 5 -> -> 0 `i `uc ]
-"200
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 200:                     SSP1CON2bits.ACKEN = 1;
-[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-"201
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 201:                 }
-}
-[e :U 1043 ]
-"202
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 202:             }
-}
-[e :U 1041 ]
-"203
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 203:         }
-}
-[e $U 1044  ]
-"204
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 204:         else
-[e :U 1040 ]
-"205
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 205:         {
-{
-"206
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 206:             if (0U != SSP1STATbits.BF)
-[e $ ! != -> 0 `ui -> . . _SSP1STATbits 0 0 `ui 1045  ]
-"207
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 207:             {
-{
-"209
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 209:                 if (I2C1_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_RX_READY) == 1)
-[e $ ! == -> ( *U _I2C1_InterruptHandler (1 . `E7740 2 `i -> 1 `i 1046  ]
-"210
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 210:                 {
-{
-"212
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 212:                     SSP1CON2bits.ACKDT = 0;
-[e = . . _SSP1CON2bits 0 5 -> -> 0 `i `uc ]
-"213
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 213:                     SSP1CON2bits.ACKEN = 1;
-[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-"214
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 214:                 }
-}
-[e $U 1047  ]
-"215
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 215:                 else
-[e :U 1046 ]
-"216
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 216:                 {
-{
-"218
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 218:                     SSP1CON2bits.ACKDT = 1;
-[e = . . _SSP1CON2bits 0 5 -> -> 1 `i `uc ]
-"219
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 219:                     SSP1CON2bits.ACKEN = 1;
-[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
-"220
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 220:                 }
-}
-[e :U 1047 ]
-"221
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 221:             }
-}
-[e :U 1045 ]
-"222
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 222:         }
-}
-[e :U 1044 ]
-"223
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 223:     }
-}
-[e :U 1039 ]
-[e :U 1035 ]
-"226
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 226:     SSP1CON1bits.CKP = 1;
-[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
-"227
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 227: }
+"72
+[; ;I2C.c: 72:     return check_bus_collision();
+[e ) ( _check_bus_collision ..  ]
+[e $UE 1033  ]
+"73
+[; ;I2C.c: 73: }
 [e :UE 1033 ]
 }
-"229
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 229: static void I2C1_ErrorEventHandler(void)
-[v _I2C1_ErrorEventHandler `(v ~T0 @X0 1 sf ]
-"230
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 230: {
+"75
+[; ;I2C.c: 75: I2C_Status I2C_HW_RepeatedStart(void)
+[v _I2C_HW_RepeatedStart `(E7732 ~T0 @X0 1 ef ]
+"76
+[; ;I2C.c: 76: {
 {
-[e :U _I2C1_ErrorEventHandler ]
+[e :U _I2C_HW_RepeatedStart ]
 [f ]
-"231
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 231:     if (0U != PIR3bits.BCL1IF)
-[e $ ! != -> 0 `ui -> . . _PIR3bits 0 1 `ui 1049  ]
-"232
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 232:     {
-{
-"233
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 233:         i2c1ErrorState = I2C_CLIENT_ERROR_BUS_COLLISION;
-[e = _i2c1ErrorState . `E7748 1 ]
-"234
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 234:         I2C1_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_ERROR);
-[e ( *U _I2C1_InterruptHandler (1 . `E7740 5 ]
-"235
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 235:         PIR3bits.BCL1IF = 0;
-[e = . . _PIR3bits 0 1 -> -> 0 `i `uc ]
-"236
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 236:     }
+"77
+[; ;I2C.c: 77:     I2C_Status s;
+[v _s `E7732 ~T0 @X0 1 a ]
+"78
+[; ;I2C.c: 78:     SSP1CON2bits.RSEN = 1;
+[e = . . _SSP1CON2bits 0 1 -> -> 1 `i `uc ]
+"79
+[; ;I2C.c: 79:     s = wait_for_idle((volatile uint8_t *)&SSP1CON2, 0x02u);
+[e = _s ( _wait_for_idle (2 , &U _SSP1CON2 -> -> 2 `ui `uc ]
+"80
+[; ;I2C.c: 80:     if (s != I2C_OK) return s;
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1036  ]
+[e ) _s ]
+[e $UE 1035  ]
+[e :U 1036 ]
+"81
+[; ;I2C.c: 81:     return check_bus_collision();
+[e ) ( _check_bus_collision ..  ]
+[e $UE 1035  ]
+"82
+[; ;I2C.c: 82: }
+[e :UE 1035 ]
 }
-[e $U 1050  ]
-"237
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 237:     else if (0U != SSP1CON1bits.WCOL)
-[e :U 1049 ]
-[e $ ! != -> 0 `ui -> . . _SSP1CON1bits 0 4 `ui 1051  ]
-"238
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 238:     {
+"84
+[; ;I2C.c: 84: I2C_Status I2C_HW_Stop(void)
+[v _I2C_HW_Stop `(E7732 ~T0 @X0 1 ef ]
+"85
+[; ;I2C.c: 85: {
 {
-"239
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 239:         i2c1ErrorState = I2C_CLIENT_ERROR_WRITE_COLLISION;
-[e = _i2c1ErrorState . `E7748 2 ]
-"240
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 240:         I2C1_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_ERROR);
-[e ( *U _I2C1_InterruptHandler (1 . `E7740 5 ]
-"241
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 241:         SSP1CON1bits.WCOL = 0;
-[e = . . _SSP1CON1bits 0 4 -> -> 0 `i `uc ]
-"242
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 242:     }
+[e :U _I2C_HW_Stop ]
+[f ]
+"86
+[; ;I2C.c: 86:     I2C_Status s;
+[v _s `E7732 ~T0 @X0 1 a ]
+"87
+[; ;I2C.c: 87:     SSP1CON2bits.PEN = 1;
+[e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
+"88
+[; ;I2C.c: 88:     s = wait_for_idle((volatile uint8_t *)&SSP1CON2, 0x04u);
+[e = _s ( _wait_for_idle (2 , &U _SSP1CON2 -> -> 4 `ui `uc ]
+"89
+[; ;I2C.c: 89:     if (s != I2C_OK) return s;
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1038  ]
+[e ) _s ]
+[e $UE 1037  ]
+[e :U 1038 ]
+"90
+[; ;I2C.c: 90:     return check_bus_collision();
+[e ) ( _check_bus_collision ..  ]
+[e $UE 1037  ]
+"91
+[; ;I2C.c: 91: }
+[e :UE 1037 ]
 }
+"93
+[; ;I2C.c: 93: I2C_Status I2C_HW_SendByte(uint8_t byte)
+[v _I2C_HW_SendByte `(E7732 ~T0 @X0 1 ef1`uc ]
+"94
+[; ;I2C.c: 94: {
+{
+[e :U _I2C_HW_SendByte ]
+"93
+[; ;I2C.c: 93: I2C_Status I2C_HW_SendByte(uint8_t byte)
+[v _byte `uc ~T0 @X0 1 r1 ]
+"94
+[; ;I2C.c: 94: {
+[f ]
+"95
+[; ;I2C.c: 95:     I2C_Status s;
+[v _s `E7732 ~T0 @X0 1 a ]
+"96
+[; ;I2C.c: 96:     SSP1BUF = byte;
+[e = _SSP1BUF _byte ]
+"98
+[; ;I2C.c: 98:     s = wait_for_if();
+[e = _s ( _wait_for_if ..  ]
+"99
+[; ;I2C.c: 99:     if (s != I2C_OK) return s;
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1040  ]
+[e ) _s ]
+[e $UE 1039  ]
+[e :U 1040 ]
+"101
+[; ;I2C.c: 101:     s = check_bus_collision();
+[e = _s ( _check_bus_collision ..  ]
+"102
+[; ;I2C.c: 102:     if (s != I2C_OK) return s;
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1041  ]
+[e ) _s ]
+[e $UE 1039  ]
+[e :U 1041 ]
+"104
+[; ;I2C.c: 104:     if (SSP1CON2bits.ACKSTAT) return I2C_NACK;
+[e $ ! != -> . . _SSP1CON2bits 0 6 `i -> 0 `i 1042  ]
+[e ) . `E7732 1 ]
+[e $UE 1039  ]
+[e :U 1042 ]
+"105
+[; ;I2C.c: 105:     return I2C_OK;
+[e ) . `E7732 0 ]
+[e $UE 1039  ]
+"106
+[; ;I2C.c: 106: }
+[e :UE 1039 ]
+}
+"108
+[; ;I2C.c: 108: I2C_Status I2C_HW_ReadByte(uint8_t *byte, _Bool send_ack)
+[v _I2C_HW_ReadByte `(E7732 ~T0 @X0 1 ef2`*uc`a ]
+"109
+[; ;I2C.c: 109: {
+{
+[e :U _I2C_HW_ReadByte ]
+"108
+[; ;I2C.c: 108: I2C_Status I2C_HW_ReadByte(uint8_t *byte, _Bool send_ack)
+[v _byte `*uc ~T0 @X0 1 r1 ]
+[v _send_ack `a ~T0 @X0 1 r2 ]
+"109
+[; ;I2C.c: 109: {
+[f ]
+"110
+[; ;I2C.c: 110:     I2C_Status s;
+[v _s `E7732 ~T0 @X0 1 a ]
+"111
+[; ;I2C.c: 111:     SSP1CON2bits.RCEN = 1;
+[e = . . _SSP1CON2bits 0 3 -> -> 1 `i `uc ]
+"113
+[; ;I2C.c: 113:     s = wait_for_if();
+[e = _s ( _wait_for_if ..  ]
+"114
+[; ;I2C.c: 114:     if (s != I2C_OK) return s;
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1044  ]
+[e ) _s ]
+[e $UE 1043  ]
+[e :U 1044 ]
+"116
+[; ;I2C.c: 116:     *byte = SSP1BUF;
+[e = *U _byte _SSP1BUF ]
+"118
+[; ;I2C.c: 118:     SSP1CON2bits.ACKDT = send_ack ? 0 : 1;
+[e = . . _SSP1CON2bits 0 5 -> ? != -> _send_ack `i -> 0 `i : -> 0 `i -> 1 `i `uc ]
+"119
+[; ;I2C.c: 119:     SSP1CON2bits.ACKEN = 1;
+[e = . . _SSP1CON2bits 0 4 -> -> 1 `i `uc ]
+"121
+[; ;I2C.c: 121:     s = wait_for_idle((volatile uint8_t *)&SSP1CON2, 0x10u);
+[e = _s ( _wait_for_idle (2 , &U _SSP1CON2 -> -> 16 `ui `uc ]
+"122
+[; ;I2C.c: 122:     if (s != I2C_OK) return s;
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1045  ]
+[e ) _s ]
+[e $UE 1043  ]
+[e :U 1045 ]
+"124
+[; ;I2C.c: 124:     return I2C_OK;
+[e ) . `E7732 0 ]
+[e $UE 1043  ]
+"125
+[; ;I2C.c: 125: }
+[e :UE 1043 ]
+}
+"131
+[; ;I2C.c: 131: I2C_Status I2C_HW_Write(uint8_t addr, const uint8_t *data, uint8_t len)
+[v _I2C_HW_Write `(E7732 ~T0 @X0 1 ef3`uc`*Cuc`uc ]
+"132
+[; ;I2C.c: 132: {
+{
+[e :U _I2C_HW_Write ]
+"131
+[; ;I2C.c: 131: I2C_Status I2C_HW_Write(uint8_t addr, const uint8_t *data, uint8_t len)
+[v _addr `uc ~T0 @X0 1 r1 ]
+[v _data `*Cuc ~T0 @X0 1 r2 ]
+[v _len `uc ~T0 @X0 1 r3 ]
+"132
+[; ;I2C.c: 132: {
+[f ]
+"133
+[; ;I2C.c: 133:     I2C_Status s;
+[v _s `E7732 ~T0 @X0 1 a ]
+"135
+[; ;I2C.c: 135:     s = I2C_HW_Start();
+[e = _s ( _I2C_HW_Start ..  ]
+"136
+[; ;I2C.c: 136:     if (s != I2C_OK) return s;
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1047  ]
+[e ) _s ]
+[e $UE 1046  ]
+[e :U 1047 ]
+"139
+[; ;I2C.c: 139:     s = I2C_HW_SendByte((uint8_t)(((unsigned)addr << 1u) & 0xFEu));
+[e = _s ( _I2C_HW_SendByte (1 -> & << -> _addr `ui -> 1 `ui -> 254 `ui `uc ]
+"140
+[; ;I2C.c: 140:     if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1048  ]
+{
+[e ( _I2C_HW_Stop ..  ]
+[e ) _s ]
+[e $UE 1046  ]
+}
+[e :U 1048 ]
+"142
+[; ;I2C.c: 142:     for (uint8_t i = 0u; i < len; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `ui `uc ]
 [e $U 1052  ]
-"243
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 243:     else
-[e :U 1051 ]
-"244
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 244:     {
+[e :U 1049 ]
 {
-"245
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 245:         i2c1ErrorState = I2C_CLIENT_ERROR_NONE;
-[e = _i2c1ErrorState . `E7748 0 ]
-"246
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 246:     }
-}
-[e :U 1052 ]
-[e :U 1050 ]
-"249
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 249:     if (0U != SSP1CON1bits.SSPOV)
-[e $ ! != -> 0 `ui -> . . _SSP1CON1bits 0 3 `ui 1053  ]
-"250
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 250:     {
+"143
+[; ;I2C.c: 143:         s = I2C_HW_SendByte(data[i]);
+[e = _s ( _I2C_HW_SendByte (1 *U + _data * -> _i `ux -> -> # *U _data `ui `ux ]
+"144
+[; ;I2C.c: 144:         if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1053  ]
 {
-"251
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 251:         SSP1CON1bits.SSPOV = 0;
-[e = . . _SSP1CON1bits 0 3 -> -> 0 `i `uc ]
-"252
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 252:     }
+[e ( _I2C_HW_Stop ..  ]
+[e ) _s ]
+[e $UE 1046  ]
 }
 [e :U 1053 ]
-"254
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 254:     SSP1CON1bits.CKP = 1;
-[e = . . _SSP1CON1bits 0 1 -> -> 1 `i `uc ]
-"255
-[; ;mcc_generated_files/i2c_client/src/mssp1.c: 255: }
-[e :UE 1048 ]
+"145
+[; ;I2C.c: 145:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1052 ]
+[e $ < -> _i `i -> _len `i 1049  ]
+[e :U 1050 ]
+}
+"147
+[; ;I2C.c: 147:     return I2C_HW_Stop();
+[e ) ( _I2C_HW_Stop ..  ]
+[e $UE 1046  ]
+"148
+[; ;I2C.c: 148: }
+[e :UE 1046 ]
+}
+"150
+[; ;I2C.c: 150: I2C_Status I2C_HW_Read(uint8_t addr, uint8_t *buf, uint8_t len)
+[v _I2C_HW_Read `(E7732 ~T0 @X0 1 ef3`uc`*uc`uc ]
+"151
+[; ;I2C.c: 151: {
+{
+[e :U _I2C_HW_Read ]
+"150
+[; ;I2C.c: 150: I2C_Status I2C_HW_Read(uint8_t addr, uint8_t *buf, uint8_t len)
+[v _addr `uc ~T0 @X0 1 r1 ]
+[v _buf `*uc ~T0 @X0 1 r2 ]
+[v _len `uc ~T0 @X0 1 r3 ]
+"151
+[; ;I2C.c: 151: {
+[f ]
+"152
+[; ;I2C.c: 152:     I2C_Status s;
+[v _s `E7732 ~T0 @X0 1 a ]
+"154
+[; ;I2C.c: 154:     if (len == 0u) return I2C_OK;
+[e $ ! == -> _len `ui -> 0 `ui 1055  ]
+[e ) . `E7732 0 ]
+[e $UE 1054  ]
+[e :U 1055 ]
+"156
+[; ;I2C.c: 156:     s = I2C_HW_Start();
+[e = _s ( _I2C_HW_Start ..  ]
+"157
+[; ;I2C.c: 157:     if (s != I2C_OK) return s;
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1056  ]
+[e ) _s ]
+[e $UE 1054  ]
+[e :U 1056 ]
+"159
+[; ;I2C.c: 159:     s = I2C_HW_SendByte((uint8_t)(((unsigned)addr << 1u) | 0x01u));
+[e = _s ( _I2C_HW_SendByte (1 -> | << -> _addr `ui -> 1 `ui -> 1 `ui `uc ]
+"160
+[; ;I2C.c: 160:     if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1057  ]
+{
+[e ( _I2C_HW_Stop ..  ]
+[e ) _s ]
+[e $UE 1054  ]
+}
+[e :U 1057 ]
+"162
+[; ;I2C.c: 162:     for (uint8_t i = 0u; i < len; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `ui `uc ]
+[e $U 1061  ]
+[e :U 1058 ]
+{
+"163
+[; ;I2C.c: 163:         _Bool ack = (i < (uint8_t)(len - 1u));
+[v _ack `a ~T0 @X0 1 a ]
+[e = _ack -> -> < -> _i `i -> -> - -> _len `ui -> 1 `ui `uc `i `i `a ]
+"164
+[; ;I2C.c: 164:         s = I2C_HW_ReadByte(&buf[i], ack);
+[e = _s ( _I2C_HW_ReadByte (2 , &U *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux _ack ]
+"165
+[; ;I2C.c: 165:         if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1062  ]
+{
+[e ( _I2C_HW_Stop ..  ]
+[e ) _s ]
+[e $UE 1054  ]
+}
+[e :U 1062 ]
+"166
+[; ;I2C.c: 166:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1061 ]
+[e $ < -> _i `i -> _len `i 1058  ]
+[e :U 1059 ]
+}
+"168
+[; ;I2C.c: 168:     return I2C_HW_Stop();
+[e ) ( _I2C_HW_Stop ..  ]
+[e $UE 1054  ]
+"169
+[; ;I2C.c: 169: }
+[e :UE 1054 ]
+}
+"171
+[; ;I2C.c: 171: I2C_Status I2C_HW_WriteRead(uint8_t addr,
+[v _I2C_HW_WriteRead `(E7732 ~T0 @X0 1 ef5`uc`*Cuc`uc`*uc`uc ]
+"174
+[; ;I2C.c: 174: {
+{
+[e :U _I2C_HW_WriteRead ]
+"171
+[; ;I2C.c: 171: I2C_Status I2C_HW_WriteRead(uint8_t addr,
+[v _addr `uc ~T0 @X0 1 r1 ]
+"172
+[; ;I2C.c: 172:                              const uint8_t *tx, uint8_t tx_len,
+[v _tx `*Cuc ~T0 @X0 1 r2 ]
+[v _tx_len `uc ~T0 @X0 1 r3 ]
+"173
+[; ;I2C.c: 173:                              uint8_t *rx, uint8_t rx_len)
+[v _rx `*uc ~T0 @X0 1 r4 ]
+[v _rx_len `uc ~T0 @X0 1 r5 ]
+"174
+[; ;I2C.c: 174: {
+[f ]
+"175
+[; ;I2C.c: 175:     I2C_Status s;
+[v _s `E7732 ~T0 @X0 1 a ]
+"177
+[; ;I2C.c: 177:     s = I2C_HW_Start();
+[e = _s ( _I2C_HW_Start ..  ]
+"178
+[; ;I2C.c: 178:     if (s != I2C_OK) return s;
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1064  ]
+[e ) _s ]
+[e $UE 1063  ]
+[e :U 1064 ]
+"180
+[; ;I2C.c: 180:     s = I2C_HW_SendByte((uint8_t)(((unsigned)addr << 1u) & 0xFEu));
+[e = _s ( _I2C_HW_SendByte (1 -> & << -> _addr `ui -> 1 `ui -> 254 `ui `uc ]
+"181
+[; ;I2C.c: 181:     if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1065  ]
+{
+[e ( _I2C_HW_Stop ..  ]
+[e ) _s ]
+[e $UE 1063  ]
+}
+[e :U 1065 ]
+"183
+[; ;I2C.c: 183:     for (uint8_t i = 0u; i < tx_len; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `ui `uc ]
+[e $U 1069  ]
+[e :U 1066 ]
+{
+"184
+[; ;I2C.c: 184:         s = I2C_HW_SendByte(tx[i]);
+[e = _s ( _I2C_HW_SendByte (1 *U + _tx * -> _i `ux -> -> # *U _tx `ui `ux ]
+"185
+[; ;I2C.c: 185:         if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1070  ]
+{
+[e ( _I2C_HW_Stop ..  ]
+[e ) _s ]
+[e $UE 1063  ]
+}
+[e :U 1070 ]
+"186
+[; ;I2C.c: 186:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1069 ]
+[e $ < -> _i `i -> _tx_len `i 1066  ]
+[e :U 1067 ]
+}
+"188
+[; ;I2C.c: 188:     s = I2C_HW_RepeatedStart();
+[e = _s ( _I2C_HW_RepeatedStart ..  ]
+"189
+[; ;I2C.c: 189:     if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1071  ]
+{
+[e ( _I2C_HW_Stop ..  ]
+[e ) _s ]
+[e $UE 1063  ]
+}
+[e :U 1071 ]
+"191
+[; ;I2C.c: 191:     s = I2C_HW_SendByte((uint8_t)(((unsigned)addr << 1u) | 0x01u));
+[e = _s ( _I2C_HW_SendByte (1 -> | << -> _addr `ui -> 1 `ui -> 1 `ui `uc ]
+"192
+[; ;I2C.c: 192:     if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1072  ]
+{
+[e ( _I2C_HW_Stop ..  ]
+[e ) _s ]
+[e $UE 1063  ]
+}
+[e :U 1072 ]
+"194
+[; ;I2C.c: 194:     for (uint8_t i = 0u; i < rx_len; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `ui `uc ]
+[e $U 1076  ]
+[e :U 1073 ]
+{
+"195
+[; ;I2C.c: 195:         _Bool ack = (i < (uint8_t)(rx_len - 1u));
+[v _ack `a ~T0 @X0 1 a ]
+[e = _ack -> -> < -> _i `i -> -> - -> _rx_len `ui -> 1 `ui `uc `i `i `a ]
+"196
+[; ;I2C.c: 196:         s = I2C_HW_ReadByte(&rx[i], ack);
+[e = _s ( _I2C_HW_ReadByte (2 , &U *U + _rx * -> _i `ux -> -> # *U _rx `ui `ux _ack ]
+"197
+[; ;I2C.c: 197:         if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+[e $ ! != -> _s `ui -> . `E7732 0 `ui 1077  ]
+{
+[e ( _I2C_HW_Stop ..  ]
+[e ) _s ]
+[e $UE 1063  ]
+}
+[e :U 1077 ]
+"198
+[; ;I2C.c: 198:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 1076 ]
+[e $ < -> _i `i -> _rx_len `i 1073  ]
+[e :U 1074 ]
+}
+"200
+[; ;I2C.c: 200:     return I2C_HW_Stop();
+[e ) ( _I2C_HW_Stop ..  ]
+[e $UE 1063  ]
+"201
+[; ;I2C.c: 201: }
+[e :UE 1063 ]
 }

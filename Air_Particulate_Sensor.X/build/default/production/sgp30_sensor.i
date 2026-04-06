@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/spi/src/mssp2.c"
+# 1 "sgp30_sensor.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,8 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/spi/src/mssp2.c" 2
-# 34 "mcc_generated_files/spi/src/mssp2.c"
+# 1 "sgp30_sensor.c" 2
+# 1 "./sgp30_sensor.h" 1
+# 20 "./sgp30_sensor.h"
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 1 3
 # 18 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -13261,297 +13262,359 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 2 3
-# 35 "mcc_generated_files/spi/src/mssp2.c" 2
-# 1 "mcc_generated_files/spi/src/../mssp2.h" 1
-# 38 "mcc_generated_files/spi/src/../mssp2.h"
-# 1 "mcc_generated_files/spi/src/../spi_interface.h" 1
-# 38 "mcc_generated_files/spi/src/../spi_interface.h"
+# 21 "./sgp30_sensor.h" 2
+
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stdbool.h" 1 3
-# 39 "mcc_generated_files/spi/src/../spi_interface.h" 2
-# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 1 3
-# 19 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 3
-# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 138 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 3
-typedef int ptrdiff_t;
-# 20 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 2 3
-# 40 "mcc_generated_files/spi/src/../spi_interface.h" 2
-
-
-
-
-
-
-struct SPI_INTERFACE
-{
-    void (*Initialize)(void);
-    void (*Deinitialize)(void);
-    _Bool (*Open)(uint8_t spiConfigIndex);
-    void (*Close)(void);
-    void (*BufferExchange)(void *bufferData, size_t bufferSize);
-    void (*BufferRead)(void *bufferData, size_t bufferSize);
-    void (*BufferWrite)(void *bufferData, size_t bufferSize);
-    uint8_t (*ByteExchange)(uint8_t byteData);
-    uint8_t (*ByteRead)(void);
-    void (*ByteWrite)(uint8_t byteData);
-    _Bool (*IsRxReady)(void);
-    _Bool (*IsTxReady)(void);
-    void (*RxCompleteCallbackRegister)(void (*callbackHandler)(void));
-    void (*TxCompleteCallbackRegister)(void (*callbackHandler)(void));
-};
-# 39 "mcc_generated_files/spi/src/../mssp2.h" 2
-
-
-
-
-
-
-extern const struct SPI_INTERFACE SPI2_Client;
-# 115 "mcc_generated_files/spi/src/../mssp2.h"
-typedef enum {
-    CLIENT_CONFIG,
-    MSSP2_DEFAULT
-} spi2_configuration_name_t;
-
-
-
-
-
-
-
-void SPI2_Initialize(void);
-
-
-
-
-
-
-
-void SPI2_Deinitialize(void);
-# 144 "mcc_generated_files/spi/src/../mssp2.h"
-_Bool SPI2_Open(uint8_t spiConfigIndex);
-
-
-
-
-
-
-
-void SPI2_Close(void);
-# 161 "mcc_generated_files/spi/src/../mssp2.h"
-void SPI2_BufferExchange(void *bufferData, size_t bufferSize);
-# 170 "mcc_generated_files/spi/src/../mssp2.h"
-void SPI2_BufferWrite(void *bufferData, size_t bufferSize);
-# 179 "mcc_generated_files/spi/src/../mssp2.h"
-void SPI2_BufferRead(void *bufferData, size_t bufferSize);
-
-
-
-
-
-
-
-uint8_t SPI2_ByteExchange(uint8_t byteData);
-# 197 "mcc_generated_files/spi/src/../mssp2.h"
-void SPI2_ByteWrite(uint8_t byteData);
-
-
-
-
-
-
-
-uint8_t SPI2_ByteRead(void);
-# 214 "mcc_generated_files/spi/src/../mssp2.h"
-_Bool SPI2_IsRxReady(void);
-# 223 "mcc_generated_files/spi/src/../mssp2.h"
-_Bool SPI2_IsTxReady(void);
-# 36 "mcc_generated_files/spi/src/mssp2.c" 2
-# 1 "mcc_generated_files/spi/src/../spi_polling_types.h" 1
-# 43 "mcc_generated_files/spi/src/../spi_polling_types.h"
+# 23 "./sgp30_sensor.h" 2
+# 54 "./sgp30_sensor.h"
 typedef struct {
-    uint8_t stat;
-    uint8_t con1;
-    uint8_t con3;
-    uint8_t baud;
-    uint8_t clock;
-} spi_configuration_t;
-# 37 "mcc_generated_files/spi/src/mssp2.c" 2
+    uint16_t co2eq;
+    uint16_t tvoc;
+    _Bool valid;
+} sgp30_data_t;
 
-const struct SPI_INTERFACE SPI2_Client = {
-    .Initialize = SPI2_Initialize,
-    .Deinitialize = SPI2_Deinitialize,
-    .Open = SPI2_Open,
-    .Close = SPI2_Close,
-    .BufferExchange = SPI2_BufferExchange,
-    .BufferWrite = SPI2_BufferWrite,
-    .BufferRead = SPI2_BufferRead,
-    .ByteExchange = SPI2_ByteExchange,
-    .ByteWrite = SPI2_ByteWrite,
-    .ByteRead = SPI2_ByteRead,
-    .IsRxReady = SPI2_IsRxReady,
-    .IsTxReady = SPI2_IsTxReady,
-    .RxCompleteCallbackRegister = ((void*)0),
-    .TxCompleteCallbackRegister = ((void*)0)
-};
 
-static const spi_configuration_t spi2_configuration[] = {
-    { 0x0, 0x4, 0x10, 0x01 },
-    { 0x64, 0x4, 0x10, 0x0 }
-};
+typedef struct {
+    uint16_t h2_signal;
+    uint16_t ethanol_signal;
+    _Bool valid;
+} sgp30_raw_t;
+# 77 "./sgp30_sensor.h"
+void sgp30_init(void);
 
-void SPI2_Initialize(void)
+
+
+
+
+
+_Bool sgp30_measure(sgp30_data_t *result);
+
+
+
+
+
+_Bool sgp30_measure_raw(sgp30_raw_t *result);
+
+
+
+
+
+
+
+_Bool sgp30_get_baseline(uint16_t *co2eq_base, uint16_t *tvoc_base);
+# 107 "./sgp30_sensor.h"
+_Bool sgp30_set_baseline(uint16_t co2eq_base, uint16_t tvoc_base);
+# 116 "./sgp30_sensor.h"
+_Bool sgp30_set_humidity(uint16_t humidity_word);
+# 131 "./sgp30_sensor.h"
+_Bool sgp30_soft_reset(void);
+
+
+
+
+
+
+_Bool sgp30_self_test(void);
+
+
+
+
+
+
+_Bool sgp30_get_serial_id(uint16_t serial_id[3]);
+
+
+
+
+
+_Bool sgp30_get_feature_set(uint16_t *feature_set);
+# 2 "sgp30_sensor.c" 2
+# 1 "./I2C.h" 1
+# 84 "./I2C.h"
+typedef enum {
+    I2C_OK = 0,
+    I2C_NACK = 1,
+    I2C_BUS_COLL = 2,
+    I2C_TIMEOUT = 3
+} I2C_Status;
+# 114 "./I2C.h"
+void I2C_HW_Init(uint8_t brg);
+# 126 "./I2C.h"
+I2C_Status I2C_HW_Write(uint8_t addr, const uint8_t *data, uint8_t len);
+# 138 "./I2C.h"
+I2C_Status I2C_HW_Read(uint8_t addr, uint8_t *buf, uint8_t len);
+# 155 "./I2C.h"
+I2C_Status I2C_HW_WriteRead(uint8_t addr,
+                             const uint8_t *tx, uint8_t tx_len,
+                             uint8_t *rx, uint8_t rx_len);
+
+
+
+
+
+I2C_Status I2C_HW_Start(void);
+I2C_Status I2C_HW_RepeatedStart(void);
+I2C_Status I2C_HW_Stop(void);
+I2C_Status I2C_HW_SendByte(uint8_t byte);
+I2C_Status I2C_HW_ReadByte(uint8_t *byte, _Bool send_ack);
+# 3 "sgp30_sensor.c" 2
+# 1 "./mcc_generated_files/system/system.h" 1
+# 42 "./mcc_generated_files/system/system.h"
+# 1 "./mcc_generated_files/system/config_bits.h" 1
+# 39 "./mcc_generated_files/system/config_bits.h"
+# 1 "./mcc_generated_files/system/../system/clock.h" 1
+# 56 "./mcc_generated_files/system/../system/clock.h"
+void CLOCK_Initialize(void);
+# 40 "./mcc_generated_files/system/config_bits.h" 2
+# 43 "./mcc_generated_files/system/system.h" 2
+# 1 "./mcc_generated_files/system/../system/pins.h" 1
+# 146 "./mcc_generated_files/system/../system/pins.h"
+void PIN_MANAGER_Initialize (void);
+
+
+
+
+
+
+
+void PIN_MANAGER_IOC(void);
+# 44 "./mcc_generated_files/system/system.h" 2
+# 1 "./mcc_generated_files/system/../system/interrupt.h" 1
+# 85 "./mcc_generated_files/system/../system/interrupt.h"
+void INTERRUPT_Initialize (void);
+# 125 "./mcc_generated_files/system/../system/interrupt.h"
+void INT_ISR(void);
+# 134 "./mcc_generated_files/system/../system/interrupt.h"
+void INT_CallBack(void);
+# 143 "./mcc_generated_files/system/../system/interrupt.h"
+void INT_SetInterruptHandler(void (* InterruptHandler)(void));
+# 152 "./mcc_generated_files/system/../system/interrupt.h"
+extern void (*INT_InterruptHandler)(void);
+# 161 "./mcc_generated_files/system/../system/interrupt.h"
+void INT_DefaultInterruptHandler(void);
+# 45 "./mcc_generated_files/system/system.h" 2
+# 54 "./mcc_generated_files/system/system.h"
+void SYSTEM_Initialize(void);
+# 4 "sgp30_sensor.c" 2
+
+
+
+
+static uint8_t sgp30_crc(uint8_t byte1, uint8_t byte2)
 {
+    uint8_t crc = 0xFFu;
+    uint8_t data[2] = { byte1, byte2 };
 
-    PIE3bits.SSP2IE = 0U;
-    PIR3bits.SSP2IF = 0U;
-
-    SSP2STAT = (uint8_t)0x00;
-
-
-
-
-    SSP2CON1 = (uint8_t)0x20;
-    SSP2CON3 = (uint8_t)0x00;
-    SSP2ADD = (uint8_t)0x00;
-}
-
-void SPI2_Deinitialize(void)
-{
-
-    SSP2STAT = (uint8_t)0x00;
-    SSP2CON1 = (uint8_t)0x00;
-    SSP2CON3 = (uint8_t)0x00;
-    SSP2ADD = (uint8_t)0x00;
-}
-
-_Bool SPI2_Open(uint8_t spiConfigIndex)
-{
-    _Bool returnValue = 0;
-    if (SSP2CON1bits.SSPEN == 0U)
-    {
-        SSP2STAT = spi2_configuration[spiConfigIndex].stat;
-        SSP2CON1 = spi2_configuration[spiConfigIndex].con1;
-        SSP2CON3 = spi2_configuration[spiConfigIndex].con3;
-        SSP2ADD = spi2_configuration[spiConfigIndex].baud;
-
-        SSP2CON1bits.SSPEN = 1U;
-
-        returnValue = 1;
-    }
-    else
-    {
-        returnValue = 0;
-    }
-    return returnValue;
-}
-
-void SPI2_Close(void)
-{
-    SSP2CON1bits.SSPEN = 0U;
-}
-
-void SPI2_BufferExchange(void *bufferData, size_t bufferSize)
-{
-    uint8_t *bufferInput = bufferData;
-    size_t bufferInputSize = bufferSize;
-    while (0U != bufferInputSize)
-    {
-        SSP2BUF = *bufferInput;
-        while (PIR3bits.SSP2IF == 0U)
-        {
-
+    for (uint8_t i = 0u; i < 2u; i++) {
+        crc ^= data[i];
+        for (uint8_t bit = 0u; bit < 8u; bit++) {
+            if (crc & 0x80u)
+                crc = (uint8_t)(((uint8_t)(crc << 1u)) ^ 0x31u);
+            else
+                crc = (uint8_t)(crc << 1u);
         }
-        PIR3bits.SSP2IF = 0U;
-        *bufferInput = SSP2BUF;
-        bufferInput++;
-        bufferInputSize--;
     }
+    return crc;
+}
+# 32 "sgp30_sensor.c"
+static _Bool sgp30_send_cmd(uint16_t cmd)
+{
+    uint8_t buf[2];
+    buf[0] = (uint8_t)(cmd >> 8u);
+    buf[1] = (uint8_t)(cmd & 0xFFu);
+
+    I2C_Status s = I2C_HW_Write(0x58u, buf, 2u);
+    return (s == I2C_OK);
+}
+# 50 "sgp30_sensor.c"
+static _Bool sgp30_read_words(uint16_t *result_buf, uint8_t n_words)
+{
+
+    uint8_t raw[9];
+    uint8_t total = (uint8_t)(n_words * 3u);
+
+    I2C_Status s = I2C_HW_Read(0x58u, raw, total);
+    if (s != I2C_OK)
+        return 0;
+
+    for (uint8_t w = 0u; w < n_words; w++) {
+        uint8_t idx = (uint8_t)(w * 3u);
+        uint8_t msb = raw[idx];
+        uint8_t lsb = raw[idx + 1u];
+        uint8_t crc = raw[idx + 2u];
+
+        if (crc != sgp30_crc(msb, lsb))
+            return 0;
+
+        result_buf[w] = ((uint16_t)msb << 8u) | (uint16_t)lsb;
+    }
+    return 1;
+}
+# 82 "sgp30_sensor.c"
+static _Bool sgp30_send_cmd_with_data(uint16_t cmd,
+                                     const uint8_t wire_words[][2],
+                                     uint8_t n_words)
+{
+
+    uint8_t buf[8];
+    uint8_t pos = 0u;
+
+    buf[pos++] = (uint8_t)(cmd >> 8u);
+    buf[pos++] = (uint8_t)(cmd & 0xFFu);
+
+    for (uint8_t w = 0u; w < n_words; w++) {
+        uint8_t msb = wire_words[w][0];
+        uint8_t lsb = wire_words[w][1];
+        buf[pos++] = msb;
+        buf[pos++] = lsb;
+        buf[pos++] = sgp30_crc(msb, lsb);
+    }
+
+    I2C_Status s = I2C_HW_Write(0x58u, buf, pos);
+    return (s == I2C_OK);
 }
 
-void SPI2_BufferWrite(void *bufferData, size_t bufferSize)
-{
-    uint8_t *bufferInput = bufferData;
-    size_t bufferInputSize = bufferSize;
-    while (0U != bufferInputSize)
-    {
-        SSP2BUF = *bufferInput;
-        while (PIR3bits.SSP2IF == 0U)
-        {
 
-        }
-        PIR3bits.SSP2IF = 0U;
-        bufferInput++;
-        bufferInputSize--;
-    }
+
+
+
+void sgp30_init(void)
+{
+    _delay((unsigned long)((10u)*(32000000U/4000.0)));
+    sgp30_send_cmd(0x2003u);
+    _delay((unsigned long)((10u)*(32000000U/4000.0)));
+
+
 }
 
-void SPI2_BufferRead(void *bufferData, size_t bufferSize)
-{
-    uint8_t *bufferInput = bufferData;
-    size_t bufferInputSize = bufferSize;
-    while (0U != bufferInputSize)
-    {
-        SSP2BUF = (uint8_t)0x00;
-        while (PIR3bits.SSP2IF == 0U)
-        {
 
-        }
-        PIR3bits.SSP2IF = 0U;
-        *bufferInput = SSP2BUF;
-        bufferInput++;
-        bufferInputSize--;
-    }
+_Bool sgp30_measure(sgp30_data_t *result)
+{
+    result->valid = 0;
+
+    if (!sgp30_send_cmd(0x2008u))
+        return 0;
+
+    _delay((unsigned long)((12u)*(32000000U/4000.0)));
+
+    uint16_t words[2];
+    if (!sgp30_read_words(words, 2u))
+        return 0;
+
+    result->co2eq = words[0];
+    result->tvoc = words[1];
+    result->valid = 1;
+    return 1;
 }
 
-uint8_t SPI2_ByteExchange(uint8_t byteData)
+_Bool sgp30_measure_raw(sgp30_raw_t *result)
 {
-    SSP2BUF = byteData;
-    while (PIR3bits.SSP2IF == 0U)
-    {
+    result->valid = 0;
 
-    }
-    PIR3bits.SSP2IF = 0U;
-    return SSP2BUF;
+    if (!sgp30_send_cmd(0x2050u))
+        return 0;
+
+    _delay((unsigned long)((25u)*(32000000U/4000.0)));
+
+    uint16_t words[2];
+    if (!sgp30_read_words(words, 2u))
+        return 0;
+
+    result->h2_signal = words[0];
+    result->ethanol_signal = words[1];
+    result->valid = 1;
+    return 1;
 }
 
-void SPI2_ByteWrite(uint8_t byteData)
+_Bool sgp30_get_baseline(uint16_t *co2eq_base, uint16_t *tvoc_base)
 {
-    SSP2BUF = byteData;
+    if (!sgp30_send_cmd(0x2015u))
+        return 0;
+
+    _delay((unsigned long)((10u)*(32000000U/4000.0)));
+
+    uint16_t words[2];
+    if (!sgp30_read_words(words, 2u))
+        return 0;
+
+    *co2eq_base = words[0];
+    *tvoc_base = words[1];
+    return 1;
 }
 
-uint8_t SPI2_ByteRead(void)
+_Bool sgp30_set_baseline(uint16_t co2eq_base, uint16_t tvoc_base)
 {
-    if (1U == PIR3bits.SSP2IF)
-    {
-        PIR3bits.SSP2IF = 0U;
-    }
-    return SSP2BUF;
+
+    uint8_t words[2][2];
+    words[0][0] = (uint8_t)(tvoc_base >> 8u);
+    words[0][1] = (uint8_t)(tvoc_base & 0xFFu);
+    words[1][0] = (uint8_t)(co2eq_base >> 8u);
+    words[1][1] = (uint8_t)(co2eq_base & 0xFFu);
+
+    if (!sgp30_send_cmd_with_data(0x201Eu, words, 2u))
+        return 0;
+
+    _delay((unsigned long)((10u)*(32000000U/4000.0)));
+    return 1;
 }
 
-_Bool SPI2_IsRxReady(void)
+_Bool sgp30_set_humidity(uint16_t humidity_word)
 {
-    _Bool returnValue = 0;
-    if (SSP2CON1bits.SSPEN == 1U)
-    {
-        returnValue = ((PIR3bits.SSP2IF != 0U) ? 1: 0);
-    }
-    else
-    {
-        returnValue = 0;
-    }
-    return returnValue;
+    uint8_t words[1][2];
+    words[0][0] = (uint8_t)(humidity_word >> 8u);
+    words[0][1] = (uint8_t)(humidity_word & 0xFFu);
+
+    if (!sgp30_send_cmd_with_data(0x2061u, words, 1u))
+        return 0;
+
+    _delay((unsigned long)((10u)*(32000000U/4000.0)));
+    return 1;
 }
 
-_Bool SPI2_IsTxReady(void)
+
+
+
+
+_Bool sgp30_soft_reset(void)
 {
-    _Bool returnValue = 0;
-    if (SSP2CON1bits.SSPEN == 1U)
-    {
-        returnValue = ((PIR3bits.SSP2IF != 0U) ? 0: 1);
-    }
-    else
-    {
-        returnValue = 0;
-    }
-    return returnValue;
+    uint8_t reset_byte = 0x06u;
+    I2C_Status s = I2C_HW_Write(0x00u, &reset_byte, 1u);
+    if (s != I2C_OK)
+        return 0;
+
+    _delay((unsigned long)((1u)*(32000000U/4000.0)));
+    return 1;
+}
+
+_Bool sgp30_self_test(void){
+    if (!sgp30_send_cmd(0x2032u))
+        return 0;
+
+    _delay((unsigned long)((220u)*(32000000U/4000.0)));
+
+    uint16_t result[1];
+    if (!sgp30_read_words(result, 1u))
+        return 0;
+
+    return (result[0] == 0xD400u);
+}
+
+_Bool sgp30_get_serial_id(uint16_t serial_id[3])
+{
+    if (!sgp30_send_cmd(0x3682u))
+        return 0;
+
+    _delay((unsigned long)((500u)*(32000000U/4000000.0)));
+
+    return sgp30_read_words(serial_id, 3u);
+}
+
+_Bool sgp30_get_feature_set(uint16_t *feature_set)
+{
+    if (!sgp30_send_cmd(0x202Fu))
+        return 0;
+
+    _delay((unsigned long)((2u)*(32000000U/4000.0)));
+
+    return sgp30_read_words(feature_set, 1u);
 }

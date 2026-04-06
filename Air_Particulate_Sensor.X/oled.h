@@ -18,6 +18,7 @@ extern "C" {
 
 void oled_init(void);
 void oled_clear(void);
+void oled_send_raw(uint8_t data);
 void oled_set_cursor(uint8_t line, uint8_t col);
 void oled_print(const char *str);
 void oled_display1(const char *str);

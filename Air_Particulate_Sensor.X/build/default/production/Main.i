@@ -13281,7 +13281,7 @@ void CLOCK_Initialize(void);
 # 40 "./mcc_generated_files/system/config_bits.h" 2
 # 43 "./mcc_generated_files/system/system.h" 2
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 210 "./mcc_generated_files/system/../system/pins.h"
+# 146 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13306,261 +13306,7 @@ extern void (*INT_InterruptHandler)(void);
 # 161 "./mcc_generated_files/system/../system/interrupt.h"
 void INT_DefaultInterruptHandler(void);
 # 45 "./mcc_generated_files/system/system.h" 2
-
-# 1 "./mcc_generated_files/system/../i2c_client/mssp1.h" 1
-# 42 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-# 1 "./mcc_generated_files/system/../i2c_client/i2c_client_interface.h" 1
-# 39 "./mcc_generated_files/system/../i2c_client/i2c_client_interface.h"
-# 1 "./mcc_generated_files/system/../i2c_client/i2c_client_types.h" 1
-# 46 "./mcc_generated_files/system/../i2c_client/i2c_client_types.h"
-typedef enum
-{
-    I2C_CLIENT_TRANSFER_DIR_WRITE = 0,
-    I2C_CLIENT_TRANSFER_DIR_READ = 1,
-} i2c_client_transfer_dir_t;
-
-
-
-
-
-
-typedef enum
-{
-    I2C_CLIENT_ACK_STATUS_RECEIVED_ACK = 0,
-    I2C_CLIENT_ACK_STATUS_RECEIVED_NACK = 1,
-} i2c_client_ack_status_t;
-
-
-
-
-
-
-typedef enum
-{
-    I2C_CLIENT_TRANSFER_EVENT_NONE = 0,
-    I2C_CLIENT_TRANSFER_EVENT_ADDR_MATCH,
-    I2C_CLIENT_TRANSFER_EVENT_RX_READY ,
-    I2C_CLIENT_TRANSFER_EVENT_TX_READY,
-    I2C_CLIENT_TRANSFER_EVENT_STOP_BIT_RECEIVED,
-    I2C_CLIENT_TRANSFER_EVENT_ERROR,
-} i2c_client_transfer_event_t;
-
-
-
-
-
-
-typedef enum
-{
-    I2C_CLIENT_ERROR_NONE = 0,
-    I2C_CLIENT_ERROR_BUS_COLLISION,
-    I2C_CLIENT_ERROR_WRITE_COLLISION,
-    I2C_CLIENT_ERROR_RECEIVE_OVERFLOW,
-    I2C_CLIENT_ERROR_TRANSMIT_UNDERFLOW,
-    I2C_CLIENT_ERROR_READ_UNDERFLOW,
-} i2c_client_error_t;
-# 40 "./mcc_generated_files/system/../i2c_client/i2c_client_interface.h" 2
-
-
-
-
-
-
-typedef struct
-{
-
-
-
-    void (*Initialize)(void);
-
-
-
-
-    void (*Deinitialize)(void);
-
-
-
-
-    void (*WriteByte)(uint8_t data);
-
-
-
-
-    uint8_t(*ReadByte)(void);
-
-
-
-
-    i2c_client_error_t (*ErrorGet)(void);
-
-
-
-
-    i2c_client_transfer_dir_t (*TransferDirGet)(void);
-
-
-
-
-    i2c_client_ack_status_t (*LastByteAckStatusGet)(void);
-
-
-
-
-    void (*CallbackRegister)(_Bool (*handler)(i2c_client_transfer_event_t clientEvent));
-
-
-
-
-    void (*Tasks)(void);
-}i2c_client_interface_t;
-# 43 "./mcc_generated_files/system/../i2c_client/mssp1.h" 2
-# 62 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-extern const i2c_client_interface_t I2C1_Client;
-# 71 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-void I2C1_Initialize(void);
-
-
-
-
-
-
-
-void I2C1_Deinitialize(void);
-# 89 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-void I2C1_WriteByte(uint8_t data);
-# 99 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-uint8_t I2C1_ReadByte(void);
-# 109 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-uint16_t I2C1_ReadAddr(void);
-# 122 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-i2c_client_error_t I2C1_ErrorGet(void);
-# 133 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-i2c_client_transfer_dir_t I2C1_TransferDirGet(void);
-# 144 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-i2c_client_ack_status_t I2C1_LastByteAckStatusGet(void);
-
-
-
-
-
-
-
-void I2C1_CallbackRegister(_Bool (*callback)(i2c_client_transfer_event_t clientEvent));
-# 162 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-void I2C1_ISR(void);
-# 172 "./mcc_generated_files/system/../i2c_client/mssp1.h"
-void I2C1_ERROR_ISR(void);
-# 47 "./mcc_generated_files/system/system.h" 2
-# 1 "./mcc_generated_files/system/../spi/mssp2.h" 1
-# 38 "./mcc_generated_files/system/../spi/mssp2.h"
-# 1 "./mcc_generated_files/system/../spi/spi_interface.h" 1
-# 39 "./mcc_generated_files/system/../spi/spi_interface.h"
-# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 1 3
-# 19 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 3
-# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 138 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 3
-typedef int ptrdiff_t;
-# 20 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 2 3
-# 40 "./mcc_generated_files/system/../spi/spi_interface.h" 2
-
-
-
-
-
-
-struct SPI_INTERFACE
-{
-    void (*Initialize)(void);
-    void (*Deinitialize)(void);
-    _Bool (*Open)(uint8_t spiConfigIndex);
-    void (*Close)(void);
-    void (*BufferExchange)(void *bufferData, size_t bufferSize);
-    void (*BufferRead)(void *bufferData, size_t bufferSize);
-    void (*BufferWrite)(void *bufferData, size_t bufferSize);
-    uint8_t (*ByteExchange)(uint8_t byteData);
-    uint8_t (*ByteRead)(void);
-    void (*ByteWrite)(uint8_t byteData);
-    _Bool (*IsRxReady)(void);
-    _Bool (*IsTxReady)(void);
-    void (*RxCompleteCallbackRegister)(void (*callbackHandler)(void));
-    void (*TxCompleteCallbackRegister)(void (*callbackHandler)(void));
-};
-# 39 "./mcc_generated_files/system/../spi/mssp2.h" 2
-
-
-
-
-
-
-extern const struct SPI_INTERFACE SPI2_Client;
-# 115 "./mcc_generated_files/system/../spi/mssp2.h"
-typedef enum {
-    CLIENT_CONFIG,
-    MSSP2_DEFAULT
-} spi2_configuration_name_t;
-
-
-
-
-
-
-
-void SPI2_Initialize(void);
-
-
-
-
-
-
-
-void SPI2_Deinitialize(void);
-# 144 "./mcc_generated_files/system/../spi/mssp2.h"
-_Bool SPI2_Open(uint8_t spiConfigIndex);
-
-
-
-
-
-
-
-void SPI2_Close(void);
-# 161 "./mcc_generated_files/system/../spi/mssp2.h"
-void SPI2_BufferExchange(void *bufferData, size_t bufferSize);
-# 170 "./mcc_generated_files/system/../spi/mssp2.h"
-void SPI2_BufferWrite(void *bufferData, size_t bufferSize);
-# 179 "./mcc_generated_files/system/../spi/mssp2.h"
-void SPI2_BufferRead(void *bufferData, size_t bufferSize);
-
-
-
-
-
-
-
-uint8_t SPI2_ByteExchange(uint8_t byteData);
-# 197 "./mcc_generated_files/system/../spi/mssp2.h"
-void SPI2_ByteWrite(uint8_t byteData);
-
-
-
-
-
-
-
-uint8_t SPI2_ByteRead(void);
-# 214 "./mcc_generated_files/system/../spi/mssp2.h"
-_Bool SPI2_IsRxReady(void);
-# 223 "./mcc_generated_files/system/../spi/mssp2.h"
-_Bool SPI2_IsTxReady(void);
-# 48 "./mcc_generated_files/system/system.h" 2
-
-
-
-
-
-
-
-
+# 54 "./mcc_generated_files/system/system.h"
 void SYSTEM_Initialize(void);
 # 9 "Main.c" 2
 # 1 "./oled.h" 1
@@ -13626,39 +13372,316 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 void oled_init(void);
 void oled_clear(void);
+void oled_send_raw(uint8_t data);
 void oled_set_cursor(uint8_t line, uint8_t col);
 void oled_print(const char *str);
 void oled_display1(const char *str);
 void oled_display2(const char *str);
 # 10 "Main.c" 2
+# 1 "./sgp30_sensor.h" 1
+# 54 "./sgp30_sensor.h"
+typedef struct {
+    uint16_t co2eq;
+    uint16_t tvoc;
+    _Bool valid;
+} sgp30_data_t;
 
-void init_heartbeat_led(){
 
+typedef struct {
+    uint16_t h2_signal;
+    uint16_t ethanol_signal;
+    _Bool valid;
+} sgp30_raw_t;
+# 77 "./sgp30_sensor.h"
+void sgp30_init(void);
+
+
+
+
+
+
+_Bool sgp30_measure(sgp30_data_t *result);
+
+
+
+
+
+_Bool sgp30_measure_raw(sgp30_raw_t *result);
+
+
+
+
+
+
+
+_Bool sgp30_get_baseline(uint16_t *co2eq_base, uint16_t *tvoc_base);
+# 107 "./sgp30_sensor.h"
+_Bool sgp30_set_baseline(uint16_t co2eq_base, uint16_t tvoc_base);
+# 116 "./sgp30_sensor.h"
+_Bool sgp30_set_humidity(uint16_t humidity_word);
+# 131 "./sgp30_sensor.h"
+_Bool sgp30_soft_reset(void);
+
+
+
+
+
+
+_Bool sgp30_self_test(void);
+
+
+
+
+
+
+_Bool sgp30_get_serial_id(uint16_t serial_id[3]);
+
+
+
+
+
+_Bool sgp30_get_feature_set(uint16_t *feature_set);
+# 11 "Main.c" 2
+# 1 "./I2C.h" 1
+# 84 "./I2C.h"
+typedef enum {
+    I2C_OK = 0,
+    I2C_NACK = 1,
+    I2C_BUS_COLL = 2,
+    I2C_TIMEOUT = 3
+} I2C_Status;
+# 114 "./I2C.h"
+void I2C_HW_Init(uint8_t brg);
+# 126 "./I2C.h"
+I2C_Status I2C_HW_Write(uint8_t addr, const uint8_t *data, uint8_t len);
+# 138 "./I2C.h"
+I2C_Status I2C_HW_Read(uint8_t addr, uint8_t *buf, uint8_t len);
+# 155 "./I2C.h"
+I2C_Status I2C_HW_WriteRead(uint8_t addr,
+                             const uint8_t *tx, uint8_t tx_len,
+                             uint8_t *rx, uint8_t rx_len);
+
+
+
+
+
+I2C_Status I2C_HW_Start(void);
+I2C_Status I2C_HW_RepeatedStart(void);
+I2C_Status I2C_HW_Stop(void);
+I2C_Status I2C_HW_SendByte(uint8_t byte);
+I2C_Status I2C_HW_ReadByte(uint8_t *byte, _Bool send_ack);
+# 12 "Main.c" 2
+# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stdio.h" 1 3
+# 24 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stdio.h" 3
+# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 12 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 3
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 143 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 3
+typedef short ssize_t;
+# 255 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long long off_t;
+# 409 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stdio.h" 2 3
+# 52 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+
+
+
+
+
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+
+
+
+
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 13 "Main.c" 2
+
+void init_heartbeat_led(void){
     TRISDbits.TRISD0 = 0;
-
-
-
     ANSELDbits.ANSD0 = 0;
     LATDbits.LATD0 = 1;
 }
-
-
 
 int main(void){
     SYSTEM_Initialize();
 
     init_heartbeat_led();
 
+
+
+
+
+    I2C_HW_Init(((uint8_t)(((32000000UL) / (4UL * (400000UL))) - 1UL)));
+
+
+    _delay((unsigned long)((500)*(32000000U/4000.0)));
     oled_init();
 
 
+    sgp30_init();
+
+    _delay((unsigned long)((2000)*(32000000U/4000.0)));
+    if (!sgp30_self_test()) {
+        oled_display1("SGP30 SELF-TEST");
+        oled_display2("FAILED!");
+
+        while(1) {
+            LATDbits.LATD0 ^= 1;
+            _delay((unsigned long)((100)*(32000000U/4000.0)));
+        }
+    }
+
+
+    oled_display1("SGP30 OK");
+    oled_display2("Warming up...");
+
+
+    sgp30_data_t air;
+    char line1[17];
+    char line2[17];
+
     while(1){
-        _delay((unsigned long)((300)*(32000000U/4000.0)));
-
         LATDbits.LATD0 = 1;
-        _delay((unsigned long)((300)*(32000000U/4000.0)));
 
+        if (sgp30_measure(&air) && air.valid) {
+            sprintf(line1, "CO2: %u ppm", air.co2eq);
+            sprintf(line2, "TVOC: %u ppb", air.tvoc);
+            oled_display1(line1);
+            oled_display2(line2);
+        }
+
+        _delay((unsigned long)((500)*(32000000U/4000.0)));
         LATDbits.LATD0 = 0;
+        _delay((unsigned long)((500)*(32000000U/4000.0)));
     }
     return 1;
 }

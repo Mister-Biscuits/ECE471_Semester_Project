@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/i2c_client/src/mssp1.c"
+# 1 "I2C.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,8 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/i2c_client/src/mssp1.c" 2
-# 36 "mcc_generated_files/i2c_client/src/mssp1.c"
+# 1 "I2C.c" 2
+
+
+
+
+
+
+# 1 "./I2C.h" 1
+# 22 "./I2C.h"
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 1 3
 # 18 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -13261,369 +13268,220 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "E:\\MPXLab\\XC8 Compiler\\pic\\include/xc.h" 2 3
-# 37 "mcc_generated_files/i2c_client/src/mssp1.c" 2
-# 1 "mcc_generated_files/i2c_client/src/../mssp1.h" 1
-# 40 "mcc_generated_files/i2c_client/src/../mssp1.h"
+# 23 "./I2C.h" 2
+
 # 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stdbool.h" 1 3
-# 41 "mcc_generated_files/i2c_client/src/../mssp1.h" 2
+# 25 "./I2C.h" 2
+# 84 "./I2C.h"
+typedef enum {
+    I2C_OK = 0,
+    I2C_NACK = 1,
+    I2C_BUS_COLL = 2,
+    I2C_TIMEOUT = 3
+} I2C_Status;
+# 114 "./I2C.h"
+void I2C_HW_Init(uint8_t brg);
+# 126 "./I2C.h"
+I2C_Status I2C_HW_Write(uint8_t addr, const uint8_t *data, uint8_t len);
+# 138 "./I2C.h"
+I2C_Status I2C_HW_Read(uint8_t addr, uint8_t *buf, uint8_t len);
+# 155 "./I2C.h"
+I2C_Status I2C_HW_WriteRead(uint8_t addr,
+                             const uint8_t *tx, uint8_t tx_len,
+                             uint8_t *rx, uint8_t rx_len);
 
-# 1 "mcc_generated_files/i2c_client/src/../i2c_client_interface.h" 1
-# 39 "mcc_generated_files/i2c_client/src/../i2c_client_interface.h"
-# 1 "mcc_generated_files/i2c_client/src/../i2c_client_types.h" 1
-# 46 "mcc_generated_files/i2c_client/src/../i2c_client_types.h"
-typedef enum
+
+
+
+
+I2C_Status I2C_HW_Start(void);
+I2C_Status I2C_HW_RepeatedStart(void);
+I2C_Status I2C_HW_Stop(void);
+I2C_Status I2C_HW_SendByte(uint8_t byte);
+I2C_Status I2C_HW_ReadByte(uint8_t *byte, _Bool send_ack);
+# 8 "I2C.c" 2
+# 18 "I2C.c"
+static I2C_Status wait_for_if(void)
 {
-    I2C_CLIENT_TRANSFER_DIR_WRITE = 0,
-    I2C_CLIENT_TRANSFER_DIR_READ = 1,
-} i2c_client_transfer_dir_t;
-
-
-
-
-
-
-typedef enum
-{
-    I2C_CLIENT_ACK_STATUS_RECEIVED_ACK = 0,
-    I2C_CLIENT_ACK_STATUS_RECEIVED_NACK = 1,
-} i2c_client_ack_status_t;
-
-
-
-
-
-
-typedef enum
-{
-    I2C_CLIENT_TRANSFER_EVENT_NONE = 0,
-    I2C_CLIENT_TRANSFER_EVENT_ADDR_MATCH,
-    I2C_CLIENT_TRANSFER_EVENT_RX_READY ,
-    I2C_CLIENT_TRANSFER_EVENT_TX_READY,
-    I2C_CLIENT_TRANSFER_EVENT_STOP_BIT_RECEIVED,
-    I2C_CLIENT_TRANSFER_EVENT_ERROR,
-} i2c_client_transfer_event_t;
-
-
-
-
-
-
-typedef enum
-{
-    I2C_CLIENT_ERROR_NONE = 0,
-    I2C_CLIENT_ERROR_BUS_COLLISION,
-    I2C_CLIENT_ERROR_WRITE_COLLISION,
-    I2C_CLIENT_ERROR_RECEIVE_OVERFLOW,
-    I2C_CLIENT_ERROR_TRANSMIT_UNDERFLOW,
-    I2C_CLIENT_ERROR_READ_UNDERFLOW,
-} i2c_client_error_t;
-# 40 "mcc_generated_files/i2c_client/src/../i2c_client_interface.h" 2
-
-
-
-
-
-
-typedef struct
-{
-
-
-
-    void (*Initialize)(void);
-
-
-
-
-    void (*Deinitialize)(void);
-
-
-
-
-    void (*WriteByte)(uint8_t data);
-
-
-
-
-    uint8_t(*ReadByte)(void);
-
-
-
-
-    i2c_client_error_t (*ErrorGet)(void);
-
-
-
-
-    i2c_client_transfer_dir_t (*TransferDirGet)(void);
-
-
-
-
-    i2c_client_ack_status_t (*LastByteAckStatusGet)(void);
-
-
-
-
-    void (*CallbackRegister)(_Bool (*handler)(i2c_client_transfer_event_t clientEvent));
-
-
-
-
-    void (*Tasks)(void);
-}i2c_client_interface_t;
-# 43 "mcc_generated_files/i2c_client/src/../mssp1.h" 2
-# 62 "mcc_generated_files/i2c_client/src/../mssp1.h"
-extern const i2c_client_interface_t I2C1_Client;
-# 71 "mcc_generated_files/i2c_client/src/../mssp1.h"
-void I2C1_Initialize(void);
-
-
-
-
-
-
-
-void I2C1_Deinitialize(void);
-# 89 "mcc_generated_files/i2c_client/src/../mssp1.h"
-void I2C1_WriteByte(uint8_t data);
-# 99 "mcc_generated_files/i2c_client/src/../mssp1.h"
-uint8_t I2C1_ReadByte(void);
-# 109 "mcc_generated_files/i2c_client/src/../mssp1.h"
-uint16_t I2C1_ReadAddr(void);
-# 122 "mcc_generated_files/i2c_client/src/../mssp1.h"
-i2c_client_error_t I2C1_ErrorGet(void);
-# 133 "mcc_generated_files/i2c_client/src/../mssp1.h"
-i2c_client_transfer_dir_t I2C1_TransferDirGet(void);
-# 144 "mcc_generated_files/i2c_client/src/../mssp1.h"
-i2c_client_ack_status_t I2C1_LastByteAckStatusGet(void);
-
-
-
-
-
-
-
-void I2C1_CallbackRegister(_Bool (*callback)(i2c_client_transfer_event_t clientEvent));
-# 162 "mcc_generated_files/i2c_client/src/../mssp1.h"
-void I2C1_ISR(void);
-# 172 "mcc_generated_files/i2c_client/src/../mssp1.h"
-void I2C1_ERROR_ISR(void);
-# 38 "mcc_generated_files/i2c_client/src/mssp1.c" 2
-
-
-
-
-const i2c_client_interface_t I2C1_Client = {
-    .Initialize = I2C1_Initialize,
-    .Deinitialize = I2C1_Deinitialize,
-    .WriteByte = I2C1_WriteByte,
-    .ReadByte = I2C1_ReadByte,
-    .TransferDirGet = I2C1_TransferDirGet,
-    .LastByteAckStatusGet = I2C1_LastByteAckStatusGet,
-    .ErrorGet = I2C1_ErrorGet,
-    .CallbackRegister = I2C1_CallbackRegister,
-    .Tasks = ((void*)0)
-};
-
-static void I2C1_EventHandler(void);
-static void I2C1_ErrorEventHandler(void);
-
-static volatile uint16_t i2c1Addr;
-static volatile i2c_client_error_t i2c1ErrorState;
-static _Bool(*I2C1_InterruptHandler)(i2c_client_transfer_event_t clientEvent);
-
-void I2C1_Initialize(void)
-{
-
-    SSP1STAT = 0x80;
-
-    SSP1CON1 |= 0x6;
-
-    SSP1CON2 = 0x1;
-
-    SSP1CON3 = 0x0;
-
-    SSP1ADD = 0x0;
-
-    SSP1MSK = 0xFE;
-
-    PIE3bits.SSP1IE = 1;
-    PIE3bits.BCL1IE = 1;
-    I2C1_InterruptHandler = ((void*)0);
-    SSP1CON1bits.SSPEN = 1;
-    SSP1CON3bits.PCIE = 1;
-    SSP1CON3bits.AHEN = 1;
-    SSP1CON3bits.DHEN = 1;
-
-}
-
-void I2C1_Deinitialize(void)
-{
-    SSP1STAT = 0x00;
-    SSP1CON1 |= 0x00;
-    SSP1CON2 = 0x00;
-    SSP1CON3 = 0x00;
-    SSP1ADD = 0x08;
-    SSP1MSK = 0xFE;
-
-    PIE3bits.SSP1IE = 0;
-    PIE3bits.BCL1IE = 0;
-    SSP1CON3bits.PCIE = 0;
-}
-
-void I2C1_WriteByte(uint8_t data)
-{
-    SSP1BUF = data;
-}
-
-uint8_t I2C1_ReadByte(void)
-{
-    return SSP1BUF;
-}
-
-uint16_t I2C1_ReadAddr(void)
-{
-    return (i2c1Addr >> 1);
-}
-
-i2c_client_error_t I2C1_ErrorGet(void)
-{
-    i2c_client_error_t error;
-    error = i2c1ErrorState;
-    i2c1ErrorState = I2C_CLIENT_ERROR_NONE;
-    return error;
-}
-
-i2c_client_transfer_dir_t I2C1_TransferDirGet(void)
-{
-    return (SSP1STATbits.R_nW ? I2C_CLIENT_TRANSFER_DIR_READ : I2C_CLIENT_TRANSFER_DIR_WRITE);
-}
-
-i2c_client_ack_status_t I2C1_LastByteAckStatusGet(void)
-{
-    return (SSP1CON2bits.ACKDT ? I2C_CLIENT_ACK_STATUS_RECEIVED_NACK : I2C_CLIENT_ACK_STATUS_RECEIVED_ACK);
-}
-
-void I2C1_CallbackRegister(_Bool(*callback)(i2c_client_transfer_event_t clientEvent))
-{
-    if (callback != ((void*)0))
-    {
-        I2C1_InterruptHandler = callback;
+    uint16_t cnt = 1000u;
+    while (!PIR3bits.SSP1IF) {
+        if (--cnt == 0u) return I2C_TIMEOUT;
     }
-}
-
-void I2C1_ISR(void)
-{
-    I2C1_EventHandler();
-}
-
-void I2C1_ERROR_ISR(void)
-{
-    I2C1_ErrorEventHandler();
-}
-
-
-
-
-static void I2C1_EventHandler(void)
-{
     PIR3bits.SSP1IF = 0;
-    if (0U != SSP1STATbits.P)
-    {
-
-        I2C1_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_STOP_BIT_RECEIVED);
-    }
-    else if ((!SSP1STATbits.D_nA) && (0U != SSP1CON3bits.ACKTIM))
-    {
-
-        i2c1Addr = I2C1_ReadByte();
-
-        i2c1ErrorState = I2C_CLIENT_ERROR_NONE;
-
-        if (I2C1_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_ADDR_MATCH) == 1)
-        {
-
-            SSP1CON2bits.ACKDT = 0;
-            SSP1CON2bits.ACKEN = 1;
-        }
-        else
-        {
-
-            SSP1CON2bits.ACKDT = 1;
-            SSP1CON2bits.ACKEN = 1;
-        }
-    }
-    else
-    {
-
-        if (0U != SSP1STATbits.R_nW)
-        {
-            if ((!SSP1STATbits.BF) && (!SSP1CON2bits.ACKSTAT))
-            {
-
-                if (I2C1_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_TX_READY) == 0)
-                {
-
-                    SSP1CON2bits.ACKDT = 1;
-                    SSP1CON2bits.ACKEN = 1;
-                }
-                else
-                {
-
-                    SSP1CON2bits.ACKDT = 0;
-                    SSP1CON2bits.ACKEN = 1;
-                }
-            }
-        }
-        else
-        {
-            if (0U != SSP1STATbits.BF)
-            {
-
-                if (I2C1_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_RX_READY) == 1)
-                {
-
-                    SSP1CON2bits.ACKDT = 0;
-                    SSP1CON2bits.ACKEN = 1;
-                }
-                else
-                {
-
-                    SSP1CON2bits.ACKDT = 1;
-                    SSP1CON2bits.ACKEN = 1;
-                }
-            }
-        }
-    }
-
-
-    SSP1CON1bits.CKP = 1;
+    return I2C_OK;
 }
 
-static void I2C1_ErrorEventHandler(void)
+static I2C_Status wait_for_idle(volatile uint8_t *reg, uint8_t mask)
 {
-    if (0U != PIR3bits.BCL1IF)
-    {
-        i2c1ErrorState = I2C_CLIENT_ERROR_BUS_COLLISION;
-        I2C1_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_ERROR);
+    uint16_t cnt = 1000u;
+    while (*reg & mask) {
+        if (--cnt == 0u) return I2C_TIMEOUT;
+    }
+    PIR3bits.SSP1IF = 0;
+    return I2C_OK;
+}
+
+static I2C_Status check_bus_collision(void)
+{
+    if (PIR3bits.BCL1IF) {
         PIR3bits.BCL1IF = 0;
+        return I2C_BUS_COLL;
     }
-    else if (0U != SSP1CON1bits.WCOL)
-    {
-        i2c1ErrorState = I2C_CLIENT_ERROR_WRITE_COLLISION;
-        I2C1_InterruptHandler(I2C_CLIENT_TRANSFER_EVENT_ERROR);
-        SSP1CON1bits.WCOL = 0;
-    }
-    else
-    {
-        i2c1ErrorState = I2C_CLIENT_ERROR_NONE;
-    }
+    return I2C_OK;
+}
 
 
-    if (0U != SSP1CON1bits.SSPOV)
-    {
-        SSP1CON1bits.SSPOV = 0;
+
+
+
+void I2C_HW_Init(uint8_t brg)
+{
+    SSP1CON1 = 0x00;
+    SSP1STAT = 0x00;
+    SSP1CON3 = 0x08;
+    SSP1ADD = brg;
+    SSP1CON1 = 0x28;
+    PIR3bits.SSP1IF = 0;
+    PIR3bits.BCL1IF = 0;
+}
+
+
+
+
+
+I2C_Status I2C_HW_Start(void)
+{
+    I2C_Status s;
+    SSP1CON2bits.SEN = 1;
+    s = wait_for_idle((volatile uint8_t *)&SSP1CON2, 0x01u);
+    if (s != I2C_OK) return s;
+    return check_bus_collision();
+}
+
+I2C_Status I2C_HW_RepeatedStart(void)
+{
+    I2C_Status s;
+    SSP1CON2bits.RSEN = 1;
+    s = wait_for_idle((volatile uint8_t *)&SSP1CON2, 0x02u);
+    if (s != I2C_OK) return s;
+    return check_bus_collision();
+}
+
+I2C_Status I2C_HW_Stop(void)
+{
+    I2C_Status s;
+    SSP1CON2bits.PEN = 1;
+    s = wait_for_idle((volatile uint8_t *)&SSP1CON2, 0x04u);
+    if (s != I2C_OK) return s;
+    return check_bus_collision();
+}
+
+I2C_Status I2C_HW_SendByte(uint8_t byte)
+{
+    I2C_Status s;
+    SSP1BUF = byte;
+
+    s = wait_for_if();
+    if (s != I2C_OK) return s;
+
+    s = check_bus_collision();
+    if (s != I2C_OK) return s;
+
+    if (SSP1CON2bits.ACKSTAT) return I2C_NACK;
+    return I2C_OK;
+}
+
+I2C_Status I2C_HW_ReadByte(uint8_t *byte, _Bool send_ack)
+{
+    I2C_Status s;
+    SSP1CON2bits.RCEN = 1;
+
+    s = wait_for_if();
+    if (s != I2C_OK) return s;
+
+    *byte = SSP1BUF;
+
+    SSP1CON2bits.ACKDT = send_ack ? 0 : 1;
+    SSP1CON2bits.ACKEN = 1;
+
+    s = wait_for_idle((volatile uint8_t *)&SSP1CON2, 0x10u);
+    if (s != I2C_OK) return s;
+
+    return I2C_OK;
+}
+
+
+
+
+
+I2C_Status I2C_HW_Write(uint8_t addr, const uint8_t *data, uint8_t len)
+{
+    I2C_Status s;
+
+    s = I2C_HW_Start();
+    if (s != I2C_OK) return s;
+
+
+    s = I2C_HW_SendByte((uint8_t)(((unsigned)addr << 1u) & 0xFEu));
+    if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+
+    for (uint8_t i = 0u; i < len; i++) {
+        s = I2C_HW_SendByte(data[i]);
+        if (s != I2C_OK) { I2C_HW_Stop(); return s; }
     }
 
-    SSP1CON1bits.CKP = 1;
+    return I2C_HW_Stop();
+}
+
+I2C_Status I2C_HW_Read(uint8_t addr, uint8_t *buf, uint8_t len)
+{
+    I2C_Status s;
+
+    if (len == 0u) return I2C_OK;
+
+    s = I2C_HW_Start();
+    if (s != I2C_OK) return s;
+
+    s = I2C_HW_SendByte((uint8_t)(((unsigned)addr << 1u) | 0x01u));
+    if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+
+    for (uint8_t i = 0u; i < len; i++) {
+        _Bool ack = (i < (uint8_t)(len - 1u));
+        s = I2C_HW_ReadByte(&buf[i], ack);
+        if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+    }
+
+    return I2C_HW_Stop();
+}
+
+I2C_Status I2C_HW_WriteRead(uint8_t addr,
+                             const uint8_t *tx, uint8_t tx_len,
+                             uint8_t *rx, uint8_t rx_len)
+{
+    I2C_Status s;
+
+    s = I2C_HW_Start();
+    if (s != I2C_OK) return s;
+
+    s = I2C_HW_SendByte((uint8_t)(((unsigned)addr << 1u) & 0xFEu));
+    if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+
+    for (uint8_t i = 0u; i < tx_len; i++) {
+        s = I2C_HW_SendByte(tx[i]);
+        if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+    }
+
+    s = I2C_HW_RepeatedStart();
+    if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+
+    s = I2C_HW_SendByte((uint8_t)(((unsigned)addr << 1u) | 0x01u));
+    if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+
+    for (uint8_t i = 0u; i < rx_len; i++) {
+        _Bool ack = (i < (uint8_t)(rx_len - 1u));
+        s = I2C_HW_ReadByte(&rx[i], ack);
+        if (s != I2C_OK) { I2C_HW_Stop(); return s; }
+    }
+
+    return I2C_HW_Stop();
 }

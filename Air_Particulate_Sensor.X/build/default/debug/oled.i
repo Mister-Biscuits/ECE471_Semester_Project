@@ -13325,6 +13325,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 void oled_init(void);
 void oled_clear(void);
+void oled_send_raw(uint8_t data);
 void oled_set_cursor(uint8_t line, uint8_t col);
 void oled_print(const char *str);
 void oled_display1(const char *str);
@@ -13334,141 +13335,54 @@ void oled_display2(const char *str);
 # 56 "./mcc_generated_files/system/clock.h"
 void CLOCK_Initialize(void);
 # 3 "oled.c" 2
-
-# 1 "./mcc_generated_files/spi/mssp2.h" 1
-# 38 "./mcc_generated_files/spi/mssp2.h"
-# 1 "./mcc_generated_files/spi/spi_interface.h" 1
-# 38 "./mcc_generated_files/spi/spi_interface.h"
-# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stdbool.h" 1 3
-# 39 "./mcc_generated_files/spi/spi_interface.h" 2
-# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 1 3
-# 19 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 3
-# 1 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 138 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/bits/alltypes.h" 3
-typedef int ptrdiff_t;
-# 20 "E:\\MPXLab\\XC8 Compiler\\pic\\include\\c99/stddef.h" 2 3
-# 40 "./mcc_generated_files/spi/spi_interface.h" 2
-
-
-
-
-
-
-struct SPI_INTERFACE
-{
-    void (*Initialize)(void);
-    void (*Deinitialize)(void);
-    _Bool (*Open)(uint8_t spiConfigIndex);
-    void (*Close)(void);
-    void (*BufferExchange)(void *bufferData, size_t bufferSize);
-    void (*BufferRead)(void *bufferData, size_t bufferSize);
-    void (*BufferWrite)(void *bufferData, size_t bufferSize);
-    uint8_t (*ByteExchange)(uint8_t byteData);
-    uint8_t (*ByteRead)(void);
-    void (*ByteWrite)(uint8_t byteData);
-    _Bool (*IsRxReady)(void);
-    _Bool (*IsTxReady)(void);
-    void (*RxCompleteCallbackRegister)(void (*callbackHandler)(void));
-    void (*TxCompleteCallbackRegister)(void (*callbackHandler)(void));
-};
-# 39 "./mcc_generated_files/spi/mssp2.h" 2
-
-
-
-
-
-
-extern const struct SPI_INTERFACE SPI2_Client;
-# 115 "./mcc_generated_files/spi/mssp2.h"
-typedef enum {
-    CLIENT_CONFIG,
-    MSSP2_DEFAULT
-} spi2_configuration_name_t;
-
-
-
-
-
-
-
-void SPI2_Initialize(void);
-
-
-
-
-
-
-
-void SPI2_Deinitialize(void);
-# 144 "./mcc_generated_files/spi/mssp2.h"
-_Bool SPI2_Open(uint8_t spiConfigIndex);
-
-
-
-
-
-
-
-void SPI2_Close(void);
-# 161 "./mcc_generated_files/spi/mssp2.h"
-void SPI2_BufferExchange(void *bufferData, size_t bufferSize);
-# 170 "./mcc_generated_files/spi/mssp2.h"
-void SPI2_BufferWrite(void *bufferData, size_t bufferSize);
-# 179 "./mcc_generated_files/spi/mssp2.h"
-void SPI2_BufferRead(void *bufferData, size_t bufferSize);
-
-
-
-
-
-
-
-uint8_t SPI2_ByteExchange(uint8_t byteData);
-# 197 "./mcc_generated_files/spi/mssp2.h"
-void SPI2_ByteWrite(uint8_t byteData);
-
-
-
-
-
-
-
-uint8_t SPI2_ByteRead(void);
-# 214 "./mcc_generated_files/spi/mssp2.h"
-_Bool SPI2_IsRxReady(void);
-# 223 "./mcc_generated_files/spi/mssp2.h"
-_Bool SPI2_IsTxReady(void);
-# 5 "oled.c" 2
-# 17 "oled.c"
-void oled_send(uint8_t rs, uint8_t data){
-    LATCbits.LATC7 = 0;
-    _delay((unsigned long)((2)*(32000000U/4000000.0)));
-
-    SPI2_ByteExchange(rs & 0x01);
-    SPI2_ByteExchange(data);
-
-    _delay((unsigned long)((2)*(32000000U/4000000.0)));
-    LATCbits.LATC7 = 0;
-    _delay((unsigned long)((50)*(32000000U/4000000.0)));
+# 23 "oled.c"
+void oled_send_bit(uint8_t bit) {
+    if (bit)
+        LATBbits.LATB0 = 1;
+    else
+        LATBbits.LATB0 = 0;
+    _delay((unsigned long)((1)*(32000000U/4000000.0)));
+    LATBbits.LATB1 = 1;
+    _delay((unsigned long)((1)*(32000000U/4000000.0)));
+    LATBbits.LATB1 = 0;
+    _delay((unsigned long)((1)*(32000000U/4000000.0)));
 }
 
 
-void oled_init(){
+void oled_send(uint8_t rs, uint8_t data) {
+    LATCbits.LATC7 = 0;
+    _delay((unsigned long)((1)*(32000000U/4000000.0)));
 
+
+    oled_send_bit(rs & 0x01);
+
+    oled_send_bit(0);
+
+    for (int i = 7; i >= 0; i--) {
+        oled_send_bit((data >> i) & 0x01);
+    }
+
+    _delay((unsigned long)((1)*(32000000U/4000000.0)));
     LATCbits.LATC7 = 1;
-    _delay((unsigned long)((1000)*(32000000U/4000.0)));
+    _delay((unsigned long)((100)*(32000000U/4000000.0)));
+}
+
+void oled_init(void) {
+   LATCbits.LATC7 = 1;
+    _delay((unsigned long)((100)*(32000000U/4000.0)));
 
     oled_send (0, 0x38);
+    _delay((unsigned long)((10)*(32000000U/4000.0)));
     oled_send (0, 0x08);
+    _delay((unsigned long)((10)*(32000000U/4000.0)));
     oled_send (0, 0x01);
-
-    _delay((unsigned long)((2000)*(32000000U/4000.0)));
-
+    _delay((unsigned long)((20)*(32000000U/4000.0)));
     oled_send (0, 0x06);
+    _delay((unsigned long)((10)*(32000000U/4000.0)));
+    oled_send (0, 0x0C);
+    _delay((unsigned long)((1)*(32000000U/4000.0)));
     oled_send (0, 0x02);
-    oled_send (0, 0x0c);
-
-    LATCbits.LATC7 = 0;
+    _delay((unsigned long)((2)*(32000000U/4000.0)));
 }
 
 
