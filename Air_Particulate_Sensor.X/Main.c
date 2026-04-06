@@ -46,7 +46,6 @@ int main(void){
         }
     }
     
-    
     oled_display1("SGP30 OK");
     oled_display2("Warming up...");
     
