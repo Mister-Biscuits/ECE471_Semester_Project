@@ -15,23 +15,23 @@
 # $ makeMP_CC="/opt/microchip/mplabc30/v3.30c/bin/pic30-gcc" ...  
 #
 SHELL=cmd.exe
-PATH_TO_IDE_BIN=E:/MPXLab/IDE/mplab_platform/platform/../mplab_ide/modules/../../bin/
+PATH_TO_IDE_BIN=C:/Users/schop/OneDrive/Documents/School/ECE471_embedded/MPLAB_X_IDE/mplab_platform/platform/../mplab_ide/modules/../../bin/
 # Adding MPLAB X bin directory to path.
-PATH:=E:/MPXLab/IDE/mplab_platform/platform/../mplab_ide/modules/../../bin/:$(PATH)
+PATH:=C:/Users/schop/OneDrive/Documents/School/ECE471_embedded/MPLAB_X_IDE/mplab_platform/platform/../mplab_ide/modules/../../bin/:$(PATH)
 # Path to java used to run MPLAB X when this makefile was created
-MP_JAVA_PATH="E:\MPXLab\IDE\sys\java\zulu8.80.0.17-ca-fx-jre8.0.422-win_x64/bin/"
+MP_JAVA_PATH="C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\MPLAB_X_IDE\sys\java\zulu8.80.0.17-ca-fx-jre8.0.422-win_x64/bin/"
 OS_CURRENT="$(shell uname -s)"
-MP_CC="E:\MPXLab\XC8 Compiler\bin\xc8-cc.exe"
+MP_CC="C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\bin\xc8-cc.exe"
 # MP_CPPC is not defined
 # MP_BC is not defined
-MP_AS="E:\MPXLab\XC8 Compiler\bin\xc8-cc.exe"
-MP_LD="E:\MPXLab\XC8 Compiler\bin\xc8-cc.exe"
-MP_AR="E:\MPXLab\XC8 Compiler\bin\xc8-ar.exe"
-DEP_GEN=${MP_JAVA_PATH}java -jar "E:/MPXLab/IDE/mplab_platform/platform/../mplab_ide/modules/../../bin/extractobjectdependencies.jar"
-MP_CC_DIR="E:\MPXLab\XC8 Compiler\bin"
+MP_AS="C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\bin\xc8-cc.exe"
+MP_LD="C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\bin\xc8-cc.exe"
+MP_AR="C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\bin\xc8-ar.exe"
+DEP_GEN=${MP_JAVA_PATH}java -jar "C:/Users/schop/OneDrive/Documents/School/ECE471_embedded/MPLAB_X_IDE/mplab_platform/platform/../mplab_ide/modules/../../bin/extractobjectdependencies.jar"
+MP_CC_DIR="C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\bin"
 # MP_CPPC_DIR is not defined
 # MP_BC_DIR is not defined
-MP_AS_DIR="E:\MPXLab\XC8 Compiler\bin"
-MP_LD_DIR="E:\MPXLab\XC8 Compiler\bin"
-MP_AR_DIR="E:\MPXLab\XC8 Compiler\bin"
-DFP_DIR=E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410
+MP_AS_DIR="C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\bin"
+MP_LD_DIR="C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\bin"
+MP_AR_DIR="C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\bin"
+DFP_DIR=C:/Users/schop/OneDrive/Documents/School/ECE471_embedded/MPLAB_X_IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410

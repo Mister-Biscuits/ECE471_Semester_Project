@@ -23,12 +23,9 @@ static uint8_t sgp30_crc(uint8_t byte1, uint8_t byte2)
 }
 
 /* ==================================================================
- * SGP30 communication helpers  (now using hardware I2C from I2C.h)
+ * SGP30 communication helpers  (hardware I2C via I2C.h)
  * ================================================================== */
 
-/* Send a 16-bit command (START + addr+W + cmd_hi + cmd_lo + STOP).
- * Returns false if any byte is NACKed or on bus error.
- */
 static bool sgp30_send_cmd(uint16_t cmd)
 {
     uint8_t buf[2];
@@ -39,17 +36,9 @@ static bool sgp30_send_cmd(uint16_t cmd)
     return (s == I2C_OK);
 }
 
-/* Read n_words 16-bit words, each followed by a CRC byte.
- * Opens a new START+read-address transaction; caller has already
- * waited the required measurement duration.
- * Returns false if sensor NACKs the read address or any CRC fails.
- *
- * Each word on the wire is 3 bytes: MSB, LSB, CRC.
- * So total read length = n_words * 3.
- */
 static bool sgp30_read_words(uint16_t *result_buf, uint8_t n_words)
 {
-    /* Maximum words we ever read is 3 (serial ID), so 9 bytes max */
+    /* Max 3 words (serial ID) = 9 bytes */
     uint8_t raw[9];
     uint8_t total = (uint8_t)(n_words * 3u);
 
@@ -71,19 +60,10 @@ static bool sgp30_read_words(uint16_t *result_buf, uint8_t n_words)
     return true;
 }
 
-/* Send a 16-bit command followed by data words + CRC bytes in one
- * I2C write transaction.
- *
- * wire_words[][2]: array of { MSB, LSB } pairs.
- * n_words        : number of data words (each followed by its CRC).
- *
- * Total write payload: 2 (cmd) + n_words*3 (MSB+LSB+CRC per word).
- */
 static bool sgp30_send_cmd_with_data(uint16_t cmd,
                                      const uint8_t wire_words[][2],
                                      uint8_t n_words)
 {
-    /* Max payload: 2 cmd bytes + 2 words * 3 bytes = 8 bytes */
     uint8_t buf[8];
     uint8_t pos = 0u;
 
@@ -108,14 +88,11 @@ static bool sgp30_send_cmd_with_data(uint16_t cmd,
 
 void sgp30_init(void)
 {
-    __delay_ms(10u);    /* tPU max = 0.6 ms; 10 ms is comfortable     */
+    __delay_ms(10u);
     sgp30_send_cmd(SGP30_CMD_INIT_AIR_QUALITY);
-    __delay_ms(10u);    /* Init_air_quality max duration = 10 ms       */
-    /* NOTE: first 15 s of sgp30_measure() calls return fixed values:
-     *       400 ppm CO2eq and 0 ppb TVOC - this is normal behaviour. */
+    __delay_ms(10u);
 }
 
-/* Must be called every 1 s for the on-chip baseline algorithm.       */
 bool sgp30_measure(sgp30_data_t *result)
 {
     result->valid = false;
@@ -123,9 +100,9 @@ bool sgp30_measure(sgp30_data_t *result)
     if (!sgp30_send_cmd(SGP30_CMD_MEASURE_AIR_QUALITY))
         return false;
 
-    __delay_ms(12u);    /* Measure_air_quality max = 12 ms (Table 10) */
+    __delay_ms(12u);
 
-    uint16_t words[2];  /* words[0] = CO2eq ppm, words[1] = TVOC ppb  */
+    uint16_t words[2];
     if (!sgp30_read_words(words, 2u))
         return false;
 
@@ -142,7 +119,7 @@ bool sgp30_measure_raw(sgp30_raw_t *result)
     if (!sgp30_send_cmd(SGP30_CMD_MEASURE_RAW_SIGNALS))
         return false;
 
-    __delay_ms(25u);    /* Measure_raw_signals max = 25 ms (Table 10) */
+    __delay_ms(25u);
 
     uint16_t words[2];
     if (!sgp30_read_words(words, 2u))
@@ -172,7 +149,6 @@ bool sgp30_get_baseline(uint16_t *co2eq_base, uint16_t *tvoc_base)
 
 bool sgp30_set_baseline(uint16_t co2eq_base, uint16_t tvoc_base)
 {
-    /* Wire order per datasheet: TVOC word first, CO2eq word second */
     uint8_t words[2][2];
     words[0][0] = (uint8_t)(tvoc_base  >> 8u);
     words[0][1] = (uint8_t)(tvoc_base  & 0xFFu);
@@ -199,10 +175,6 @@ bool sgp30_set_humidity(uint16_t humidity_word)
     return true;
 }
 
-/* Soft reset via I2C General Call.
- * Resets ALL devices on the bus that support General Call.
- * Call sgp30_init() again after this.
- */
 bool sgp30_soft_reset(void)
 {
     uint8_t reset_byte = SGP30_GENERAL_CALL_RESET;
@@ -214,11 +186,20 @@ bool sgp30_soft_reset(void)
     return true;
 }
 
-bool sgp30_self_test(void){
+/**
+ * @brief  Run on-chip self-test.
+ *
+ * IMPORTANT per SGP30 datasheet: "Do NOT call after Init_air_quality
+ * - for production test only."  After the Measure_test command the
+ * sensor enters sleep mode.  You MUST call sgp30_init() again after
+ * this if you want to take air quality measurements.
+ */
+bool sgp30_self_test(void)
+{
     if (!sgp30_send_cmd(SGP30_CMD_MEASURE_TEST))
         return false;
 
-    __delay_ms(220u);   /* Measure_test max = 220 ms (Table 10) */
+    __delay_ms(220u);
 
     uint16_t result[1];
     if (!sgp30_read_words(result, 1u))

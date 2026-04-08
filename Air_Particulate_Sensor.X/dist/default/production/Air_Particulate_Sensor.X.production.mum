@@ -1,7 +1,7 @@
 
 16LF15375 Memory Summary:
-    Program space        used   781h (  1921) of  2000h words   ( 23.4%)
-    Data space           used    85h (   133) of   400h bytes   ( 13.0%)
+    Program space        used   8F8h (  2296) of  2000h words   ( 28.0%)
+    Data space           used    98h (   152) of   400h bytes   ( 14.8%)
     EEPROM space         None available
     Configuration bits   used     5h (     5) of     5h words   (100.0%)
     ID Location space    used     0h (     0) of     4h bytes   (  0.0%)

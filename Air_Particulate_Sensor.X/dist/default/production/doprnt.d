@@ -1,2 +1,2 @@
 dist/default/production\doprnt.p1: \
-  E:/MPXLab/XC8\ Compiler/pic/sources/c99/common/doprnt.c
+  C:/Users/schop/OneDrive/Documents/School/ECE471_embedded/XC8\ Compiler/pic/sources/c99/common/doprnt.c
