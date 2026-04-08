@@ -14,6 +14,7 @@
 /* BRG values (compile-time constants, no 32-bit math on device) */
 #define BRG_400K  I2C_HW_BRG(32000000UL, 400000UL)  /* = 19 */
 #define BRG_100K  I2C_HW_BRG(32000000UL, 100000UL)  /* = 79 */
+#define BRG_10K   I2C_HW_BRG(32000000UL, 10000UL)
 
 void init_heartbeat_led(void){
     TRISDbits.TRISD0 = 0;

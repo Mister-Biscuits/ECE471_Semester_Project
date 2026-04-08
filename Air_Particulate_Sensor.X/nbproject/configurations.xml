@@ -7,6 +7,12 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
+        <logicalFolder name="i2c_host" displayName="i2c_host" projectFiles="true">
+          <itemPath>mcc_generated_files/i2c_host/mssp1.h</itemPath>
+          <itemPath>mcc_generated_files/i2c_host/i2c_host_types.h</itemPath>
+          <itemPath>mcc_generated_files/i2c_host/i2c_host_event_types.h</itemPath>
+          <itemPath>mcc_generated_files/i2c_host/i2c_host_interface.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="system" displayName="system" projectFiles="true">
           <itemPath>mcc_generated_files/system/clock.h</itemPath>
           <itemPath>mcc_generated_files/system/interrupt.h</itemPath>
@@ -35,6 +41,11 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
+        <logicalFolder name="i2c_host" displayName="i2c_host" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/i2c_host/src/mssp1.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
         <logicalFolder name="system" displayName="system" projectFiles="true">
           <logicalFolder name="src" displayName="src" projectFiles="true">
             <itemPath>mcc_generated_files/system/src/config_bits.c</itemPath>
@@ -205,7 +216,7 @@
         <property key="communication.speed" value="${communication.speed.default}"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
-        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="debugoptions.useswbreakpoints" value="true"/>
         <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>

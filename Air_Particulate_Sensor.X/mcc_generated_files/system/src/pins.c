@@ -3,9 +3,33 @@
  * 
  * @file pins.c
  * 
- * MODIFIED: PPS for MSSP1 I2C on RC4(SDA)/RC5(SCL),
- *           open-drain + WPU on I2C pins,
- *           slew rate limiting OFF on I2C pins for cleaner edges.
+ * @ingroup  pinsdriver
+ * 
+ * @brief This is generated driver implementation for pins. 
+ *        This file provides implementations for pin APIs for all pins selected in the GUI.
+ *
+ * @version Driver Version 3.0.0
+*/
+
+/*
+© [2026] Microchip Technology Inc. and its subsidiaries.
+
+    Subject to your compliance with these terms, you may use Microchip 
+    software and any derivatives exclusively with Microchip products. 
+    You are responsible for complying with 3rd party license terms  
+    applicable to your use of 3rd party software (including open source  
+    software) that may accompany Microchip software. SOFTWARE IS ?AS IS.? 
+    NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS 
+    SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT,  
+    MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT 
+    WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY 
+    KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF 
+    MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE 
+    FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP?S 
+    TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT 
+    EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
+    THIS SOFTWARE.
 */
 
 #include "../pins.h"
@@ -13,72 +37,62 @@
 
 void PIN_MANAGER_Initialize(void)
 {
-    /**
-     LATx registers
-     */
+   /**
+    LATx registers
+    */
     LATA = 0x0;
     LATB = 0x0;
-    LATC = 0x0;
+    LATC = 0x30;
     LATD = 0x0;
     LATE = 0x0;
 
     /**
-     TRISx registers
-     * RB0,RB1 = output (OLED bit-bang SPI)
-     * RC4,RC5 = input  (I2C - MSSP requires TRIS=1)
-     * RC7     = output (OLED CS)
-     */
+    TRISx registers
+    */
     TRISA = 0xFF;
-    TRISB = 0xFC;       /* RB0,RB1 output */
-    TRISC = 0x3F;       /* RC7 output; RC4,RC5 input */
+    TRISB = 0xFC;
+    TRISC = 0x7F;
     TRISD = 0xFF;
     TRISE = 0xF;
 
     /**
-     ANSELx registers  (0 = digital)
-     * RC4,RC5 = digital for I2C
-     * RC7     = digital for CS
-     * RB0,RB1 = digital for SPI
-     */
+    ANSELx registers
+    */
     ANSELA = 0xFF;
     ANSELB = 0xFC;
-    ANSELC = 0x0F;      /* RC4,RC5,RC6,RC7 digital */
+    ANSELC = 0x4F;
     ANSELD = 0xFF;
     ANSELE = 0x7;
 
     /**
-     WPUx registers - weak pull-ups on I2C lines
-     */
+    WPUx registers
+    */
     WPUA = 0x0;
     WPUB = 0x0;
-    WPUC = 0x30;        /* WPU on RC4(SDA) and RC5(SCL) */
+    WPUC = 0x0;
     WPUD = 0x0;
     WPUE = 0x0;
   
     /**
-     ODx registers - open-drain on I2C lines
-     */
+    ODx registers
+    */
+   
     ODCONA = 0x0;
     ODCONB = 0x0;
-    ODCONC = 0x30;      /* Open-drain RC4,RC5 */
+    ODCONC = 0x0;
     ODCOND = 0x0;
     ODCONE = 0x0;
-
     /**
-     SLRCONx registers
-     * Disable slew rate limiting on RC4,RC5 for cleaner I2C edges.
-     * SLRCON bit: 1 = limited slew rate, 0 = unlimited.
-     * 0xFF with bits 4,5 cleared = 0xCF
-     */
+    SLRCONx registers
+    */
     SLRCONA = 0xFF;
     SLRCONB = 0xFF;
-    SLRCONC = 0xCF;     /* Faster edges on RC4,RC5 */
+    SLRCONC = 0xFF;
     SLRCOND = 0xFF;
     SLRCONE = 0x7;
-
     /**
-     INLVLx registers
-     */
+    INLVLx registers
+    */
     INLVLA = 0xFF;
     INLVLB = 0xFF;
     INLVLC = 0xFF;
@@ -86,19 +100,20 @@ void PIN_MANAGER_Initialize(void)
     INLVLE = 0xF;
 
     /**
-     PPS registers - MSSP1 I2C on RC4(SDA) / RC5(SCL)
-     *
-     * Input:  RC4 = 0x14, RC5 = 0x15
-     * Output: SCL1 = 0x18, SDA1 = 0x19
-     */
-    SSP1DATPPS = 0x14;  /* RC4 -> SDA1 input  */
-    SSP1CLKPPS = 0x15;  /* RC5 -> SCL1 input  */
-    RC4PPS     = 0x19;  /* SDA1 output -> RC4 */
-    RC5PPS     = 0x18;  /* SCL1 output -> RC5 */
+    PPS registers
+    */
+    SSP1CLKPPS = 0x14;  //RC4->MSSP1:SCL1;
+    RC4PPS = 0x15;  //RC4->MSSP1:SCL1;
+    SSP1DATPPS = 0x15;  //RC5->MSSP1:SDA1;
+    RC5PPS = 0x16;  //RC5->MSSP1:SDA1;
 
     /**
-     IOCx registers 
-     */
+    APFCON registers
+    */
+
+   /**
+    IOCx registers 
+    */
     IOCAP = 0x0;
     IOCAN = 0x0;
     IOCAF = 0x0;
@@ -111,8 +126,13 @@ void PIN_MANAGER_Initialize(void)
     IOCEP = 0x0;
     IOCEN = 0x0;
     IOCEF = 0x0;
+
+
 }
   
 void PIN_MANAGER_IOC(void)
 {
 }
+/**
+ End of File
+*/

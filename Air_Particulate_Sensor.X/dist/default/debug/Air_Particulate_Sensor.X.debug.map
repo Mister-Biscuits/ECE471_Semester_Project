@@ -2,14 +2,13 @@ Microchip MPLAB XC8 Compiler V3.10
 
 Linker command line:
 
--W-3 \
-  --edf=C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\dat\20250813170317_en.msgs \
-  -cn -h+dist/default/debug\Air_Particulate_Sensor.X.debug.sym \
+-W-3 --edf=E:\MPXLab\XC8 Compiler\pic\dat\20250813170317_en.msgs -cn \
+  -h+dist/default/debug\Air_Particulate_Sensor.X.debug.sym \
   --cmf=dist/default/debug\Air_Particulate_Sensor.X.debug.cmf -z \
-  -Q16LF15375 -oC:\Users\schop\AppData\Local\Temp\xcAska0.0\driver_tmp_3.o \
+  -Q16LF15375 -oC:\Users\schop\AppData\Local\Temp\xcAs7u8.0\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/debug/Air_Particulate_Sensor.X.debug.map \
-  --md=C:\Users\schop\AppData\Local\Temp\xcAska0.0\driver_tmp_0.dat -E1 \
+  --md=C:\Users\schop\AppData\Local\Temp\xcAs7u8.0\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh \
   -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 \
   -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh \
@@ -44,7 +43,7 @@ Linker command line:
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,sivt,init,end_init -ppowerup=CODE -pcinit=CODE \
   -pfunctab=ENTRY -k \
-  C:\Users\schop\AppData\Local\Temp\xcAska0.0\driver_tmp_17.o \
+  C:\Users\schop\AppData\Local\Temp\xcAs7u8.0\driver_tmp_17.o \
   dist/default/debug\Air_Particulate_Sensor.X.debug.o 
 
 Object code version is 3.11
@@ -54,7 +53,7 @@ Machine type is 16LF15375
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\schop\AppData\Local\Temp\xcAska0.0\driver_tmp_17.o
+C:\Users\schop\AppData\Local\Temp\xcAs7u8.0\driver_tmp_17.o
                 end_init                              3        3        2        0       0
                 reset_vec                             0        0        3        0       0
                 config                             8007     8007        5        0       4
@@ -1357,26 +1356,26 @@ wtemp0a                                  (abs)        0007F
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\doprnt.c
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
+		_sprintf       		CODE           	010C	0000	30
+
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c estimated size: 30
+
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\lwdiv.c
+		___lwdiv       		CODE           	031D	0000	58
+
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\lwdiv.c estimated size: 58
+
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\doprnt.c
 		_vfpfcnvrt     		CODE           	05EC	0000	201
 		_vfprintf      		CODE           	00EE	0000	30
 
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\doprnt.c estimated size: 231
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\doprnt.c estimated size: 231
 
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\lwmod.c
-		___lwmod       		CODE           	01E0	0000	50
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\Umul8.c
+		___bmul        		CODE           	000E	0000	19
 
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\lwmod.c estimated size: 50
-
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\putch.c
-		_putch         		CODE           	0006	0000	1
-
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\putch.c estimated size: 1
-
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
-		_sprintf       		CODE           	010C	0000	30
-
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c estimated size: 30
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\Umul8.c estimated size: 19
 
 sgp30_sensor.c
 		_sgp30_send_cmd		CODE           	0036	0000	23
@@ -1409,25 +1408,10 @@ mcc_generated_files/system/src/interrupt.c
 
 mcc_generated_files/system/src/interrupt.c estimated size: 16
 
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\lwdiv.c
-		___lwdiv       		CODE           	031D	0000	58
-
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\lwdiv.c estimated size: 58
-
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\Umul8.c
-		___bmul        		CODE           	000E	0000	19
-
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\Umul8.c estimated size: 19
-
 mcc_generated_files/system/src/pins.c
 		_PIN_MANAGER_Initialize		CODE           	0484	0000	82
 
 mcc_generated_files/system/src/pins.c estimated size: 82
-
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
-		_fputc         		CODE           	04D6	0000	87
-
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\nf_fputc.c estimated size: 87
 
 Main.c
 		_init_heartbeat_led		CODE           	0007	0000	7
@@ -1442,6 +1426,21 @@ shared
 
 shared estimated size: 8
 
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\nf_fputc.c
+		_fputc         		CODE           	04D6	0000	87
+
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\nf_fputc.c estimated size: 87
+
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\strlen.c
+		_strlen        		CODE           	0065	0000	25
+
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\strlen.c estimated size: 25
+
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\lwmod.c
+		___lwmod       		CODE           	01E0	0000	50
+
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\lwmod.c estimated size: 50
+
 oled.c
 		_oled_send_bit 		CODE           	0097	0000	28
 		_oled_set_cursor		CODE           	00B3	0000	29
@@ -1452,10 +1451,10 @@ oled.c
 
 oled.c estimated size: 366
 
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\strlen.c
-		_strlen        		CODE           	0065	0000	25
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\putch.c
+		_putch         		CODE           	0006	0000	1
 
-C:\Users\schop\OneDrive\Documents\School\ECE471_embedded\XC8 Compiler\pic\sources\c99\common\strlen.c estimated size: 25
+E:\MPXLab\XC8 Compiler\pic\sources\c99\common\putch.c estimated size: 1
 
 mcc_generated_files/system/src/clock.c
 		_CLOCK_Initialize		CODE           	0FC8	0000	10

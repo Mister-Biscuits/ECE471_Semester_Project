@@ -16,7 +16,7 @@
 /* at 400 kHz takes ~22.5 us = ~180 instruction cycles.               */
 /* 5000 gives ample margin for clock-stretching and multi-byte xfers.  */
 /* ------------------------------------------------------------------ */
-#define I2C_HW_TIMEOUT_CNT  5000u
+#define I2C_HW_TIMEOUT_CNT  10000u
 
 /* ------------------------------------------------------------------ */
 /* Private helpers                                                     */
@@ -100,39 +100,30 @@ void I2C_HW_Init(uint8_t brg)
  *
  * @param brg  The same BRG value used in I2C_HW_Init().
  */
-void I2C_HW_BusRecovery(uint8_t brg)
-{
-    /* Disable MSSP so we can bit-bang the pins */
-    I2Cx_CON1 = 0x00;
-
-    /* Temporarily take manual control of SCL (RC5) */
-    /* SDA (RC4) stays as input so we can read it    */
-    TRISCbits.TRISC5 = 0;          /* SCL = output */
-    TRISCbits.TRISC4 = 1;          /* SDA = input  */
+void I2C_HW_BusRecovery(uint8_t brg){
+    // SCL is now RC4, SDA is now RC5
+    TRISCbits.TRISC4 = 0;          // SCL = output
+    TRISCbits.TRISC5 = 1;          // SDA = input
 
     for (uint8_t i = 0u; i < 9u; i++) {
-        LATCbits.LATC5 = 0;        /* SCL low  */
+        LATCbits.LATC4 = 0;        // SCL low
         __delay_us(5);
-        LATCbits.LATC5 = 1;        /* SCL high */
+        LATCbits.LATC4 = 1;        // SCL high
         __delay_us(5);
-        if (PORTCbits.RC4 == 1)     /* SDA released? */
+        if (PORTCbits.RC5 == 1)     // SDA released?
             break;
     }
 
-    /* Generate a STOP condition manually: SDA low, then SCL high,
-     * then SDA high.  */
-    TRISCbits.TRISC4 = 0;          /* SDA = output */
-    LATCbits.LATC4 = 0;            /* SDA low  */
+    TRISCbits.TRISC5 = 0;          // SDA = output
+    LATCbits.LATC5 = 0;            // SDA low
     __delay_us(5);
-    LATCbits.LATC5 = 1;            /* SCL high */
+    LATCbits.LATC4 = 1;            // SCL high
     __delay_us(5);
-    LATCbits.LATC4 = 1;            /* SDA high -> STOP */
+    LATCbits.LATC5 = 1;            // SDA high -> STOP
     __delay_us(5);
 
-    /* Return pins to input (MSSP requires TRIS=1) */
-    TRISCbits.TRISC4 = 1;
     TRISCbits.TRISC5 = 1;
-
+    TRISCbits.TRISC4 = 1;
     /* Re-initialize the MSSP */
     I2C_HW_Init(brg);
 }
