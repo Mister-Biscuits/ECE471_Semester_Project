@@ -13279,7 +13279,20 @@ typedef struct {
     uint16_t ethanol_signal;
     _Bool valid;
 } sgp30_raw_t;
-# 77 "./sgp30_sensor.h"
+
+
+typedef struct {
+    uint8_t needs_update;
+    uint8_t show_warning;
+    uint8_t screen_mode;
+} display_state_t;
+
+
+typedef struct {
+    uint16_t tvoc_warn_ppb;
+    uint16_t co2eq_warn_ppm;
+} threshold_config_t;
+# 94 "./sgp30_sensor.h"
 void sgp30_init(void);
 
 
@@ -13302,11 +13315,11 @@ _Bool sgp30_measure_raw(sgp30_raw_t *result);
 
 
 _Bool sgp30_get_baseline(uint16_t *co2eq_base, uint16_t *tvoc_base);
-# 107 "./sgp30_sensor.h"
+# 124 "./sgp30_sensor.h"
 _Bool sgp30_set_baseline(uint16_t co2eq_base, uint16_t tvoc_base);
-# 116 "./sgp30_sensor.h"
+# 133 "./sgp30_sensor.h"
 _Bool sgp30_set_humidity(uint16_t humidity_word);
-# 131 "./sgp30_sensor.h"
+# 147 "./sgp30_sensor.h"
 _Bool sgp30_soft_reset(void);
 
 

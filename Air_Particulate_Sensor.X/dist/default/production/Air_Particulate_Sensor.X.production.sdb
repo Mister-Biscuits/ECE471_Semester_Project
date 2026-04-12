@@ -3,27 +3,6 @@
 [d edition pro ]
 [d chip 16LF15375 ]
 [d frameptr 6 ]
-"42 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\Main.c
-[e E8048 . `uc
-I2C_OK 0
-I2C_NACK 1
-I2C_BUS_COLL 2
-I2C_TIMEOUT 3
-]
-"35 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\sgp30_sensor.c
-[e E7761 . `uc
-I2C_OK 0
-I2C_NACK 1
-I2C_BUS_COLL 2
-I2C_TIMEOUT 3
-]
-"25 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\I2C.c
-[e E7732 . `uc
-I2C_OK 0
-I2C_NACK 1
-I2C_BUS_COLL 2
-I2C_TIMEOUT 3
-]
 "55 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\mcc_generated_files/i2c_host/src/mssp1.c
 [e E7732 . `uc
 I2C_ERROR_NONE 0
@@ -42,6 +21,27 @@ I2C_STATE_NACK 5
 I2C_STATE_ERROR 6
 I2C_STATE_STOP 7
 I2C_STATE_RESET 8
+]
+"42 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\Main.c
+[e E8057 . `uc
+I2C_OK 0
+I2C_NACK 1
+I2C_BUS_COLL 2
+I2C_TIMEOUT 3
+]
+"35 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\sgp30_sensor.c
+[e E7770 . `uc
+I2C_OK 0
+I2C_NACK 1
+I2C_BUS_COLL 2
+I2C_TIMEOUT 3
+]
+"25 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\I2C.c
+[e E7732 . `uc
+I2C_OK 0
+I2C_NACK 1
+I2C_BUS_COLL 2
+I2C_TIMEOUT 3
 ]
 "1177 E:\MPXLab\XC8 Compiler\pic\sources\c99\common\doprnt.c
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
@@ -78,25 +78,25 @@ I2C_STATE_RESET 8
 "72
 [v _I2C_HW_Init I2C_HW_Init `(v  1 e 1 0 ]
 "135
-[v _I2C_HW_Start I2C_HW_Start `(E8048  1 e 1 0 ]
+[v _I2C_HW_Start I2C_HW_Start `(E8057  1 e 1 0 ]
 "147
 [v _I2C_HW_RepeatedStart I2C_HW_RepeatedStart `(E7732  1 e 1 0 ]
 "159
-[v _I2C_HW_Stop I2C_HW_Stop `(E8048  1 e 1 0 ]
+[v _I2C_HW_Stop I2C_HW_Stop `(E8057  1 e 1 0 ]
 "171
-[v _I2C_HW_SendByte I2C_HW_SendByte `(E8048  1 e 1 0 ]
+[v _I2C_HW_SendByte I2C_HW_SendByte `(E8057  1 e 1 0 ]
 "190
 [v _I2C_HW_ReadByte I2C_HW_ReadByte `(E7732  1 e 1 0 ]
 "222
-[v _I2C_HW_Write I2C_HW_Write `(E7761  1 e 1 0 ]
+[v _I2C_HW_Write I2C_HW_Write `(E7770  1 e 1 0 ]
 "240
-[v _I2C_HW_Read I2C_HW_Read `(E7761  1 e 1 0 ]
+[v _I2C_HW_Read I2C_HW_Read `(E7770  1 e 1 0 ]
 "19 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\Main.c
 [v _init_heartbeat_led init_heartbeat_led `(v  1 e 1 0 ]
 "27
 [v _blink_error blink_error `(v  1 s 1 blink_error ]
 "42
-[v _sgp30_probe sgp30_probe `(E8048  1 s 1 sgp30_probe ]
+[v _sgp30_probe sgp30_probe `(E8057  1 s 1 sgp30_probe ]
 "54
 [v _main main `(i  1 e 2 0 ]
 "84 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\mcc_generated_files/i2c_host/src/mssp1.c
@@ -189,15 +189,15 @@ I2C_STATE_RESET 8
 [v _sgp30_measure sgp30_measure `(a  1 e 1 0 ]
 "197
 [v _sgp30_self_test sgp30_self_test `(a  1 e 1 0 ]
-[s S120 . 1 `uc 1 INTEDG 1 0 :1:0 
+[s S780 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "368 E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h
-[u S125 . 1 `S120 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES125  1 e 1 @11 ]
-[s S681 . 1 `uc 1 RC0 1 0 :1:0 
+[u S785 . 1 `S780 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES785  1 e 1 @11 ]
+[s S1323 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -207,15 +207,15 @@ I2C_STATE_RESET 8
 `uc 1 RC7 1 0 :1:7 
 ]
 "529
-[u S690 . 1 `S681 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES690  1 e 1 @14 ]
+[u S1332 . 1 `S1323 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES1332  1 e 1 @14 ]
 "674
 [v _TRISA TRISA `VEuc  1 e 1 @18 ]
 "736
 [v _TRISB TRISB `VEuc  1 e 1 @19 ]
 "798
 [v _TRISC TRISC `VEuc  1 e 1 @20 ]
-[s S646 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S1288 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -225,11 +225,11 @@ I2C_STATE_RESET 8
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "815
-[u S655 . 1 `S646 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES655  1 e 1 @20 ]
+[u S1297 . 1 `S1288 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES1297  1 e 1 @20 ]
 "860
 [v _TRISD TRISD `VEuc  1 e 1 @21 ]
-[s S231 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S849 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -239,15 +239,15 @@ I2C_STATE_RESET 8
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "877
-[u S240 . 1 `S231 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES240  1 e 1 @21 ]
+[u S858 . 1 `S849 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES858  1 e 1 @21 ]
 "922
 [v _TRISE TRISE `VEuc  1 e 1 @22 ]
 "954
 [v _LATA LATA `VEuc  1 e 1 @24 ]
 "1016
 [v _LATB LATB `VEuc  1 e 1 @25 ]
-[s S425 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S1067 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -257,11 +257,11 @@ I2C_STATE_RESET 8
 `uc 1 LATB7 1 0 :1:7 
 ]
 "1033
-[u S434 . 1 `S425 1 . 1 0 ]
-[v _LATBbits LATBbits `VES434  1 e 1 @25 ]
+[u S1076 . 1 `S1067 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1076  1 e 1 @25 ]
 "1078
 [v _LATC LATC `VEuc  1 e 1 @26 ]
-[s S448 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S1090 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -271,11 +271,11 @@ I2C_STATE_RESET 8
 `uc 1 LATC7 1 0 :1:7 
 ]
 "1095
-[u S457 . 1 `S448 1 . 1 0 ]
-[v _LATCbits LATCbits `VES457  1 e 1 @26 ]
+[u S1099 . 1 `S1090 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1099  1 e 1 @26 ]
 "1140
 [v _LATD LATD `VEuc  1 e 1 @27 ]
-[s S273 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S891 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -285,8 +285,8 @@ I2C_STATE_RESET 8
 `uc 1 LATD7 1 0 :1:7 
 ]
 "1157
-[u S282 . 1 `S273 1 . 1 0 ]
-[v _LATDbits LATDbits `VES282  1 e 1 @27 ]
+[u S900 . 1 `S891 1 . 1 0 ]
+[v _LATDbits LATDbits `VES900  1 e 1 @27 ]
 "1202
 [v _LATE LATE `VEuc  1 e 1 @28 ]
 "2410
@@ -295,7 +295,7 @@ I2C_STATE_RESET 8
 [v _SSP1ADD SSP1ADD `VEuc  1 e 1 @397 ]
 "2620
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @399 ]
-[s S1186 . 1 `uc 1 BF 1 0 :1:0 
+[s S374 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -305,33 +305,33 @@ I2C_STATE_RESET 8
 `uc 1 SMP 1 0 :1:7 
 ]
 "2729
-[s S1195 . 1 `uc 1 . 1 0 :2:0 
+[s S383 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S1200 . 1 `uc 1 . 1 0 :2:0 
+[s S388 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S1205 . 1 `uc 1 . 1 0 :2:0 
+[s S393 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S1210 . 1 `uc 1 . 1 0 :2:0 
+[s S398 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[s S1215 . 1 `uc 1 . 1 0 :2:0 
+[s S403 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
-[s S1221 . 1 `uc 1 BF1 1 0 :1:0 
+[s S409 . 1 `uc 1 BF1 1 0 :1:0 
 `uc 1 UA1 1 0 :1:1 
 `uc 1 R 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
@@ -340,66 +340,66 @@ I2C_STATE_RESET 8
 `uc 1 CKE1 1 0 :1:6 
 `uc 1 SMP1 1 0 :1:7 
 ]
-[s S1230 . 1 `uc 1 . 1 0 :2:0 
+[s S418 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 START1 1 0 :1:3 
 `uc 1 STOP1 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S1236 . 1 `uc 1 . 1 0 :2:0 
+[s S424 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW1 1 0 :1:2 
 `uc 1 I2C_START1 1 0 :1:3 
 `uc 1 I2C_STOP2 1 0 :1:4 
 `uc 1 DA1 1 0 :1:5 
 ]
-[s S1242 . 1 `uc 1 . 1 0 :2:0 
+[s S430 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ1 1 0 :1:2 
 `uc 1 S2 1 0 :1:3 
 `uc 1 P2 1 0 :1:4 
 `uc 1 DATA_ADDRESS1 1 0 :1:5 
 ]
-[s S1248 . 1 `uc 1 . 1 0 :2:0 
+[s S436 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A1 1 0 :1:5 
 ]
-[s S1253 . 1 `uc 1 . 1 0 :2:0 
+[s S441 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_nA1 1 0 :1:5 
 ]
-[s S1258 . 1 `uc 1 . 1 0 :2:0 
+[s S446 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_nW1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 I2C_DAT1 1 0 :1:5 
 ]
-[s S1263 . 1 `uc 1 . 1 0 :2:0 
+[s S451 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW2 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA2 1 0 :1:5 
 ]
-[s S1268 . 1 `uc 1 . 1 0 :2:0 
+[s S456 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS1 1 0 :1:5 
 ]
-[u S1273 . 1 `S1186 1 . 1 0 `S1195 1 . 1 0 `S1200 1 . 1 0 `S1205 1 . 1 0 `S1210 1 . 1 0 `S1215 1 . 1 0 `S1221 1 . 1 0 `S1230 1 . 1 0 `S1236 1 . 1 0 `S1242 1 . 1 0 `S1248 1 . 1 0 `S1253 1 . 1 0 `S1258 1 . 1 0 `S1263 1 . 1 0 `S1268 1 . 1 0 ]
-[v _SSP1STATbits SSP1STATbits `VES1273  1 e 1 @399 ]
+[u S461 . 1 `S374 1 . 1 0 `S383 1 . 1 0 `S388 1 . 1 0 `S393 1 . 1 0 `S398 1 . 1 0 `S403 1 . 1 0 `S409 1 . 1 0 `S418 1 . 1 0 `S424 1 . 1 0 `S430 1 . 1 0 `S436 1 . 1 0 `S441 1 . 1 0 `S446 1 . 1 0 `S451 1 . 1 0 `S456 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES461  1 e 1 @399 ]
 "2984
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @400 ]
-[s S780 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S212 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "3014
-[s S786 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S218 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[s S791 . 1 `uc 1 SSPM01 1 0 :1:0 
+[s S223 . 1 `uc 1 SSPM01 1 0 :1:0 
 `uc 1 SSPM11 1 0 :1:1 
 `uc 1 SSPM21 1 0 :1:2 
 `uc 1 SSPM31 1 0 :1:3 
@@ -408,11 +408,11 @@ I2C_STATE_RESET 8
 `uc 1 SSPOV1 1 0 :1:6 
 `uc 1 WCOL1 1 0 :1:7 
 ]
-[u S800 . 1 `S780 1 . 1 0 `S786 1 . 1 0 `S791 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES800  1 e 1 @400 ]
+[u S232 . 1 `S212 1 . 1 0 `S218 1 . 1 0 `S223 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES232  1 e 1 @400 ]
 "3104
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @401 ]
-[s S702 . 1 `uc 1 SEN 1 0 :1:0 
+[s S276 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -422,17 +422,17 @@ I2C_STATE_RESET 8
 `uc 1 GCEN 1 0 :1:7 
 ]
 "3151
-[s S711 . 1 `uc 1 . 1 0 :1:0 
+[s S285 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK 1 0 :5:1 
 ]
-[s S714 . 1 `uc 1 . 1 0 :1:0 
+[s S288 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK1 1 0 :1:1 
 `uc 1 ADMSK2 1 0 :1:2 
 `uc 1 ADMSK3 1 0 :1:3 
 `uc 1 ADMSK4 1 0 :1:4 
 `uc 1 ADMSK5 1 0 :1:5 
 ]
-[s S721 . 1 `uc 1 SEN1 1 0 :1:0 
+[s S295 . 1 `uc 1 SEN1 1 0 :1:0 
 `uc 1 ADMSK11 1 0 :1:1 
 `uc 1 ADMSK21 1 0 :1:2 
 `uc 1 ADMSK31 1 0 :1:3 
@@ -441,26 +441,26 @@ I2C_STATE_RESET 8
 `uc 1 ACKSTAT1 1 0 :1:6 
 `uc 1 GCEN1 1 0 :1:7 
 ]
-[s S730 . 1 `uc 1 . 1 0 :1:0 
+[s S304 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RSEN1 1 0 :1:1 
 `uc 1 PEN1 1 0 :1:2 
 `uc 1 RCEN1 1 0 :1:3 
 `uc 1 ADMSK41 1 0 :1:4 
 `uc 1 ADMSK51 1 0 :1:5 
 ]
-[u S737 . 1 `S702 1 . 1 0 `S711 1 . 1 0 `S714 1 . 1 0 `S721 1 . 1 0 `S730 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES737  1 e 1 @401 ]
+[u S311 . 1 `S276 1 . 1 0 `S285 1 . 1 0 `S288 1 . 1 0 `S295 1 . 1 0 `S304 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES311  1 e 1 @401 ]
 "3291
 [v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @402 ]
-[s S97 . 1 `uc 1 INTF 1 0 :1:0 
+[s S757 . 1 `uc 1 INTF 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIF 1 0 :1:4 
 `uc 1 TMR0IF 1 0 :1:5 
 ]
 "9222
-[u S102 . 1 `S97 1 . 1 0 ]
-[v _PIR0bits PIR0bits `VES102  1 e 1 @1804 ]
-[s S154 . 1 `uc 1 SSP1IF 1 0 :1:0 
+[u S762 . 1 `S757 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES762  1 e 1 @1804 ]
+[s S353 . 1 `uc 1 SSP1IF 1 0 :1:0 
 `uc 1 BCL1IF 1 0 :1:1 
 `uc 1 SSP2IF 1 0 :1:2 
 `uc 1 BCL2IF 1 0 :1:3 
@@ -470,9 +470,9 @@ I2C_STATE_RESET 8
 `uc 1 RC2IF 1 0 :1:7 
 ]
 "9331
-[u S163 . 1 `S154 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES163  1 e 1 @1807 ]
-[s S133 . 1 `uc 1 SSP1IE 1 0 :1:0 
+[u S362 . 1 `S353 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES362  1 e 1 @1807 ]
+[s S191 . 1 `uc 1 SSP1IE 1 0 :1:0 
 `uc 1 BCL1IE 1 0 :1:1 
 `uc 1 SSP2IE 1 0 :1:2 
 `uc 1 BCL2IE 1 0 :1:3 
@@ -482,8 +482,8 @@ I2C_STATE_RESET 8
 `uc 1 RC2IE 1 0 :1:7 
 ]
 "9637
-[u S142 . 1 `S133 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES142  1 e 1 @1817 ]
+[u S200 . 1 `S191 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES200  1 e 1 @1817 ]
 "11095
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
 "11235
@@ -552,7 +552,7 @@ I2C_STATE_RESET 8
 [v _IOCCF IOCCF `VEuc  1 e 1 @8021 ]
 "21638
 [v _ANSELD ANSELD `VEuc  1 e 1 @8025 ]
-[s S252 . 1 `uc 1 ANSD0 1 0 :1:0 
+[s S870 . 1 `uc 1 ANSD0 1 0 :1:0 
 `uc 1 ANSD1 1 0 :1:1 
 `uc 1 ANSD2 1 0 :1:2 
 `uc 1 ANSD3 1 0 :1:3 
@@ -562,8 +562,8 @@ I2C_STATE_RESET 8
 `uc 1 ANSD7 1 0 :1:7 
 ]
 "21655
-[u S261 . 1 `S252 1 . 1 0 ]
-[v _ANSELDbits ANSELDbits `VES261  1 e 1 @8025 ]
+[u S879 . 1 `S870 1 . 1 0 ]
+[v _ANSELDbits ANSELDbits `VES879  1 e 1 @8025 ]
 "21700
 [v _WPUD WPUD `VEuc  1 e 1 @8026 ]
 "21762
@@ -597,9 +597,9 @@ I2C_STATE_RESET 8
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "68 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\mcc_generated_files/i2c_host/src/mssp1.c
 [v _I2C1_Callback I2C1_Callback `*.37(v  1 s 2 I2C1_Callback ]
-[s S1024 . 14 `a 1 busy 1 0 `us 1 address 2 1 `*.2uc 1 writePtr 2 3 `ui 1 writeLength 2 5 `*.2uc 1 readPtr 2 7 `ui 1 readLength 2 9 `a 1 switchToRead 1 11 `E7732 1 errorState 1 12 `E7741 1 state 1 13 ]
+[s S139 . 14 `a 1 busy 1 0 `us 1 address 2 1 `*.2uc 1 writePtr 2 3 `ui 1 writeLength 2 5 `*.2uc 1 readPtr 2 7 `ui 1 readLength 2 9 `a 1 switchToRead 1 11 `E7732 1 errorState 1 12 `E7741 1 state 1 13 ]
 "69
-[v _i2c1Status i2c1Status `VES1024  1 s 14 i2c1Status ]
+[v _i2c1Status i2c1Status `VES139  1 s 14 i2c1Status ]
 "72
 [v _i2c1_eventTable i2c1_eventTable `DC[9]*.37(E7741  1 s 18 i2c1_eventTable ]
 "38 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\mcc_generated_files/system/src/interrupt.c
@@ -607,28 +607,42 @@ I2C_STATE_RESET 8
 "54 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\Main.c
 [v _main main `(i  1 e 2 0 ]
 {
+"143
+[v main@tvoc_limit tvoc_limit `us  1 a 2 57 ]
+"142
+[v main@tvoc_val tvoc_val `us  1 a 2 55 ]
 "83
 [v main@line2 line2 `[17]uc  1 a 17 0 ]
 "127
-[v main@line2_420 line2 `[17]uc  1 a 17 34 ]
+[v main@line2_1045 line2 `[17]uc  1 a 17 34 ]
 "126
 [v main@line1 line1 `[17]uc  1 a 17 17 ]
-[s S352 . 5 `us 1 co2eq 2 0 `us 1 tvoc 2 2 `a 1 valid 1 4 ]
+[s S970 . 5 `us 1 co2eq 2 0 `us 1 tvoc 2 2 `a 1 valid 1 4 ]
 "125
-[v main@air air `S352  1 a 5 53 ]
+[v main@air air `S970  1 a 5 64 ]
+[s S978 . 4 `us 1 tvoc_warn_ppb 2 0 `us 1 co2eq_warn_ppm 2 2 ]
+"134
+[v main@thresholds thresholds `S978  1 a 4 51 ]
+[s S974 . 3 `uc 1 needs_update 1 0 `uc 1 show_warning 1 1 `uc 1 screen_mode 1 2 ]
+"130
+[v main@disp disp `S974  1 a 3 61 ]
 "80
-[v main@probe_result probe_result `E8048  1 a 1 52 ]
+[v main@probe_result probe_result `E8057  1 a 1 60 ]
 "103
-[v main@test_ok test_ok `a  1 a 1 51 ]
-"147
+[v main@test_ok test_ok `a  1 a 1 59 ]
+"127
+[v main@F8423 F8423 `S974  1 s 3 F8423 ]
+"130
+[v main@F8425 F8425 `S978  1 s 4 F8425 ]
+"178
 } 0
 "9 E:\MPXLab\XC8 Compiler\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S1748 . 2 `*.39uc 1 buffer 2 0 `*.2DCuc 1 source 2 0 ]
+[u S1770 . 2 `*.39uc 1 buffer 2 0 `*.2DCuc 1 source 2 0 ]
 "13
-[s S1751 _IO_FILE 11 `S1748 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v sprintf@f f `S1751  1 a 11 34 ]
+[s S1773 _IO_FILE 11 `S1770 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S1773  1 a 11 34 ]
 "12
 [v sprintf@ap ap `[1]*.4v  1 a 1 33 ]
 "9
@@ -641,9 +655,9 @@ I2C_STATE_RESET 8
 {
 "1820
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 26 ]
-[s S1783 _IO_FILE 0 ]
+[s S1805 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.39S1783  1 p 2 20 ]
+[v vfprintf@fp fp `*.39S1805  1 p 2 20 ]
 [v vfprintf@fmt fmt `*.25DCuc  1 p 2 22 ]
 [v vfprintf@ap ap `*.4*.4v  1 p 1 24 ]
 "1840
@@ -651,15 +665,15 @@ I2C_STATE_RESET 8
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S1796 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S1818 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S1796  1 a 4 15 ]
+[v vfpfcnvrt@convarg convarg `S1818  1 a 4 15 ]
 "1179
 [v vfpfcnvrt@cp cp `*.25uc  1 a 2 13 ]
 [v vfpfcnvrt@c c `uc  1 a 1 19 ]
-[s S1783 _IO_FILE 0 ]
+[s S1805 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.39S1783  1 p 2 5 ]
+[v vfpfcnvrt@fp fp `*.39S1805  1 p 2 5 ]
 [v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 7 ]
 [v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 8 ]
 "1814
@@ -668,9 +682,9 @@ I2C_STATE_RESET 8
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 3 ]
-[u S1748 . 2 `*.39uc 1 buffer 2 0 `*.2DCuc 1 source 2 0 ]
-[s S1751 _IO_FILE 11 `S1748 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.39S1751  1 p 2 5 ]
+[u S1770 . 2 `*.39uc 1 buffer 2 0 `*.2DCuc 1 source 2 0 ]
+[s S1773 _IO_FILE 11 `S1770 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.39S1773  1 p 2 5 ]
 "24
 } 0
 "7 E:\MPXLab\XC8 Compiler\pic\sources\c99\common\putch.c
@@ -708,10 +722,10 @@ I2C_STATE_RESET 8
 "209
 } 0
 "42 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\Main.c
-[v _sgp30_probe sgp30_probe `(E8048  1 s 1 sgp30_probe ]
+[v _sgp30_probe sgp30_probe `(E8057  1 s 1 sgp30_probe ]
 {
 "44
-[v sgp30_probe@s s `E8048  1 a 1 0 ]
+[v sgp30_probe@s s `E8057  1 a 1 0 ]
 "52
 } 0
 "96 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\sgp30_sensor.c
@@ -719,9 +733,9 @@ I2C_STATE_RESET 8
 {
 "105
 [v sgp30_measure@words words `[2]us  1 a 4 30 ]
-[s S352 . 5 `us 1 co2eq 2 0 `us 1 tvoc 2 2 `a 1 valid 1 4 ]
+[s S970 . 5 `us 1 co2eq 2 0 `us 1 tvoc 2 2 `a 1 valid 1 4 ]
 "96
-[v sgp30_measure@result result `*.39S352  1 p 2 27 ]
+[v sgp30_measure@result result `*.39S970  1 p 2 27 ]
 "113
 } 0
 "39
@@ -740,7 +754,7 @@ I2C_STATE_RESET 8
 "42
 [v sgp30_read_words@raw raw `[9]uc  1 a 9 11 ]
 "45
-[v sgp30_read_words@s s `E7761  1 a 1 21 ]
+[v sgp30_read_words@s s `E7770  1 a 1 21 ]
 "43
 [v sgp30_read_words@total total `uc  1 a 1 20 ]
 "39
@@ -781,7 +795,7 @@ I2C_STATE_RESET 8
 "51
 } 1
 "240 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\I2C.c
-[v _I2C_HW_Read I2C_HW_Read `(E7761  1 e 1 0 ]
+[v _I2C_HW_Read I2C_HW_Read `(E7770  1 e 1 0 ]
 {
 [v I2C_HW_Read@addr addr `uc  1 p 1 wreg ]
 "253
@@ -819,13 +833,13 @@ I2C_STATE_RESET 8
 "31
 [v sgp30_send_cmd@buf buf `[2]uc  1 a 2 8 ]
 "35
-[v sgp30_send_cmd@s s `E7761  1 a 1 7 ]
+[v sgp30_send_cmd@s s `E7770  1 a 1 7 ]
 "29
 [v sgp30_send_cmd@cmd cmd `us  1 p 2 5 ]
 "37
 } 0
 "222 E:\School\ECE_471_Embedded\Semester_Project\ECE471_Semester_Project\Air_Particulate_Sensor.X\I2C.c
-[v _I2C_HW_Write I2C_HW_Write `(E7761  1 e 1 0 ]
+[v _I2C_HW_Write I2C_HW_Write `(E7770  1 e 1 0 ]
 {
 [v I2C_HW_Write@addr addr `uc  1 p 1 wreg ]
 "232
@@ -841,14 +855,14 @@ I2C_STATE_RESET 8
 "238
 } 1
 "159
-[v _I2C_HW_Stop I2C_HW_Stop `(E8048  1 e 1 0 ]
+[v _I2C_HW_Stop I2C_HW_Stop `(E8057  1 e 1 0 ]
 {
 "160
 [v I2C_HW_Stop@s s `E7732  1 a 1 7 ]
 "169
 } 0
 "135
-[v _I2C_HW_Start I2C_HW_Start `(E8048  1 e 1 0 ]
+[v _I2C_HW_Start I2C_HW_Start `(E8057  1 e 1 0 ]
 {
 "136
 [v I2C_HW_Start@s s `E7732  1 a 1 7 ]
@@ -865,7 +879,7 @@ I2C_STATE_RESET 8
 "41
 } 0
 "171
-[v _I2C_HW_SendByte I2C_HW_SendByte `(E8048  1 e 1 0 ]
+[v _I2C_HW_SendByte I2C_HW_SendByte `(E8057  1 e 1 0 ]
 {
 [v I2C_HW_SendByte@byte byte `uc  1 p 1 wreg ]
 "173

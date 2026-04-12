@@ -126,17 +126,48 @@ int main(void){
     char line1[17];
     char line2[17];
     
+    // Display state and threshold config
+    display_state_t disp = { .needs_update = 1u,
+                             .show_warning = 0u,
+                             .screen_mode  = 0u };
+    
+    threshold_config_t thresholds = { .tvoc_warn_ppb  = TVOC_WARN_DEFAULT,
+                                      .co2eq_warn_ppm = CO2EQ_WARN_DEFAULT };
+    
     while(1){
         LATDbits.LATD0 = 1;
         
         if (sgp30_measure(&air) && air.valid) {
+            // Pull values into locals for reliable 16-bit compare on PIC16
+            uint16_t tvoc_val = air.tvoc;
+            uint16_t tvoc_limit = thresholds.tvoc_warn_ppb;
+            
+            // Check TVOC against warning threshold
+            if (tvoc_val > tvoc_limit) {
+                disp.show_warning = 1u;
+                disp.screen_mode  = 1u;
+            } else {
+                disp.show_warning = 0u;
+                disp.screen_mode  = 0u;
+            }
+            
+            // Normal readout on line 1
             sprintf(line1, "CO2: %u ppm", air.co2eq);
-            sprintf(line2, "TVOC: %u ppb", air.tvoc);
+            
+            // Line 2: warning message or TVOC value
+            if (disp.show_warning) {
+                sprintf(line2, "!TVOC HI: %u ppb", air.tvoc);
+            } else {
+                sprintf(line2, "TVOC: %u ppb", air.tvoc);
+            }
+            
             oled_display1(line1);
             oled_display2(line2);
+            disp.needs_update = 0u;
         } else {
             oled_display1("Read error");
             oled_display2("Retrying...");
+            disp.needs_update = 1u;
         }
         
         __delay_ms(500);

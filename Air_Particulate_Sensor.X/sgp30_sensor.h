@@ -8,8 +8,8 @@
  * Datasheet references (v0.9):
  *  - I2C address  : 0x58  (Table 8)
  *  - Interface    : I2C fast mode, max 400 kHz  (Table 3)
- *  - Commands     : 16-bit, MSB first  (§6.2)
- *  - Response     : 2-byte word + 1-byte CRC-8 per word, MSB first  (§6.6)
+ *  - Commands     : 16-bit, MSB first  (?6.2)
+ *  - Response     : 2-byte word + 1-byte CRC-8 per word, MSB first  (?6.6)
  *  - CRC          : poly 0x31, init 0xFF, no reflection  (Table 13)
  *  - Sampling     : Measure_air_quality must be called every 1 s  (Table 2)
  */
@@ -43,7 +43,7 @@
 #define SGP30_GENERAL_CALL_ADDR         0x00u
 #define SGP30_GENERAL_CALL_RESET        0x06u
 
-/* Self-test pass pattern (§6.3 Measure Test) */
+/* Self-test pass pattern (?6.3 Measure Test) */
 #define SGP30_SELF_TEST_PASS            0xD400u
 
 /* ------------------------------------------------------------------ */
@@ -63,6 +63,23 @@ typedef struct {
     uint16_t ethanol_signal; /* Raw ethanol signal output */
     bool     valid;
 } sgp30_raw_t;
+
+/* Display state tracking for OLED updates */
+typedef struct {
+    uint8_t  needs_update;   // 1 = refresh OLED
+    uint8_t  show_warning;   // 1 = currently displaying TVOC alert
+    uint8_t  screen_mode;    // 0 = normal readout, 1 = warning overlay
+} display_state_t;
+
+/* Configurable warning thresholds */
+typedef struct {
+    uint16_t tvoc_warn_ppb;  // TVOC warning level (default 200 ppb)
+    uint16_t co2eq_warn_ppm; // eCO2 warning level (default 1000 ppm)
+} threshold_config_t;
+
+// Default threshold values
+#define TVOC_WARN_DEFAULT   200u   // ppb
+#define CO2EQ_WARN_DEFAULT  1000u  // ppm
 
 /* ------------------------------------------------------------------ */
 /* Public API                                                          */
@@ -101,29 +118,28 @@ bool    sgp30_get_baseline(uint16_t *co2eq_base, uint16_t *tvoc_base);
  * @brief  Restore previously saved baseline values.
  *         Must be called AFTER sgp30_init().
  *         Parameters are in order (co2eq, tvoc) but the wire order is
- *         (TVOC first, CO2eq second) per §6.3 ? handled internally.
+ *         (TVOC first, CO2eq second) per ?6.3 ? handled internally.
  * @return true on success.
  */
 bool    sgp30_set_baseline(uint16_t co2eq_base, uint16_t tvoc_base);
 
 /**
  * @brief  Write absolute humidity for on-chip compensation.
- *         Value is a fixed-point 8.8 number in g/m³.
- *         Send 0x0000 to use the sensor default (11.57 g/m³).
+ *         Value is a fixed-point 8.8 number in g/m?.
+ *         Send 0x0000 to use the sensor default (11.57 g/m?).
  *         Helper macro: SGP30_HUMIDITY_WORD(integer_gm3, frac_256ths)
  * @return true on success.
  */
 bool    sgp30_set_humidity(uint16_t humidity_word);
 
-/**
- * @brief  Helper to build the Set_humidity word from float g/m³.
- *         e.g. 16.5 g/m³ ? SGP30_HUMIDITY_FLOAT(16.5f) = 0x1080
- */
-#define SGP30_HUMIDITY_FLOAT(gm3) \
-    ((uint16_t)(((uint8_t)(gm3) << 8) | (uint8_t)(((gm3) - (uint8_t)(gm3)) * 256.0f)))
+// Integer-only helper to build the Set_humidity word.
+// whole = integer g/m3, frac = fractional part in 256ths
+// e.g. 16.5 g/m3 -> SGP30_HUMIDITY_WORD(16, 128) = 0x1080
+#define SGP30_HUMIDITY_WORD(whole, frac) \
+    ((uint16_t)(((uint8_t)(whole) << 8u) | (uint8_t)(frac)))
 
 /**
- * @brief  Issue a soft reset via I2C General Call (§6.4).
+ * @brief  Issue a soft reset via I2C General Call (?6.4).
  *         WARNING: resets ALL devices on the bus that support General Call.
  *         A new sgp30_init() must be called after this.
  * @return true on success.
@@ -131,21 +147,21 @@ bool    sgp30_set_humidity(uint16_t humidity_word);
 bool    sgp30_soft_reset(void);
 
 /**
- * @brief  Run the on-chip self-test (§6.3 Measure Test).
+ * @brief  Run the on-chip self-test (?6.3 Measure Test).
  *         Do NOT call after Init_air_quality ? for production test only.
  * @return true if sensor returns the pass pattern 0xD400.
  */
 bool    sgp30_self_test(void);
 
 /**
- * @brief  Read the 48-bit serial ID (§6.5).
+ * @brief  Read the 48-bit serial ID (?6.5).
  *         serial_id[0] = most-significant word (first received).
  * @return true on success.
  */
 bool    sgp30_get_serial_id(uint16_t serial_id[3]);
 
 /**
- * @brief  Read the feature set version word (§6.3 Feature Set).
+ * @brief  Read the feature set version word (?6.3 Feature Set).
  * @return true on success.
  */
 bool    sgp30_get_feature_set(uint16_t *feature_set);

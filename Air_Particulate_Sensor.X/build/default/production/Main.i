@@ -13546,7 +13546,20 @@ typedef struct {
     uint16_t ethanol_signal;
     _Bool valid;
 } sgp30_raw_t;
-# 77 "./sgp30_sensor.h"
+
+
+typedef struct {
+    uint8_t needs_update;
+    uint8_t show_warning;
+    uint8_t screen_mode;
+} display_state_t;
+
+
+typedef struct {
+    uint16_t tvoc_warn_ppb;
+    uint16_t co2eq_warn_ppm;
+} threshold_config_t;
+# 94 "./sgp30_sensor.h"
 void sgp30_init(void);
 
 
@@ -13569,11 +13582,11 @@ _Bool sgp30_measure_raw(sgp30_raw_t *result);
 
 
 _Bool sgp30_get_baseline(uint16_t *co2eq_base, uint16_t *tvoc_base);
-# 107 "./sgp30_sensor.h"
+# 124 "./sgp30_sensor.h"
 _Bool sgp30_set_baseline(uint16_t co2eq_base, uint16_t tvoc_base);
-# 116 "./sgp30_sensor.h"
+# 133 "./sgp30_sensor.h"
 _Bool sgp30_set_humidity(uint16_t humidity_word);
-# 131 "./sgp30_sensor.h"
+# 147 "./sgp30_sensor.h"
 _Bool sgp30_soft_reset(void);
 
 
@@ -13878,17 +13891,48 @@ int main(void){
     char line1[17];
     char line2[17];
 
+
+    display_state_t disp = { .needs_update = 1u,
+                             .show_warning = 0u,
+                             .screen_mode = 0u };
+
+    threshold_config_t thresholds = { .tvoc_warn_ppb = 200u,
+                                      .co2eq_warn_ppm = 1000u };
+
     while(1){
         LATDbits.LATD0 = 1;
 
         if (sgp30_measure(&air) && air.valid) {
+
+            uint16_t tvoc_val = air.tvoc;
+            uint16_t tvoc_limit = thresholds.tvoc_warn_ppb;
+
+
+            if (tvoc_val > tvoc_limit) {
+                disp.show_warning = 1u;
+                disp.screen_mode = 1u;
+            } else {
+                disp.show_warning = 0u;
+                disp.screen_mode = 0u;
+            }
+
+
             sprintf(line1, "CO2: %u ppm", air.co2eq);
-            sprintf(line2, "TVOC: %u ppb", air.tvoc);
+
+
+            if (disp.show_warning) {
+                sprintf(line2, "!TVOC HI: %u ppb", air.tvoc);
+            } else {
+                sprintf(line2, "TVOC: %u ppb", air.tvoc);
+            }
+
             oled_display1(line1);
             oled_display2(line2);
+            disp.needs_update = 0u;
         } else {
             oled_display1("Read error");
             oled_display2("Retrying...");
+            disp.needs_update = 1u;
         }
 
         _delay((unsigned long)((500)*(32000000U/4000.0)));

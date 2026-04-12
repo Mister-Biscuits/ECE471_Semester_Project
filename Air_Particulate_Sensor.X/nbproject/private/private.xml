@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/schop/OneDrive/Documents/School/ECE471_embedded/Semester%20Project/ECE471_Semester_Project/Air_Particulate_Sensor.X/I2C.c</file>
-            <file>file:/C:/Users/schop/OneDrive/Documents/School/ECE471_embedded/Semester%20Project/ECE471_Semester_Project/Air_Particulate_Sensor.X/mcc_generated_files/system/src/pins.c</file>
-            <file>file:/C:/Users/schop/OneDrive/Documents/School/ECE471_embedded/Semester%20Project/ECE471_Semester_Project/Air_Particulate_Sensor.X/I2C.h</file>
-            <file>file:/C:/Users/schop/OneDrive/Documents/School/ECE471_embedded/Semester%20Project/ECE471_Semester_Project/Air_Particulate_Sensor.X/sgp30_sensor.c</file>
-            <file>file:/C:/Users/schop/OneDrive/Documents/School/ECE471_embedded/Semester%20Project/ECE471_Semester_Project/Air_Particulate_Sensor.X/Main.c</file>
+            <file>file:/E:/School/ECE_471_Embedded/Semester_Project/ECE471_Semester_Project/Air_Particulate_Sensor.X/sgp30_sensor.c</file>
+            <file>file:/E:/School/ECE_471_Embedded/Semester_Project/ECE471_Semester_Project/Air_Particulate_Sensor.X/sgp30_sensor.h</file>
+            <file>file:/E:/School/ECE_471_Embedded/Semester_Project/ECE471_Semester_Project/Air_Particulate_Sensor.X/Makefile</file>
+            <file>file:/E:/School/ECE_471_Embedded/Semester_Project/ECE471_Semester_Project/Air_Particulate_Sensor.X/Main.c</file>
         </group>
     </open-files>
 </project-private>

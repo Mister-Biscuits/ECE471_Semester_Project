@@ -38,17 +38,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p i __delay ]
 "42 Main.c
 [; ;Main.c: 42: static I2C_Status sgp30_probe(void)
-[c E8048 0 1 2 3 .. ]
-[n E8048 . I2C_OK I2C_NACK I2C_BUS_COLL I2C_TIMEOUT  ]
+[c E8057 0 1 2 3 .. ]
+[n E8057 . I2C_OK I2C_NACK I2C_BUS_COLL I2C_TIMEOUT  ]
 "74 ./I2C.h
 [; ;./I2C.h: 74: I2C_Status I2C_HW_Start(void);
-[v _I2C_HW_Start `(E8048 ~T0 @X0 0 ef ]
+[v _I2C_HW_Start `(E8057 ~T0 @X0 0 ef ]
 "76
 [; ;./I2C.h: 76: I2C_Status I2C_HW_Stop(void);
-[v _I2C_HW_Stop `(E8048 ~T0 @X0 0 ef ]
+[v _I2C_HW_Stop `(E8057 ~T0 @X0 0 ef ]
 "77
 [; ;./I2C.h: 77: I2C_Status I2C_HW_SendByte(uint8_t byte);
-[v _I2C_HW_SendByte `(E8048 ~T0 @X0 0 ef1`uc ]
+[v _I2C_HW_SendByte `(E8057 ~T0 @X0 0 ef1`uc ]
 [p mainexit ]
 "55 ./mcc_generated_files/system/system.h
 [; ;./mcc_generated_files/system/system.h: 55: void SYSTEM_Initialize(void);
@@ -68,18 +68,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 "121 E:\MPXLab\XC8 Compiler\pic\include\c99/stdio.h
 [; ;E:\MPXLab\XC8 Compiler\pic\include\c99/stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"138 ./sgp30_sensor.h
-[; ;./sgp30_sensor.h: 138: _Bool sgp30_self_test(void);
+"154 ./sgp30_sensor.h
+[; ;./sgp30_sensor.h: 154: _Bool sgp30_self_test(void);
 [v _sgp30_self_test `(a ~T0 @X0 0 ef ]
-"77
-[; ;./sgp30_sensor.h: 77: void sgp30_init(void);
+"94
+[; ;./sgp30_sensor.h: 94: void sgp30_init(void);
 [v _sgp30_init `(v ~T0 @X0 0 ef ]
 "54
 [; ;./sgp30_sensor.h: 54: typedef struct {
 [s S1024 `us 1 `us 1 `a 1 ]
 [n S1024 . co2eq tvoc valid ]
-"84
-[; ;./sgp30_sensor.h: 84: _Bool sgp30_measure(sgp30_data_t *result);
+"68
+[; ;./sgp30_sensor.h: 68: typedef struct {
+[s S1026 `uc 1 `uc 1 `uc 1 ]
+[n S1026 . needs_update show_warning screen_mode ]
+"75
+[; ;./sgp30_sensor.h: 75: typedef struct {
+[s S1027 `us 1 `us 1 ]
+[n S1027 . tvoc_warn_ppb co2eq_warn_ppm ]
+"101
+[; ;./sgp30_sensor.h: 101: _Bool sgp30_measure(sgp30_data_t *result);
 [v _sgp30_measure `(a ~T0 @X0 0 ef1`*S1024 ]
 "52 E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h
 [; ;E:/MPXLab/IDE/packs/Microchip/PIC16F1xxxx_DFP/1.26.410/xc8\pic\include\proc/pic16lf15375.h: 52: __asm("INDF0 equ 00h");
@@ -1202,7 +1210,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
 "23
 [; ;Main.c: 23: }
-[e :UE 1028 ]
+[e :UE 1030 ]
 }
 "27
 [; ;Main.c: 27: static void blink_error(uint8_t count)
@@ -1219,15 +1227,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "29
 [; ;Main.c: 29:     while (1) {
-[e :U 1031 ]
+[e :U 1033 ]
 {
 "30
 [; ;Main.c: 30:         for (uint8_t i = 0u; i < count; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `ui `uc ]
-[e $U 1036  ]
-[e :U 1033 ]
+[e $U 1038  ]
+[e :U 1035 ]
 {
 "31
 [; ;Main.c: 31:             LATDbits.LATD0 = 1;
@@ -1245,9 +1253,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Main.c: 35:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
+[e :U 1038 ]
+[e $ < -> _i `i -> _count `i 1035  ]
 [e :U 1036 ]
-[e $ < -> _i `i -> _count `i 1033  ]
-[e :U 1034 ]
 }
 "36
 [; ;Main.c: 36:         _delay((unsigned long)((800)*(32000000U/4000.0)));
@@ -1255,16 +1263,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37
 [; ;Main.c: 37:     }
 }
-[e :U 1030 ]
-[e $U 1031  ]
 [e :U 1032 ]
+[e $U 1033  ]
+[e :U 1034 ]
 "38
 [; ;Main.c: 38: }
-[e :UE 1029 ]
+[e :UE 1031 ]
 }
 "42
 [; ;Main.c: 42: static I2C_Status sgp30_probe(void)
-[v _sgp30_probe `(E8048 ~T0 @X0 1 sf ]
+[v _sgp30_probe `(E8057 ~T0 @X0 1 sf ]
 "43
 [; ;Main.c: 43: {
 {
@@ -1272,19 +1280,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "44
 [; ;Main.c: 44:     I2C_Status s;
-[v _s `E8048 ~T0 @X0 1 a ]
+[v _s `E8057 ~T0 @X0 1 a ]
 "45
 [; ;Main.c: 45:     s = I2C_HW_Start();
 [e = _s ( _I2C_HW_Start ..  ]
 "46
 [; ;Main.c: 46:     if (s != I2C_OK) { I2C_HW_Stop(); return s; }
-[e $ ! != -> _s `ui -> . `E8048 0 `ui 1038  ]
+[e $ ! != -> _s `ui -> . `E8057 0 `ui 1040  ]
 {
 [e ( _I2C_HW_Stop ..  ]
 [e ) _s ]
-[e $UE 1037  ]
+[e $UE 1039  ]
 }
-[e :U 1038 ]
+[e :U 1040 ]
 "49
 [; ;Main.c: 49:     s = I2C_HW_SendByte((uint8_t)(((unsigned)0x58u << 1u) & 0xFEu));
 [e = _s ( _I2C_HW_SendByte (1 -> & << -> 88 `ui -> 1 `ui -> 254 `ui `uc ]
@@ -1294,10 +1302,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51
 [; ;Main.c: 51:     return s;
 [e ) _s ]
-[e $UE 1037  ]
+[e $UE 1039  ]
 "52
 [; ;Main.c: 52: }
-[e :UE 1037 ]
+[e :UE 1039 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
 "54
@@ -1332,11 +1340,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
 "80
 [; ;Main.c: 80:     I2C_Status probe_result = sgp30_probe();
-[v _probe_result `E8048 ~T0 @X0 1 a ]
+[v _probe_result `E8057 ~T0 @X0 1 a ]
 [e = _probe_result ( _sgp30_probe ..  ]
 "82
 [; ;Main.c: 82:     if (probe_result != I2C_OK) {
-[e $ ! != -> _probe_result `ui -> . `E8048 0 `ui 1040  ]
+[e $ ! != -> _probe_result `ui -> . `E8057 0 `ui 1042  ]
 {
 "83
 [; ;Main.c: 83:         char line2[17];
@@ -1356,7 +1364,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "90
 [; ;Main.c: 90:     }
 }
-[e :U 1040 ]
+[e :U 1042 ]
 "92
 [; ;Main.c: 92:     oled_display1("SGP30 found!");
 [e ( _oled_display1 (1 :s 5C ]
@@ -1372,7 +1380,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _test_ok ( _sgp30_self_test ..  ]
 "105
 [; ;Main.c: 105:     if (!test_ok) {
-[e $ ! ! != -> _test_ok `i -> 0 `i 1041  ]
+[e $ ! ! != -> _test_ok `i -> 0 `i 1043  ]
 {
 "106
 [; ;Main.c: 106:         oled_display1("Self-test FAIL");
@@ -1386,8 +1394,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "112
 [; ;Main.c: 112:     } else {
 }
-[e $U 1042  ]
-[e :U 1041 ]
+[e $U 1044  ]
+[e :U 1043 ]
 {
 "113
 [; ;Main.c: 113:         oled_display1("Self-test PASS");
@@ -1401,7 +1409,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "116
 [; ;Main.c: 116:     }
 }
-[e :U 1042 ]
+[e :U 1044 ]
 "119
 [; ;Main.c: 119:     sgp30_init();
 [e ( _sgp30_init ..  ]
@@ -1420,80 +1428,165 @@ Version 4.0 HI-TECH Software Intermediate Code
 "127
 [; ;Main.c: 127:     char line2[17];
 [v _line2 `uc ~T0 @X0 -> 17 `i a ]
-"129
-[; ;Main.c: 129:     while(1){
-[e :U 1044 ]
-{
+[v F8423 `S1026 ~T0 @X0 1 s ]
+[i F8423
+:U ..
+:U ..
 "130
-[; ;Main.c: 130:         LATDbits.LATD0 = 1;
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"132
-[; ;Main.c: 132:         if (sgp30_measure(&air) && air.valid) {
-[e $ ! && != -> ( _sgp30_measure (1 &U _air `i -> 0 `i != -> . _air 2 `i -> 0 `i 1046  ]
-{
-"133
-[; ;Main.c: 133:             sprintf(line1, "CO2: %u ppm", air.co2eq);
-[e ( _sprintf (1 , (. , &U _line1 :s 13C -> . _air 0 `ui ]
+[; ;Main.c: 130:     display_state_t disp = { .needs_update = 1u,
+-> -> 1 `ui `uc
+-> -> 0 `ui `uc
+-> -> 0 `ui `uc
+..
+..
+]
+[v _disp `S1026 ~T0 @X0 1 a ]
+[e = _disp F8423 ]
+[v F8425 `S1027 ~T0 @X0 1 s ]
+[i F8425
+:U ..
+:U ..
 "134
-[; ;Main.c: 134:             sprintf(line2, "TVOC: %u ppb", air.tvoc);
-[e ( _sprintf (1 , (. , &U _line2 :s 14C -> . _air 1 `ui ]
-"135
-[; ;Main.c: 135:             oled_display1(line1);
-[e ( _oled_display1 (1 -> &U _line1 `*Cuc ]
-"136
-[; ;Main.c: 136:             oled_display2(line2);
-[e ( _oled_display2 (1 -> &U _line2 `*Cuc ]
+[; ;Main.c: 134:     threshold_config_t thresholds = { .tvoc_warn_ppb = 200u,
+-> -> 200 `ui `us
+-> -> 1000 `ui `us
+..
+..
+]
+[v _thresholds `S1027 ~T0 @X0 1 a ]
+[e = _thresholds F8425 ]
 "137
-[; ;Main.c: 137:         } else {
-}
-[e $U 1047  ]
+[; ;Main.c: 137:     while(1){
 [e :U 1046 ]
 {
 "138
-[; ;Main.c: 138:             oled_display1("Read error");
-[e ( _oled_display1 (1 :s 15C ]
-"139
-[; ;Main.c: 139:             oled_display2("Retrying...");
-[e ( _oled_display2 (1 :s 16C ]
+[; ;Main.c: 138:         LATDbits.LATD0 = 1;
+[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
 "140
-[; ;Main.c: 140:         }
-}
-[e :U 1047 ]
+[; ;Main.c: 140:         if (sgp30_measure(&air) && air.valid) {
+[e $ ! && != -> ( _sgp30_measure (1 &U _air `i -> 0 `i != -> . _air 2 `i -> 0 `i 1048  ]
+{
 "142
-[; ;Main.c: 142:         _delay((unsigned long)((500)*(32000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+[; ;Main.c: 142:             uint16_t tvoc_val = air.tvoc;
+[v _tvoc_val `us ~T0 @X0 1 a ]
+[e = _tvoc_val . _air 1 ]
 "143
-[; ;Main.c: 143:         LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"144
-[; ;Main.c: 144:         _delay((unsigned long)((500)*(32000000U/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
-"145
-[; ;Main.c: 145:     }
-}
-[e :U 1043 ]
-[e $U 1044  ]
-[e :U 1045 ]
+[; ;Main.c: 143:             uint16_t tvoc_limit = thresholds.tvoc_warn_ppb;
+[v _tvoc_limit `us ~T0 @X0 1 a ]
+[e = _tvoc_limit . _thresholds 0 ]
 "146
-[; ;Main.c: 146:     return 1;
-[e ) -> 1 `i ]
-[e $UE 1039  ]
+[; ;Main.c: 146:             if (tvoc_val > tvoc_limit) {
+[e $ ! > -> _tvoc_val `ui -> _tvoc_limit `ui 1049  ]
+{
 "147
-[; ;Main.c: 147: }
-[e :UE 1039 ]
+[; ;Main.c: 147:                 disp.show_warning = 1u;
+[e = . _disp 1 -> -> 1 `ui `uc ]
+"148
+[; ;Main.c: 148:                 disp.screen_mode = 1u;
+[e = . _disp 2 -> -> 1 `ui `uc ]
+"149
+[; ;Main.c: 149:             } else {
+}
+[e $U 1050  ]
+[e :U 1049 ]
+{
+"150
+[; ;Main.c: 150:                 disp.show_warning = 0u;
+[e = . _disp 1 -> -> 0 `ui `uc ]
+"151
+[; ;Main.c: 151:                 disp.screen_mode = 0u;
+[e = . _disp 2 -> -> 0 `ui `uc ]
+"152
+[; ;Main.c: 152:             }
+}
+[e :U 1050 ]
+"155
+[; ;Main.c: 155:             sprintf(line1, "CO2: %u ppm", air.co2eq);
+[e ( _sprintf (1 , (. , &U _line1 :s 13C -> . _air 0 `ui ]
+"158
+[; ;Main.c: 158:             if (disp.show_warning) {
+[e $ ! != -> . _disp 1 `i -> 0 `i 1051  ]
+{
+"159
+[; ;Main.c: 159:                 sprintf(line2, "!TVOC HI: %u ppb", air.tvoc);
+[e ( _sprintf (1 , (. , &U _line2 :s 14C -> . _air 1 `ui ]
+"160
+[; ;Main.c: 160:             } else {
+}
+[e $U 1052  ]
+[e :U 1051 ]
+{
+"161
+[; ;Main.c: 161:                 sprintf(line2, "TVOC: %u ppb", air.tvoc);
+[e ( _sprintf (1 , (. , &U _line2 :s 15C -> . _air 1 `ui ]
+"162
+[; ;Main.c: 162:             }
+}
+[e :U 1052 ]
+"164
+[; ;Main.c: 164:             oled_display1(line1);
+[e ( _oled_display1 (1 -> &U _line1 `*Cuc ]
+"165
+[; ;Main.c: 165:             oled_display2(line2);
+[e ( _oled_display2 (1 -> &U _line2 `*Cuc ]
+"166
+[; ;Main.c: 166:             disp.needs_update = 0u;
+[e = . _disp 0 -> -> 0 `ui `uc ]
+"167
+[; ;Main.c: 167:         } else {
+}
+[e $U 1053  ]
+[e :U 1048 ]
+{
+"168
+[; ;Main.c: 168:             oled_display1("Read error");
+[e ( _oled_display1 (1 :s 16C ]
+"169
+[; ;Main.c: 169:             oled_display2("Retrying...");
+[e ( _oled_display2 (1 :s 17C ]
+"170
+[; ;Main.c: 170:             disp.needs_update = 1u;
+[e = . _disp 0 -> -> 1 `ui `uc ]
+"171
+[; ;Main.c: 171:         }
+}
+[e :U 1053 ]
+"173
+[; ;Main.c: 173:         _delay((unsigned long)((500)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"174
+[; ;Main.c: 174:         LATDbits.LATD0 = 0;
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+"175
+[; ;Main.c: 175:         _delay((unsigned long)((500)*(32000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32000000 `ul `d .4000.0 `ul ]
+"176
+[; ;Main.c: 176:     }
+}
+[e :U 1045 ]
+[e $U 1046  ]
+[e :U 1047 ]
+"177
+[; ;Main.c: 177:     return 1;
+[e ) -> 1 `i ]
+[e $UE 1041  ]
+"178
+[; ;Main.c: 178: }
+[e :UE 1041 ]
 }
 [p f _sprintf 8389632 ]
 [a 3C 69 114 114 58 32 37 117 0 ]
-[a 15C 82 101 97 100 32 101 114 114 111 114 0 ]
+[a 16C 82 101 97 100 32 101 114 114 111 114 0 ]
 [a 13C 67 79 50 58 32 37 117 32 112 112 109 0 ]
 [a 12C 49 53 115 32 105 110 105 116 32 112 101 114 105 111 100 0 ]
-[a 14C 84 86 79 67 58 32 37 117 32 112 112 98 0 ]
+[a 14C 33 84 86 79 67 32 72 73 58 32 37 117 32 112 112 98 0 ]
+[a 15C 84 86 79 67 58 32 37 117 32 112 112 98 0 ]
 [a 9C 83 101 108 102 45 116 101 115 116 32 80 65 83 83 0 ]
 [a 7C 83 101 108 102 45 116 101 115 116 32 70 65 73 76 0 ]
 [a 6C 83 101 108 102 45 116 101 115 116 46 46 46 0 ]
 [a 1C 73 50 67 32 105 110 105 116 46 46 46 0 ]
 [a 11C 87 97 114 109 105 110 103 32 117 112 46 46 46 0 ]
-[a 16C 82 101 116 114 121 105 110 103 46 46 46 0 ]
+[a 17C 82 101 116 114 121 105 110 103 46 46 46 0 ]
 [a 8C 67 111 110 116 105 110 117 105 110 103 46 46 46 0 ]
 [a 5C 83 71 80 51 48 32 102 111 117 110 100 33 0 ]
 [a 4C 83 71 80 51 48 32 110 111 32 65 67 75 33 0 ]
