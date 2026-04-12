@@ -156,7 +156,7 @@ int main(void){
             
             // Line 2: warning message or TVOC value
             if (disp.show_warning) {
-                sprintf(line2, "!TVOC HI: %u ppb", air.tvoc);
+                sprintf(line2, "TVOC WARN: %u", air.tvoc);
             } else {
                 sprintf(line2, "TVOC: %u ppb", air.tvoc);
             }
